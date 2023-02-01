@@ -210,7 +210,7 @@ Boolean, false by default. Adds new return fields with prefix of `confirmed_` fo
 }
 ```
 
-**Optional "representative", "weight", "pending"**
+**Optional "representative", "weight", "receivable"**
 Booleans, false by default. Additionally returns representative, voting weight, pending/receivable balance for account   
 
 **Request:**
@@ -220,7 +220,7 @@ Booleans, false by default. Additionally returns representative, voting weight, 
   "account": "nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3",
   "representative": "true",
   "weight": "true",
-  "pending": "true"
+  "receivable": "true"
 }
 ```
 
@@ -382,7 +382,7 @@ Deprecated in V24.0+. Replaced by [accounts_receivable](#accounts_receivable)
 
 ### accounts_receivable  
 
-_since V24.0, use [accounts_pending](#accounts_pending) for V23.3 and below_
+_since V24.0, use [accounts_pending](#accounts_pending)_
 
 Returns a list of confirmed block hashes which have not yet been received by these **accounts**  
 
@@ -604,8 +604,8 @@ Default "true". If "true", "cemented" in the response will contain the number of
 ---
 
 ### block_create
-_enable_control required,   
-Creates a json representations of new block based on input data & signed with **private key** or **account** in **wallet**. Use for offline signing. Using the optional `json_block` is recommended since v19.0.  
+_enable_control required_ 
+Creates a json representations of new block based on input data & signed with **private key** or **account** in **wallet**. Use for offline signing. Using the optional `json_block` is recommended .  
 
 --8<-- "warning-enable-control.md"
 
@@ -661,7 +661,7 @@ If difficulty and work values are both not given, RPC processor tries to calcula
 ```json
 {
   "hash": "FF0144381CFF0B2C079A115E7ADA7E96F43FD219446E7524C48D1CC9900C4F17",
-  "difficulty": "ffffffe1278b3dc6", // since V21.0
+  "difficulty": "ffffffe1278b3dc6",
   "block": {
     "type": "state",
     "account": "nano_3qgmh14nwztqw4wmcdzy4xpqeejey68chx6nciczwn9abji7ihhum9qtpmdr",
@@ -680,7 +680,7 @@ If difficulty and work values are both not given, RPC processor tries to calcula
 
 ### block_hash  
 
-Returning block hash for given **block** content. Using the optional `json_block` is recommended since v19.0.  
+Returning block hash for given **block** content. Using the optional `json_block` is recommended .  
 
 **Request:**
 ```json
@@ -720,7 +720,7 @@ Retrieves a json representation of the block in `contents` along with:
 * Whether block was `confirmed`, `subtype` (_for state blocks_) of `send`, `receive`, `change` or `epoch`
 * `successor` returned
 
-Using the optional `json_block` is recommended since v19.0.  
+Using the optional `json_block` is recommended .  
 
 **Request:**
 ```json
@@ -764,7 +764,7 @@ Default "false". If "true", "contents" will contain a JSON subtree instead of a 
 ---
 
 ### blocks  
-Retrieves a json representations of **blocks**. Using the optional `json_block` is recommended since v19.0.  
+Retrieves a json representations of **blocks**. Using the optional `json_block` is recommended .  
 
 **Request:**
 ```json
@@ -806,7 +806,7 @@ Retrieves a json representations of `blocks` in `contents` along with:
 * Whether block was `confirmed`, `subtype` (_for state blocks_) of `send`, `receive`, `change` or `epoch`
 * `successor` returned
 
-Using the optional `json_block` is recommended since v19.0.  
+Using the optional `json_block` is recommended .  
 
 **Request:**
 ```json
@@ -1157,7 +1157,9 @@ Boolean, false by default. Returns a list of block hashes in the account chain s
 
 ### confirmation_active  
    
-Returns list of active elections qualified roots (excluding stopped & aborted elections); since V21, also includes the number of unconfirmed and confirmed active elections. Find info about specific qualified root with [confirmation_info](#confirmation_info)  
+Returns list of active elections qualified roots (excluding stopped & aborted elections);
+Includes the number of unconfirmed and confirmed active elections. 
+Find info about specific qualified root with [confirmation_info](#confirmation_info)  
 
 !!! note
     The roots provided are two parts and differ between the first account block and subsequent blocks:
@@ -1178,8 +1180,8 @@ Returns list of active elections qualified roots (excluding stopped & aborted el
  "confirmations": [
    "8031B600827C5CC05FDC911C28BBAC12A0E096CCB30FA8324F56C123676281B28031B600827C5CC05FDC911C28BBAC12A0E096CCB30FA8324F56C123676281B2"
  ],
- "unconfirmed": "133", // since V21.0
- "confirmed": "5" // since V21.0
+ "unconfirmed": "133", 
+ "confirmed": "5"
 }
 ```   
    
@@ -1217,7 +1219,7 @@ Returns the hash of the block which is having the confirmation height set for, e
 --8<-- "warning-debug-only-command.md"
  
 duration, time, confirmation_stats:    
-Returns hash, tally weight, election duration (in milliseconds), election confirmation timestamp for recent elections winners; since V20.0, the confirmation request count; since V21.0, the number of blocks and voters. Also returns stats: count of elections in history (limited to 2048) & average duration time.
+Returns hash, tally weight, election duration (in milliseconds), election confirmation timestamp for recent elections winners; the confirmation request count; the number of blocks and voters. Also returns stats: count of elections in history (limited to 2048) & average duration time.
 
 `confirmation_history_size` can be managed in the configuration file to adjust the number of elections to be kept in history and returned by this call. Due to timings inside the node, the default 2048 limit will return all confirmations up to traffic levels of approximately 56 confirmations/sec. To properly track levels above this, increase this value or use the confirmation subscription through the [websocket](/integration-guides/websockets) instead.
 
@@ -1269,29 +1271,28 @@ Valid block hash, filters return for only the provided hash. If there is no conf
 ```  
 
 If the block is unknown on the node, the following error will be returned:  
-```"error": "Invalid block hash"```  
+`"error": "Invalid block hash"`  
  
 ---
-
 ### confirmation_info 
    
-Returns info about an unconfirmed active election by **root**. Including announcements count, last winner (initially local ledger block), total tally of voted representatives, concurrent blocks with tally & block contents for each. Using the optional `json_block` is recommended since v19.0.
+Returns info about an unconfirmed active election by **root**. Including announcements count, last winner (initially local ledger block), total tally of voted representatives, concurrent blocks with tally & block contents for each. Using the optional `json_block` is recommended.
 
 !!! note
     The roots provided are two parts and differ between the first account block and subsequent blocks:
 
     * First account block (open): `0000000000000000000000000000000000000000000000000000000000000000` + account public key
-    * Other blocks: previous hash + previous hash
-
+    * Other blocks: previous hash + previous hash 
 
 **Request:**
-```json
+```
 {
   "action": "confirmation_info",
   "json_block": "true",
   "root": "EE125B1B1D85D3C24636B3590E1642D9F21B166C0C6CD99C9C6087A1224A0C44EE125B1B1D85D3C24636B3590E1642D9F21B166C0C6CD99C9C6087A1224A0C44"
 }
-```  
+```
+
 **Response:**
 ```json
 {
@@ -1490,7 +1491,6 @@ Returns a list of pairs of delegator accounts and balances given a representativ
 ```   
 
 **Optional parameters:**  
-_since V23.0_  
 
 * `threshold`: minimum required balance for a delegating account to be included in the response
 * `count`: number of delegators to return
@@ -1541,7 +1541,7 @@ Derive deterministic keypair from **seed** based on **index**
 ---
 
 ### epoch_upgrade  
-_enable_control required,  
+_enable_control required_  
 
 --8<-- "warning-debug-only-command.md"
 
@@ -1677,7 +1677,7 @@ Derive public key and account number from **private key**
 ---
 
 ### ledger
-_enable_control required,    
+_enable_control required_
 Returns frontier, open block, change representative block, balance, last modified timestamp from local database & block count starting at **account** up to **count**   
 
 --8<-- "warning-enable-control.md"
@@ -1755,7 +1755,7 @@ Number (128 bit, decimal), default 0. Return only accounts with balance above **
 ---
 
 ### node_id
-_enable_control required,  
+_enable_control required_
 
 --8<-- "warning-debug-only-command.md"
  
@@ -1783,7 +1783,7 @@ the node_id has a `node_` prefix
 ---
 
 ### node_id_delete
-_enable_control required, 
+_enable_control required_ 
 
 --8<-- "warning-debug-only-command.md"
 
@@ -1896,7 +1896,7 @@ Scans all accounts, checks for unconfirmed blocks in account chains, and then qu
 ---
 
 ### process  
-Publish **block** to the network. Using the optional `json_block` is recommended since v19.0. In v20.0-v21.3, blocks are watched for confirmation by default (see optional `watch_work`).  If `enable_control` is not set to `true` on the node, then the optional `watch_work` must be set to `false`. In V22.0+ the work watcher has been removed.
+Publish **block** to the network. Using the optional `json_block` is recommended. 
 
 --8<-- "warning-process-sub-type-recommended.md"
 
@@ -1951,7 +1951,6 @@ Boolean, default "false". If "true", requests will add the blocks to the block p
 
 ### receivable
 
-_since V23.0, use [pending](#pending) for V22.1 and below_  
 Returns a list of block hashes which have not yet been received by this account.
 
 **Request:**
@@ -2055,7 +2054,6 @@ Boolean, true by default (), previously false by default. Only returns confirmed
 
 ### receivable_exists
 
-_since V23.0, use [pending_exists](#pending_exists) for V22.1 and below_  
 Check whether block is receivable by **hash**  
 
 **Request:**
@@ -2256,7 +2254,7 @@ Boolean, false by default. Additionally rebroadcast destination chain blocks fro
 
 ### sign
   
-Signing provided **block** with private **key** or key of **account** from **wallet**. Using the optional `json_block` is recommended since v19.0.  
+Signing provided **block** with private **key** or key of **account** from **wallet**. Using the optional `json_block` is recommended .  
 
 **Request with private key:**
 ```json
@@ -2744,7 +2742,7 @@ Returns a list of pairs of unchecked block hashes and their json representation 
 ---
 
 ### unchecked_clear   
-_enable_control required,      
+_enable_control required_      
 Clear unchecked synchronizing blocks   
 
 --8<-- "warning-enable-control.md"
@@ -2766,7 +2764,7 @@ Clear unchecked synchronizing blocks
 
 ### unchecked_get  
   
-Retrieves a json representation of unchecked synchronizing block by **hash**. Using the optional `json_block` is recommended since v19.0.  
+Retrieves a json representation of unchecked synchronizing block by **hash**. Using the optional `json_block` is recommended .  
 
 **Request:**
 ```json
@@ -2802,7 +2800,7 @@ Default "false". If "true", "contents" will contain a JSON subtree instead of a 
 
 ### unchecked_keys   
    
-Retrieves unchecked database keys, blocks hashes & a json representations of unchecked receivable blocks starting from **key** up to **count**. Using the optional `json_block` is recommended since v19.0.   
+Retrieves unchecked database keys, blocks hashes & a json representations of unchecked receivable blocks starting from **key** up to **count**. Using the optional `json_block` is recommended .   
 
 --8<-- "known-issue-unchecked-keys-rpc-rocksdb.md"
 
@@ -2848,7 +2846,7 @@ Default "false". If "true", "contents" will contain a JSON subtree instead of a 
 
 ### unopened  
 
-_enable_control required,    
+_enable_control required_    
 
 Returns the total receivable balance for unopened accounts in the local database, starting at **account** (optional) up to **count** (optional), sorted by account number. _**Notes:**_ By default excludes the burn account.   
 
@@ -2936,8 +2934,8 @@ Generates **work** for block. **hash** is the frontier of the account or in the 
 {
   "work": "2b3d689bbcb21dca",
   "difficulty": "fffffff93c41ec94", // of the resulting work
-  "multiplier": "1.182623871097636", // since v19.0, calculated from default base difficulty
-  "hash": "718CC2121C3E641059BC1C2CFC45666C99E8AE922F7A807B7D07B62C995D79E2" // since v20.0
+  "multiplier": "1.182623871097636", // , calculated from default base difficulty
+  "hash": "718CC2121C3E641059BC1C2CFC45666C99E8AE922F7A807B7D07B62C995D79E2" 
 }
 ```  
 
@@ -2988,7 +2986,7 @@ Default "false". If "true", `block` in the request should contain a JSON subtree
 ---
 
 ### work_peer_add  
-_enable_control required,      
+_enable_control required_      
 Add specific **IP address** and **port** as work peer for node until restart   
 
 --8<-- "warning-enable-control.md"
@@ -3011,7 +3009,7 @@ Add specific **IP address** and **port** as work peer for node until restart
 ---
 
 ### work_peers   
-_enable_control required,      
+_enable_control required_      
 
 --8<-- "warning-enable-control.md"
 
@@ -3033,7 +3031,7 @@ _enable_control required,
 ---
 
 ### work_peers_clear  
-_enable_control required,      
+_enable_control required_      
 Clear work peers node list until restart   
 
 --8<-- "warning-enable-control.md"
@@ -3074,7 +3072,7 @@ Check whether **work** is valid for block. Provides two values: **valid_all** is
   "hash": "718CC2121C3E641059BC1C2CFC45666C99E8AE922F7A807B7D07B62C995D79E2"
 }
 ```  
-**Response since v21.0:**
+**Response:**
 ```json
 {
   "valid_all": "1",
@@ -3088,8 +3086,8 @@ Check whether **work** is valid for block. Provides two values: **valid_all** is
     ```json
     {
       "valid": "1",
-      "difficulty": "fffffff93c41ec94", // since v19.0
-      "multiplier": "9.4609" // since v19.0
+      "difficulty": "fffffff93c41ec94", // 
+      "multiplier": "9.4609" // 
     }
     ```
 
@@ -3111,8 +3109,8 @@ Difficulty value (16 hexadecimal digits string, 64 bit). Uses **difficulty** val
 ```json
 {
   "valid": "0",
-  "valid_all": "1", // since v21.0
-  "valid_receive": "1", // since v21.0
+  "valid_all": "1", 
+  "valid_receive": "1", 
   "difficulty": "fffffff93c41ec94",
   "multiplier": "1.182623871097636"
 }
@@ -3287,7 +3285,7 @@ Work value (16 hexadecimal digits string, 64 bit). Uses **work** value for block
 ---
 
 ### accounts_create  
-_enable_control required,   
+_enable_control required_  
 Creates new accounts, insert next deterministic keys in **wallet** up to **count**  
 
 --8<-- "warning-enable-control.md"
@@ -3422,7 +3420,7 @@ Work value (16 hexadecimal digits string, 64 bit). Uses **work** value for block
 ---
 
 ### receive_minimum  
-_enable_control required,    
+_enable_control required_    
 Returns receive minimum for node wallet  
 
 --8<-- "warning-enable-control.md"
@@ -3443,7 +3441,7 @@ Returns receive minimum for node wallet
 ---
 
 ### receive_minimum_set  
-_enable_control required,    
+_ enable_control required _    
 Set **amount** as new receive minimum for node wallet until restart  
 
 --8<-- "warning-enable-control.md"
@@ -3472,7 +3470,7 @@ Deprecated in V24.0+. Replaced by [search_receivable](#search_receivable)
 
 ### search_receivable
 
-_since V24.0, use [search_pending](#search_pending) for V23.3 and below_
+_since V24.0, use [search_pending](#search_pending)_
 
 _enable_control required_  
 Tells the node to look for receivable blocks for any account in **wallet**  
@@ -3502,9 +3500,9 @@ Deprecated in V24.0+. Replaced by [search_receivable_all](#search_receivable_all
 
 ### search_receivable_all  
 
-_since V24.0, use [search_pending_all](#search_pending_all) for V23.3 and below_
+_since V24.0, use [search_pending_all](#search_pending_all) _
 
-_enable_control required,   
+_enable_control required_   
 Tells the node to look for receivable blocks for any account in all available wallets  
 
 --8<-- "warning-enable-control.md"
@@ -3647,7 +3645,7 @@ Boolean, false by default. Disables work generation after adding account
 ---
 
 ### wallet_add_watch  
-_enable_control required,   
+_enable_control required_   
 Add watch-only **accounts** to **wallet**  
 
 --8<-- "warning-enable-control.md"
@@ -3925,7 +3923,7 @@ Given a **wallet** id, from all of the accounts in the wallet, returns:
 ---
 
 ### wallet_ledger
-_enable_control required,    
+_enable_control required_    
 Returns frontier, open block, change representative block, balance, last modified timestamp from local database & block count for accounts from **wallet**   
 
 --8<-- "warning-includes-unconfirmed.md"
@@ -3996,7 +3994,7 @@ UNIX timestamp (number), 0 by default. Return only accounts modified in local da
 ---
 
 ### wallet_lock   
-_enable_control required,   
+_enable_control required_   
 Locks **wallet**  
 
 --8<-- "warning-enable-control.md"
@@ -4201,7 +4199,7 @@ Boolean, false by default. Change representative for existing accounts in wallet
 ---
 
 ### wallet_republish  
-_enable_control required,    
+_enable_control required_    
 Rebroadcast blocks for accounts from **wallet** starting at frontier down to **count** to the network     
 
 --8<-- "warning-enable-control.md"
@@ -4228,7 +4226,7 @@ Rebroadcast blocks for accounts from **wallet** starting at frontier down to **c
 ---
 
 ### wallet_work_get
-_enable_control required,      
+_enable_control required_      
 Returns a list of pairs of account and work from **wallet**   
 
 --8<-- "warning-enable-control.md"
@@ -4252,7 +4250,7 @@ Returns a list of pairs of account and work from **wallet**
 ---
 
 ### work_get
-_enable_control required,      
+_enable_control required_      
 Retrieves work for **account** in **wallet**  
 
 --8<-- "warning-enable-control.md"
@@ -4275,7 +4273,7 @@ Retrieves work for **account** in **wallet**
 ---
 
 ### work_set
-_enable_control required,      
+_enable_control required_      
 Set **work** for **account** in **wallet**  
 
 --8<-- "warning-enable-control.md"
@@ -4371,9 +4369,9 @@ Returns the difficulty values (16 hexadecimal digits string, 64 bit) and related
 {
     "deprecated": "1",
     "network_minimum": "fffffff800000000",
-    "network_receive_minimum": "fffffe0000000000", // since V21.2
+    "network_receive_minimum": "fffffe0000000000", 
     "network_current": "fffffff800000000",
-    "network_receive_current": "fffffe0000000000", // since V21.2
+    "network_receive_current": "fffffe0000000000",
     "multiplier": "1"
 }
 ```
@@ -4410,7 +4408,7 @@ Note: Before v20, the sampling period was between 16 and 36 seconds.
 
 ### history  
 
-**Deprecated**: please use `account_history` instead. It provides a `head` option which is identical to the history `hash` option.
+**Deprecated**: please use [account_history](#account_history) instead. It provides a `head` option which is identical to the history `hash` option.
 
 ---
 
@@ -4532,105 +4530,7 @@ Multiply an rai amount by the rai ratio.
 
 ---
 
-#### Removed in _v22_
+#### Removed in _v24_
 
-### block_count_type  
-Reports the number of blocks in the ledger by type (send, receive, open, change, state with version)   
+No RPCs have been removed in V24
 
-**Request:**
-```json
-{
-  "action": "block_count_type"
-}
-```  
-**Response:**
-```json
-{
-  "send": "5016664",
-  "receive": "4081228",
-  "open": "546457",
-  "change": "24193",
-  "state_v0": "4216537",
-  "state_v1": "10653709",
-  "state": "14870246"
-}
-```  
-
----
-
-### payment_begin   
-Begin a new payment session. Searches wallet for an account that's marked as available and has a 0 balance. If one is found, the account number is returned and is marked as unavailable. If no account is found, a new account is created, placed in the wallet, and returned.  
-
-**Request:**
-```json
-{
-  "action": "payment_begin",
-  "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"
-}
-```  
-**Response:**
-```json
-{
-  "account" : "nano_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
-}
-```  
-
----
-
-### payment_end  
-End a payment session.  Marks the account as available for use in a payment session. 
-
-**Request:**
-```json
-{
-  "action": "payment_end",
-  "account": "nano_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
-  "wallet": "FFFD1BAEC8EC20814BBB9059B393051AAA8380F9B5A2E6B2489A277D81789EEE"
-}
-```  
-**Response:**
-```json
-{
-}
-```   
-
----
-
-### payment_init  
-Marks all accounts in wallet as available for being used as a payment session.  
-
-**Request:**
-```json
-{
-  "action": "payment_init",
-  "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"
-}
-```  
-**Response:**
-```json
-{
-  "status": "Ready"
-}
-```  
-
----
-
-### payment_wait  
-Wait for payment of 'amount' to arrive in 'account' or until 'timeout' milliseconds have elapsed.  
-
-**Request:**
-```json
-{
-  "action": "payment_wait",
-  "account": "nano_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
-  "amount": "1",
-  "timeout": "1000"
-}
-```  
-**Response:**
-```json
-{
-  "deprecated": "1",
-  "status" : "success"
-}
-```  
