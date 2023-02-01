@@ -153,6 +153,8 @@ extra_javascript:
 extra_css:
   - 'stylesheets/extras.css'
 extra:
+  version:
+    provider: mike
   social:
   - icon: 'fontawesome/brands/github'
     link: 'https://github.com/nanocurrency'

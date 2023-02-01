@@ -339,27 +339,6 @@ Returns how many RAW is owned and how many have not yet been received by **accou
     }
   }
 }
-```  
-
-!!! info "Error handling"
-    With _version 24.0+_, `accounts_balances` response errors are also returned per entry.
-    If an account does not exist, zero balance and zero receivables are returned.
-    Version V24.0 has a bug: unopened accounts with receivables return an error instead of the receivables.
-    ```json
-    {
-      "balances": {
-        "nano_3wfddg7a1paogrcwi3yhwnaerboukbr7rs3z3ino5toyq3yyhimo6f6egij6": {
-          "balance": "442000000000000000000000000000",
-          "pending": "0",
-          "receivable": "0"
-        },
-        "nano_1hrts7hcoozxccnffoq9hqhngnn9jz783usapejm57ejtqcyz9dpso1bibuy": {
-          "error": "Account not found"
-        }
-      }
-    }
-    ```
-
 
 ---
 
@@ -400,14 +379,6 @@ Returns a list of pairs of account and block hash representing the head block fo
 ---
 
 ### accounts_pending
-
-Deprecated in V24.0+. Replaced by [accounts_receivable](#accounts_receivable)
-
----
-
-### accounts_receivable  
-
-_since V24.0, use [accounts_pending](#accounts_pending) for V23.3 and below_
 
 Returns a list of confirmed block hashes which have not yet been received by these **accounts**  
 
@@ -839,9 +810,9 @@ Default "false". If "true", "contents" will contain a JSON subtree instead of a 
 ### blocks_info   
 Retrieves a json representations of `blocks` in `contents` along with:
 
-* _since version 18.0_: `block_account`, transaction `amount`, block `balance`, block `height` in account chain, block local modification `timestamp`
-* _since version 19.0_: Whether block was `confirmed`, `subtype` (_for state blocks_) of `send`, `receive`, `change` or `epoch`
-* _since version 23.0_: `successor` returned
+* `block_account`, transaction `amount`, block `balance`, block `height` in account chain, block local modification `timestamp`
+*  Whether block was `confirmed`, `subtype` (_for state blocks_) of `send`, `receive`, `change` or `epoch`
+* `successor` returned
 
 Using the optional `json_block` is recommended since v19.0.  
 
@@ -1536,7 +1507,6 @@ Returns a list of pairs of delegator accounts and balances given a representativ
 ```   
 
 **Optional parameters:**  
-_since V23.0_  
 
 * `threshold`: minimum required balance for a delegating account to be included in the response
 * `count`: number of delegators to return
@@ -1787,7 +1757,6 @@ Booleans, false by default. Additionally returns representative, voting weight, 
 }
 ```  
 **Optional "modified_since"**  
-_version 11.0+_   
 UNIX timestamp (number), 0 by default. Return only accounts modified in local database after specific timestamp   
 
 **Optional "sorting"**  
@@ -1795,18 +1764,17 @@ Boolean, false by default. Additional sorting accounts in descending order
 NOTE: The "count" option is ignored if "sorting" is specified
 
 **Optional "threshold"**  
-_version 19.0+_  
 Number (128 bit, decimal), default 0. Return only accounts with balance above **threshold**. If **receivable** is also given, the number compared with the threshold is the sum of account balance and receivable balance.
 
 ---
 
 ### node_id
-_enable_control required, version 17.0+_ 
+_enable_control required
 
 --8<-- "warning-debug-only-command.md"
  
 Returns private key, public key and node ID number with checksum (similar to account representation) from the existing node ID created on startup. "as_account" field is **deprecated**  
-_version 20.0 will generate the node_id with `node_` prefix, earlier versions will generate with `nano_` prefix_  
+the node_id is prefixed with `node_`
 
 --8<-- "warning-enable-control.md"
 
@@ -1881,10 +1849,9 @@ Returns a list of pairs of online peer IPv6:port and its node protocol network v
 ```   
 **Optional "peer_details"**
 
-_version 18.0+_   
 Boolean, false by default. Returns a list of peers IPv6:port with its node protocol network version and node ID. The node ID is random and is not a Nano address. As of Version V21+ `type` returns `tcp`, as `udp` was **deprecated** and is not longer used for peering with that node.
 
-_version 20.0 will generate the node_id with `node_` prefix, earlier versions will generate with `nano_` prefix_  
+node_id is has a `node_` prefix
 
 **Request:**
 ```json
@@ -1972,11 +1939,9 @@ Publish **block** to the network. Using the optional `json_block` is recommended
 }
 ```
 **Optional "force"**  
-_version 13.1+_  
 Boolean, false by default. Manually forcing fork resolution if processed block is not accepted as fork
 
 **Optional "subtype"**  
-_version 18.0+_  
 String, empty by default. Additional check for state blocks subtype, i.e. prevent accidental sending to incorrect accounts instead of receiving receivable blocks. Options:
 
 * `send` - account balance is reduced
@@ -1986,23 +1951,15 @@ String, empty by default. Additional check for state blocks subtype, i.e. preven
 * `epoch` - block signed with epoch signer private key (does not allow balance or representative changes)
 
 **Optional "json_block"**  
-_version 19.0+_  
 Boolean, default "false". If "true", "block" must contain a JSON subtree instead of a JSON string.
 
-**Optional "watch_work"**  
-_added in version 20.0+_  
-_removed in version 22.0_  
-Boolean, default "true". If "true", **block** will be placed on watch for confirmation, with equivalent functionality to in-wallet transactions using [send](#send), [receive](#receive) and [account_representative_set](#account_representative_set), including republishing and rework if confirmation is delayed (default is 5 seconds, set by `work_watcher_period` config entry) and if [active_difficulty](#active_difficulty) is higher than the block's PoW difficulty.
-
 **Optional "async"**  
-_version 22.0+_  
 Boolean, default "false". If "true", requests will add the blocks to the block processor queue and `{"started":"1"}` will be immediately returned, instead of waiting for block process completion to return. To know if the block was properly processed, monitor the [WebSocket topic `new_unconfirmed_block`](../integration-guides/websockets.md#new-unconfirmed-blocks) and a notification for that successful block will be sent.
 
 ---
 
 ### receivable
 
-_since V23.0, use [pending](#pending) for V22.1 and below_  
 Returns a list of block hashes which have not yet been received by this account.
 
 **Request:**
@@ -2023,7 +1980,6 @@ Returns a list of block hashes which have not yet been received by this account.
 Number. Determines limit of number of blocks to return.
 
 **Optional "threshold"**  
-_version 8.0+_   
 Number (128 bit, decimal). Returns a list of receivable block hashes with amount more or equal to **threshold**  
 
 **Request:**
@@ -3528,14 +3484,6 @@ Set **amount** as new receive minimum for node wallet until restart
 
 ### search_pending
 
-Deprecated in V24.0+. Replaced by [search_receivable](#search_receivable)
-
----
-
-### search_receivable
-
-_since V24.0, use [search_pending](#search_pending) for V23.3 and below_
-
 _enable_control required_  
 Tells the node to look for receivable blocks for any account in **wallet**  
 
@@ -3557,14 +3505,6 @@ Tells the node to look for receivable blocks for any account in **wallet**
 ---
 
 ### search_pending_all
-
-Deprecated in V24.0+. Replaced by [search_receivable_all](#search_receivable_all)
-
----
-
-### search_receivable_all  
-
-_since V24.0, use [search_pending_all](#search_pending_all) for V23.3 and below_
 
 _enable_control required, version 8.0+_  
 Tells the node to look for receivable blocks for any account in all available wallets  
@@ -4100,14 +4040,6 @@ Checks whether **wallet** is locked
 ---
 
 ### wallet_pending
-
-Deprecated in V24.0+. Replaced by [wallet_receivable](#wallet_receivable)
-
----
-
-### wallet_receivable
-
-_since V24.0, use [wallet_pending](#wallet_pending) for V23.3 and below_
 
 _enable_control required_   
 Returns a list of block hashes which have not yet been received by accounts in this **wallet**  
