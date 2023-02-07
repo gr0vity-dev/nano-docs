@@ -41,9 +41,9 @@ description: Find out the expected resource usage for the nano procotol across n
 
 Existing whitepaper sectionsrelated to this page:
 
-* [Resource Usage](/whitepaper/english/#resource-usage)
+* [Resource Usage](../../whitepaper/english/#resource-usage)
 
 Existing content related to this page:
 
-* [Representatives and voting](/what-is-nano/overview/#representatives-and-voting)
-* [Representatives](/integration-guides/the-basics/#representatives)
+* [Representatives and voting](../../what-is-nano/overview/#representatives-and-voting)
+* [Representatives](../../integration-guides/the-basics/#representatives)

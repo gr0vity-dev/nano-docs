@@ -66,4 +66,4 @@ description: Understand the different attack vectors on the nano network and the
 
 Existing whitepaper sections related to this page:
 
-* [Attack Vectors](/whitepaper/english/#attack-vectors)
+* [Attack Vectors](../../whitepaper/english/#attack-vectors)

@@ -198,7 +198,7 @@ If more fine-grained filtering is needed, `active` can be replaced with `active_
 Filters for **confirmation** can be used to subscribe only to selected accounts. Once filters are given, blocks from accounts that do not match the options are not broadcasted.
 
 !!! warning "Legacy blocks never broadcasted"
-    Note that [legacy blocks](/glossary#legacy-blocks) are never broadcasted if filters are given, even if they match the accounts.
+    Note that [legacy blocks](../../glossary#legacy-blocks) are never broadcasted if filters are given, even if they match the accounts.
 
 ```json
 {
@@ -425,7 +425,7 @@ By default only `vote` type votes are broadcasted, and the others are filtered. 
 
 ### Stopped elections
 
-If an election is stopped for any reason, the corresponding block hash is sent on the `"stopped_election"` topic. Reasons for stopping elections include low priority elections being dropped due to processing queue capacity being reached, and forced processing via [`process`](/commands/rpc-protocol/#process) RPC when there's a fork.
+If an election is stopped for any reason, the corresponding block hash is sent on the `"stopped_election"` topic. Reasons for stopping elections include low priority elections being dropped due to processing queue capacity being reached, and forced processing via [`process`](../../commands/rpc-protocol/#process) RPC when there's a fork.
 
 ##### Subscribing
 
@@ -649,7 +649,7 @@ See the [telemetry](../commands/rpc-protocol.md#telemetry) RPC command which giv
 This subscription is available since _v21.0_
 
 !!! danger "These blocks are not confirmed"
-    Blocks received through this websocket should **not** be used for tracking confirmations, as they are unconfirmed and could be replaced by a conflicting block. Read the [confirmation tracking guide](/integration-guides/block-confirmation-tracking/) for more details.
+    Blocks received through this websocket should **not** be used for tracking confirmations, as they are unconfirmed and could be replaced by a conflicting block. Read the [confirmation tracking guide](../../integration-guides/block-confirmation-tracking/) for more details.
 
 ##### Subscribing
 

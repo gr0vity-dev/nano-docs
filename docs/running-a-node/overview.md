@@ -29,10 +29,10 @@ When first setting up a node it will not be configured to participate in consens
 	For a very brief overview of how representatives and voting works in the nano network, see the [What is nano? page](../what-is-nano/overview.md#representatives-and-voting). If you're looking to dig deeper, the [ORV consensus section of the living whitepaper](../protocol-design/orv-consensus.md) helps explain further how consensus works.
 
 ### Representative nodes
-If a node is setup with a Representative account, is configured to vote and has **less than 0.1% of [online voting weight](/glossary#online-voting-weight)** delegated to them, they are a considered Representative node. These nodes will validate and vote on transactions seen on the network. Their votes will be directly sent to a subset of their peers, but other nodes on the network will not rebroadcast their votes.
+If a node is setup with a Representative account, is configured to vote and has **less than 0.1% of [online voting weight](../../glossary#online-voting-weight)** delegated to them, they are a considered Representative node. These nodes will validate and vote on transactions seen on the network. Their votes will be directly sent to a subset of their peers, but other nodes on the network will not rebroadcast their votes.
 
 ### Principal Representative nodes
-Representative nodes with **at least 0.1% of the [online voting weight](/glossary#online-voting-weight)** delegated to them participate more broadly in network consensus because votes they send to their peers are then rebroadcasted by those nodes as well. These "PR" nodes have the most impact to the security and availability of the network so [keeping them secure](security.md) and following [maintenance recommendations](#maintenance) should be taken seriously.
+Representative nodes with **at least 0.1% of the [online voting weight](../../glossary#online-voting-weight)** delegated to them participate more broadly in network consensus because votes they send to their peers are then rebroadcasted by those nodes as well. These "PR" nodes have the most impact to the security and availability of the network so [keeping them secure](security.md) and following [maintenance recommendations](#maintenance) should be taken seriously.
 
 !!! success "Becoming a Principal Representative"
 	With the ability for any user on the network to redelegate their voting weight, even an account with no weight today can become a Principal Representative over time.

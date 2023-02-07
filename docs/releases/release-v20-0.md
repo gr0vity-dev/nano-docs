@@ -8,7 +8,7 @@ description: Details of the V20.0 nano node release including upgrade notices, m
 ## Upgrade Notices
 
 !!! warning "Only node V18.0 and higher supported"
-	With V20.0 only nodes V18.0 and higher will be peered with on the network (see [Active Releases](/releases/node-releases/#active-releases) above). This means any nodes running versions earlier than 18.0 will begin to lose peers and fall out of sync over time once upgrades to V20.0 begin.
+	With V20.0 only nodes V18.0 and higher will be peered with on the network (see [Active Releases](../../releases/node-releases/#active-releases) above). This means any nodes running versions earlier than 18.0 will begin to lose peers and fall out of sync over time once upgrades to V20.0 begin.
 
 	**If you are running a node version earlier than V18.0, please update as soon as possible to avoid disruption.**
 
@@ -37,7 +37,7 @@ The following commands can be used to generated commented out, complete config f
 More details on the new configuration setup can be found in the node [Configuration documentation](https://docs.nano.org/running-a-node/configuration/).
 
 ### Networking changes
-Improvements to default network setup in this version requires less setup from node operators, specifically around port forwarding. Although new setups will immediately benefit, any existing systems that have already setup port forwarding may be impacted by these changes. For those systems, we recommend validating your network setup allows proper peering with a test V20.0 node prior to upgrading. If you run into issues, review the [Troubleshooting UPnP documentation](/running-a-node/troubleshooting/#troubleshooting-upnp) for assistance. Additional help can be sought in the [Node and Representative Management forum category](https://forum.nano.org/c/node-and-rep). 
+Improvements to default network setup in this version requires less setup from node operators, specifically around port forwarding. Although new setups will immediately benefit, any existing systems that have already setup port forwarding may be impacted by these changes. For those systems, we recommend validating your network setup allows proper peering with a test V20.0 node prior to upgrading. If you run into issues, review the [Troubleshooting UPnP documentation](../../running-a-node/troubleshooting/#troubleshooting-upnp) for assistance. Additional help can be sought in the [Node and Representative Management forum category](https://forum.nano.org/c/node-and-rep). 
 
 ### Proof-of-Work management
 A couple changes to PoW management that services should be aware of:
@@ -75,22 +75,22 @@ As part of the original implementation work we were able to setup infrastructure
 
 ## RPC Updates
 
-* **BEHAVIOR CHANGE** [`process`](/commands/rpc-protocol/#process) now takes an optional flag `watch_work` (default `true`). Unless set to `false`, processed blocks can be subject to PoW rework
-* **BEHAVIOR CHANGE** [`bootstrap`](/commands/rpc-protocol/#bootstrap), [`bootstrap_any`](/commands/rpc-protocol/#bootstrap_any) and [`boostrap_lazy`](/commands/rpc-protocol/#bootstrap_lazy) will now throw errors when certain launch flags are used to disabled bootstrap methods - see each RPC page for details
-* **BEHAVIOR CHANGE** RPCs requiring work generation will now throw errors when work generation is disabled (no [work peers](/integration-guides/work-generation/#nodework_peers), no [OpenCL](/integration-guides/work-generation/#nodeopenclenable) and no work threads configured)
-* [`block_count`](/commands/rpc-protocol/#block_count) no longer requires config option `enable_control` to get the cemented block count
-* [`unchecked`](/commands/rpc-protocol/#unchecked) now takes an optional flag `json_block` to return blocks in JSON-format
-* [`version`](/commands/rpc-protocol/#version) now includes more fields - network label, identifier (hash of the genesis open block) and build information
-* [`peers`](/commands/rpc-protocol/#peers) and [`node_id`](/commands/rpc-protocol/#node_id) now return node IDs with a `node_` prefix
-* [work_generate](/commands/rpc-protocol/#work_generate) and [work_validate](/commands/rpc-protocol/#work_validate) can now take a multiplier (against base difficulty) to set a different difficulty threshold
+* **BEHAVIOR CHANGE** [`process`](../../commands/rpc-protocol/#process) now takes an optional flag `watch_work` (default `true`). Unless set to `false`, processed blocks can be subject to PoW rework
+* **BEHAVIOR CHANGE** [`bootstrap`](../../commands/rpc-protocol/#bootstrap), [`bootstrap_any`](../../commands/rpc-protocol/#bootstrap_any) and [`boostrap_lazy`](../../commands/rpc-protocol/#bootstrap_lazy) will now throw errors when certain launch flags are used to disabled bootstrap methods - see each RPC page for details
+* **BEHAVIOR CHANGE** RPCs requiring work generation will now throw errors when work generation is disabled (no [work peers](../../integration-guides/work-generation/#nodework_peers), no [OpenCL](../../integration-guides/work-generation/#nodeopenclenable) and no work threads configured)
+* [`block_count`](../../commands/rpc-protocol/#block_count) no longer requires config option `enable_control` to get the cemented block count
+* [`unchecked`](../../commands/rpc-protocol/#unchecked) now takes an optional flag `json_block` to return blocks in JSON-format
+* [`version`](../../commands/rpc-protocol/#version) now includes more fields - network label, identifier (hash of the genesis open block) and build information
+* [`peers`](../../commands/rpc-protocol/#peers) and [`node_id`](../../commands/rpc-protocol/#node_id) now return node IDs with a `node_` prefix
+* [work_generate](../../commands/rpc-protocol/#work_generate) and [work_validate](../../commands/rpc-protocol/#work_validate) can now take a multiplier (against base difficulty) to set a different difficulty threshold
 
 ---
 
 ## CLI Updates
 
-* **NEW** [`generate_config [node|rpc]`](/commands/command-line-interface/#-generate_config-noderpc) prints sample configuration files to _stdout_
+* **NEW** [`generate_config [node|rpc]`](../../commands/command-line-interface/#-generate_config-noderpc) prints sample configuration files to _stdout_
     * `use_defaults` additional argument to generate uncommented entries (not recommended)
-* **NEW** [`config`](/commands/command-line-interface/#-config-keyvalue) passes configuration arguments, alternative to setting in the config file
+* **NEW** [`config`](../../commands/command-line-interface/#-config-keyvalue) passes configuration arguments, alternative to setting in the config file
 
 ---
 
@@ -100,7 +100,7 @@ As part of the original implementation work we were able to setup infrastructure
 	For node operators looking to upgrade to V20.0 or tune their configurations, the [Node and Representative Management category](https://forum.nano.org/c/node-and-rep) of the forum is a great resource to use.
 
 !!! tip "Generate .toml config to see options"
-	As noted in the [Upgrade Notices](#upgrade-notices) above, this version will migrate your existing .json files over to .toml files. Only non-default values for these fields will be added to the new .toml file. If you wish to adjust other options, use the [config generation commands](/running-a-node/configuration/#configuration-file-locations) to see all available options.
+	As noted in the [Upgrade Notices](#upgrade-notices) above, this version will migrate your existing .json files over to .toml files. Only non-default values for these fields will be added to the new .toml file. If you wish to adjust other options, use the [config generation commands](../../running-a-node/configuration/#configuration-file-locations) to see all available options.
 
 The following options are notable node configuration updates. Additional configuration changes have been included in this release and can be found when generating the config files.
 
@@ -112,13 +112,13 @@ The following options are notable node configuration updates. Additional configu
 
 ## Developer/Debug Options
 
-* New RPC [`epoch_upgrade`](/commands/rpc-protocol/#epoch_upgrade) allowing easier epoch distribution (**Note** - this epoch requires a special private key to be used, see the [Network Upgrades](/releases/network-upgrades/#epoch-blocks) page for information)
-* RPC [`bootstrap`](/commands/rpc-protocol/#bootstrap) has a new optional "bypass_frontier_confirmation"
-* RPC [`bootstrap_status`](/commands/rpc-protocol/#bootstrap_status) now displays more data about the current bootstrap attempt
-* New CLI [`debug_stacktrace`](/commands/command-line-interface/#-debug_stacktrace) displays an example stacktrace, simulating an unexpected program crash
-* New CLI [`debug_account_versions`](/commands/command-line-interface/#-debug_account_versions) displays the total number of accounts separated by version and opened/unopened
-* CLI [`debug_validate_blocks`](/commands/command-line-interface/#-debug_validate_blocks) updated to cover more cases
-* CLI `debug_profile_verify` renamed to [`debug_profile_validate`](/commands/command-line-interface/#-debug_profile_validate) and now provides simplified work validation profiling
+* New RPC [`epoch_upgrade`](../../commands/rpc-protocol/#epoch_upgrade) allowing easier epoch distribution (**Note** - this epoch requires a special private key to be used, see the [Network Upgrades](../../releases/network-upgrades/#epoch-blocks) page for information)
+* RPC [`bootstrap`](../../commands/rpc-protocol/#bootstrap) has a new optional "bypass_frontier_confirmation"
+* RPC [`bootstrap_status`](../../commands/rpc-protocol/#bootstrap_status) now displays more data about the current bootstrap attempt
+* New CLI [`debug_stacktrace`](../../commands/command-line-interface/#-debug_stacktrace) displays an example stacktrace, simulating an unexpected program crash
+* New CLI [`debug_account_versions`](../../commands/command-line-interface/#-debug_account_versions) displays the total number of accounts separated by version and opened/unopened
+* CLI [`debug_validate_blocks`](../../commands/command-line-interface/#-debug_validate_blocks) updated to cover more cases
+* CLI `debug_profile_verify` renamed to [`debug_profile_validate`](../../commands/command-line-interface/#-debug_profile_validate) and now provides simplified work validation profiling
 * New CMake build options:
   * `NANO_ROCKSDB` enables use of the RocksDB database backend, experimental
   * `NANO_WARN_TO_ERR` turns compiler warnings into errors on Linux/Mac

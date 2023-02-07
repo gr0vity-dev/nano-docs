@@ -13,7 +13,7 @@ Each Nano node determines for itself whether or not to add a valid transaction t
 
 <span id="account-chains-diagram"></span>
 
-![account-chains](/diagrams/account-chains.svg)
+![account-chains](../diagrams/account-chains.svg)
 
 *Figure 1.  Each account has its own blockchain containing the account’s balance history. Block 1 must be a receive transaction with it's `previous` field as constant `0`.*
 
@@ -70,7 +70,7 @@ The lattice structure of the ledger arises from blocks connecting across account
 
 <span id="block-lattice-diagram"></span>
 
-![block-lattice](/diagrams/block-lattice.svg)
+![block-lattice](../diagrams/block-lattice.svg)
 
 As illustrated above, the ledger was initiated with a genesis account containing the genesis balance. The genesis balance was a fixed quantity and can never be increased. The genesis balance was divided across various accounts via send transactions registered on the genesis account-chain. The sum of the balances of all accounts in the ledger will never exceed the initial genesis balance, which gives the system an upper bound on quantity and no ability to increase it.
 
@@ -86,12 +86,12 @@ See the official [forum](https://forum.nano.org/t/ledger-pruning/114) or [GitHub
 
 Existing whitepaper sections related to this page:
 
-* [Nano Components](/whitepaper/english/#raiblocks-components)
+* [Nano Components](../../whitepaper/english/#raiblocks-components)
 
 Other existing content related to this page:
 
-* [Block Lattice design](/integration-guides/the-basics/#block-lattice-design)
-* [Accounts, Keys, Seeds, etc.](/integration-guides/the-basics/#account-key-seed-and-wallet-ids)
+* [Block Lattice design](../../integration-guides/the-basics/#block-lattice-design)
+* [Accounts, Keys, Seeds, etc.](../../integration-guides/the-basics/#account-key-seed-and-wallet-ids)
 * [Looking up to Confirmation Height](https://medium.com/nanocurrency/looking-up-to-confirmation-height-69f0cd2a85bc)
 * [Ledger Management guide](../running-a-node/ledger-management.md)
 

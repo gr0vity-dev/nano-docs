@@ -392,7 +392,7 @@ Format: `cmake -D VARNAME=VARVALUE`
 * `NANO_SECURE_RPC=ON` (to build node with TLS)
 * `NANO_WARN_TO_ERR=ON` (*v20.0+* turn compiler warnings into errors on Linux/Mac) 
 * `NANO_TIMED_LOCKS=50` (*v20.0+* when the number of milliseconds a mutex is held is equal or greater than this output a stacktrace, 0 disables.)
-* `NANO_STACKTRACE_BACKTRACE=ON` (*v20.0+* use a different configuration of Boost backtrace in stacktraces, attempting to display filenames, function names and line numbers. Needs `libbacktrace` to be installed. Some [workarounds](https://www.boost.org/doc/libs/develop/doc/html/stacktrace/configuration_and_build.html#stacktrace.configuration_and_build.f3) may be necessary depending on system and configuration. Use CLI [`--debug_stacktrace`](/commands/command-line-interface#-debug_stacktrace) to get an example output.)
+* `NANO_STACKTRACE_BACKTRACE=ON` (*v20.0+* use a different configuration of Boost backtrace in stacktraces, attempting to display filenames, function names and line numbers. Needs `libbacktrace` to be installed. Some [workarounds](https://www.boost.org/doc/libs/develop/doc/html/stacktrace/configuration_and_build.html#stacktrace.configuration_and_build.f3) may be necessary depending on system and configuration. Use CLI [`--debug_stacktrace`](../../commands/command-line-interface#-debug_stacktrace) to get an example output.)
 * `CI_BUILD=TRUE` (*v20.0+* if enabled, uses environment variable `TRAVIS_TAG` (required) to modify the locally reported node version; example `TRAVIS_TAG="My Nano Node v20"`)
 * `NANO_ASIO_HANDLER_TRACKING=10` (Output asio diagnostics for any completion handlers which have taken longer than this in milliseconds. For more information see the description of the PR [#2681](https://github.com/nanocurrency/nano-node/pull/2681))
 * `NANO_FUZZER_TEST=ON` (Build the fuzz tests, not available on Windows)
@@ -456,7 +456,7 @@ If running on a debugger, add the argument `--gtest_break_on_failure` break at t
 ### Environment variables to customize tests
 
 * `TEST_KEEP_TMPDIRS=1` - Setting this to anything will prevent the tests deleting any files it creates, useful for debugging log files. 
-* `TEST_USE_ROCKSDB=1` - Use the RocksDB ledger backend for the tests instead of LMDB. The tests must be built with [RocksDB](/running-a-node/rocksdb-ledger-backend/#rocksdb-ledger-backend) support.
+* `TEST_USE_ROCKSDB=1` - Use the RocksDB ledger backend for the tests instead of LMDB. The tests must be built with [RocksDB](../../running-a-node/rocksdb-ledger-backend/#rocksdb-ledger-backend) support.
 * `TEST_BASE_PORT=26000` - The base port used in tests, the range of ports used in this case would be 26000 - 26199. This is useful if wanting to run multiple tests at once without port conflicts, the default base port used is 24000. 
 * `NANO_DEFAULT_PEER=peering.nano.org` - Setting this adds its variable contents to `preconfigured_peers` from config-node.toml, & allows manually setting initial peering DNS. Setting it to an unresolvable address will prevent the node from contacting peers (after wiping peer table).
 

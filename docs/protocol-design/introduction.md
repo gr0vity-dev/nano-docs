@@ -66,5 +66,5 @@ Existing whitepaper sections related to this page:
 Other existing content related to this page:
 
 * [Nano Overview](../what-is-nano/overview.md)
-* [Representatives and Voting](/what-is-nano/overview/#representatives-and-voting)
+* [Representatives and Voting](../../what-is-nano/overview/#representatives-and-voting)
 * [Incentives to run a node](https://medium.com/nanocurrency/the-incentives-to-run-a-node-ccc3510c2562)

@@ -23,7 +23,7 @@ The system is akin to writing (send) and cashing (receive) a Cashier's Check.  T
 
 ## Representatives
 
-The Nano Network achieves consensus using the unique [Open Representative Voting (ORV)](/what-is-nano/overview/#representatives-and-voting) model. In this setup, representatives (accounts where nano\_node with the private keys are running 24/7) vote on transactions.
+The Nano Network achieves consensus using the unique [Open Representative Voting (ORV)](../../what-is-nano/overview/#representatives-and-voting) model. In this setup, representatives (accounts where nano\_node with the private keys are running 24/7) vote on transactions.
 
 !!! info
     Below are some helpful things to remember about Nano's representatives and consensus:
@@ -58,7 +58,7 @@ Private keys are derived **deterministically** from the seed, which means that a
 
 Wallet implementations will commonly start from index 0 and increment it by 1 each time you create a new account so that recovering accounts is as easy as importing the seed and then repeating this account creation process.
 
-It should be noted that Nano reference wallet is using described Blake2b private keys derivation path. However some implementations can use BIP44 deterministic wallets and [mnemonic seed](/integration-guides/key-management/#mnemonic-seed) producing different private keys for given seed and indices. Additionally 24-word mnemonic can be derived from a Nano 64 length hex seed as entropy with clear notice for users that this is not BIP44 seed/entropy.
+It should be noted that Nano reference wallet is using described Blake2b private keys derivation path. However some implementations can use BIP44 deterministic wallets and [mnemonic seed](../../integration-guides/key-management/#mnemonic-seed) producing different private keys for given seed and indices. Additionally 24-word mnemonic can be derived from a Nano 64 length hex seed as entropy with clear notice for users that this is not BIP44 seed/entropy.
 
 **Code samples**
 
@@ -127,7 +127,7 @@ $$
     * All RPC commands expect units to be represented as $raw$. 
     * Always keep units in integer $raw$ amounts to prevent any floating-point error or unit confusion.
     * Depending on your implementation language, you may require a big number library to perform arithmetic directly on $raw$.
-    * See [Distribution and Units](/protocol-design/distribution-and-units/) page for more details on units.
+    * See [Distribution and Units](../../protocol-design/distribution-and-units/) page for more details on units.
     * Because final balances are recorded rather than transaction amounts, API calls must be done carefully to avoid loss of funds. Incorrect arithmetic or use of fields may change an intended receive to a send to a non-existent address.
 
 ---
@@ -155,7 +155,7 @@ Because each block contains the current state of the account, the `"type"` of th
 | signature      | 128 hex-char string | 64 bytes   | ED25519+Blake2b 512-bit signature |
 | work           | 16 hex-char string  | 8 bytes    | [Proof of Work](../glossary.md#proof-of-work-pow) Nonce |
 
-Depending on the action each transaction intends to perform, the `"link"` field will have a different value for [block_create](/commands/rpc-protocol#block_create) RPC command:
+Depending on the action each transaction intends to perform, the `"link"` field will have a different value for [block_create](../../commands/rpc-protocol#block_create) RPC command:
 
 | Action  | RPC Format         | Description                                |
 |         |                    |                                            |
@@ -191,7 +191,7 @@ The digital signing algorithm (which internally applies another Blake2b hashing)
 
 ### Creating Blocks
 
-For details on how to create individual blocks for sending from, receiving to, opening or changing representatives for an account, please see the [Creating Transactions](/integration-guides/key-management/#creating-transactions) section.
+For details on how to create individual blocks for sending from, receiving to, opening or changing representatives for an account, please see the [Creating Transactions](../../integration-guides/key-management/#creating-transactions) section.
 
 ---
 

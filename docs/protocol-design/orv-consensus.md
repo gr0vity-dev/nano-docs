@@ -5,12 +5,12 @@ description: Take a deep dive into the unique, gossip-based algorithm used by na
 
 --8<-- "wip-living-whitepaper.md"
 
-Existing whitepaper sections: [System Overview](/whitepaper/english/#system-overview), [Implementation](/whitepaper/english/#implementation)
+Existing whitepaper sections: [System Overview](../../whitepaper/english/#system-overview), [Implementation](../../whitepaper/english/#implementation)
 
 Existing content:
 
-* [Representatives and voting](/what-is-nano/overview/#representatives-and-voting)
-* [Representatives](/integration-guides/the-basics/#representatives)
+* [Representatives and voting](../../what-is-nano/overview/#representatives-and-voting)
+* [Representatives](../../integration-guides/the-basics/#representatives)
 * [PoW for Receive block](https://github.com/nanocurrency/nano-node/issues/464#issuecomment-356467448)
 
 ---
@@ -21,11 +21,11 @@ In order to protect against [double spending](attack-vectors.md#50-attack) and [
 
 Due to Nano's [block-lattice ledger design](ledger.md), only account owners have the ability to sign blocks into their account-chains, so all forks must be the result of poor programming or malicious intent (double-spend) by the account owner, which means that nodes can easily make policy decisions on how to handle forks without affecting legitimate transactions.
 
-Because Nano accounts can freely delegate their voting weight to representatives at any time, the users have more control over who has power with consensus and how decentralized the network is. Also note that delegation of voting weight does not mean staking of any funds - the account delegating can still spend all their available funds at any time without restrictions. This is a key advantage to the design of [Open Representative Voting (ORV)](/glossary/#open-representative-voting-orv). With no direct monetary incentive for nodes, this removes emergent centralization forces for longer-term trending toward decentralization of the network.[^2]
+Because Nano accounts can freely delegate their voting weight to representatives at any time, the users have more control over who has power with consensus and how decentralized the network is. Also note that delegation of voting weight does not mean staking of any funds - the account delegating can still spend all their available funds at any time without restrictions. This is a key advantage to the design of [Open Representative Voting (ORV)](../../glossary/#open-representative-voting-orv). With no direct monetary incentive for nodes, this removes emergent centralization forces for longer-term trending toward decentralization of the network.[^2]
 
 ### Open Representative Voting (ORV) vs Proof of Stake (PoS)
 
-While Nano uses a weighted-voting system ([ORV](/protocol-design#orv-consensus)) that can be compared to PoS, it differs from traditional PoS because:
+While Nano uses a weighted-voting system ([ORV](../../protocol-design#orv-consensus)) that can be compared to PoS, it differs from traditional PoS because:
 
 - There is not one monolithic blockchain that requires leader selection (i.e. a staker or a miner) to extend
 
@@ -43,7 +43,7 @@ While Nano uses a weighted-voting system ([ORV](/protocol-design#orv-consensus))
 
 - Representatives do not earn transaction fees
 
-- Representatives cannot reverse transactions that nodes have locally confirmed (due to [block cementing](/glossary#cementing)).
+- Representatives cannot reverse transactions that nodes have locally confirmed (due to [block cementing](../../glossary#cementing)).
 
 ### Confirmation Speed
 
@@ -108,11 +108,11 @@ This implementation decision was made in part because of the exponential bandwid
 
 Existing whitepaper sections related to this page:
 
-* [System Overview](/whitepaper/english/#system-overview)
-* [Implementation](/whitepaper/english/#implementation)
+* [System Overview](../../whitepaper/english/#system-overview)
+* [Implementation](../../whitepaper/english/#implementation)
 
 Existing content related to this page:
 
-* [Representatives and voting](/what-is-nano/overview/#representatives-and-voting)
-* [Representatives](/integration-guides/the-basics/#representatives)
+* [Representatives and voting](../../what-is-nano/overview/#representatives-and-voting)
+* [Representatives](../../integration-guides/the-basics/#representatives)
 * [PoW for Receive block](https://github.com/nanocurrency/nano-node/issues/464#issuecomment-356467448)

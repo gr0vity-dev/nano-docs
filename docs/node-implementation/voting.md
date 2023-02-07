@@ -49,7 +49,7 @@ This online status is counted regardless of where the vote originated from - the
 
 Existing whitepaper sections related to this page:
 
-* [Implementation](/whitepaper/english/#implementation)
+* [Implementation](../../whitepaper/english/#implementation)
 
 Other content related to this page:
 

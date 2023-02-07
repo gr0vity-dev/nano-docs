@@ -25,7 +25,7 @@ The following command will start the node container. Either set the specified en
 
 * `${NANO_TAG}` - The version of docker image you will be running.
 
-* `${NANO_HOST_DIR}` - Location on the host computer where the ledger, configuration files, and logs will be stored. The Docker container will directly store files such as [config-node.toml](/running-a-node/configuration) and `data.ldb` into this directory.
+* `${NANO_HOST_DIR}` - Location on the host computer where the ledger, configuration files, and logs will be stored. The Docker container will directly store files such as [config-node.toml](../../running-a-node/configuration) and `data.ldb` into this directory.
 
 ---
 
@@ -47,9 +47,9 @@ docker run --restart=unless-stopped -d \
 | `--restart=unless-stopped`                            | Restarts the container if it crashes |
 | `nanocurrency/nano:${NANO_TAG}`                       | Specifies the container to execute with tag |
 | `-p 127.0.0.1:7076:7076`<br />or `-p[::1]:7076:7076` | Indicates that only RPC commands originating from the host will be accepted. **WARNING: Without the proper IP configured here, anyone with access to your system's IP address can control your nano\_node.** |
-| `-p 127.0.0.1:7078:7078`<br />or `-p[::1]:7078:7078` | Indicates that only the host can create a connection to the [websocket server](/integration-guides/websockets). Data throughput can be very high depending on configuration, which could slow down the node if available outside the host.
+| `-p 127.0.0.1:7078:7078`<br />or `-p[::1]:7078:7078` | Indicates that only the host can create a connection to the [websocket server](../../integration-guides/websockets). Data throughput can be very high depending on configuration, which could slow down the node if available outside the host.
 
-If you wish to use different ports, change the host ports in the `docker run` command; do not change the ports in the [config-node.toml](/running-a-node/configuration) file.
+If you wish to use different ports, change the host ports in the `docker run` command; do not change the ports in the [config-node.toml](../../running-a-node/configuration) file.
 
 This will start the docker container using host ports 7075 and 7076 and put the data in a permanent location in your hosts's home directory, outside the docker container. Upon successful startup, Docker will return the container's full ID. A typical ID will look something like the value below.
 
@@ -58,7 +58,7 @@ This will start the docker container using host ports 7075 and 7076 and put the 
 ```
 
 !!! note
-    As of V21 peering and communicating via UDP has been disabled by default and is deprecated. The ability to use UDP will be removed from the node in a future release yet to be determined.  For more information, see the [network details](/running-a-node/configuration/#network-details).
+    As of V21 peering and communicating via UDP has been disabled by default and is deprecated. The ability to use UDP will be removed from the node in a future release yet to be determined.  For more information, see the [network details](../../running-a-node/configuration/#network-details).
 
     On port 7075, only TCP is required since V21.
 
@@ -133,7 +133,7 @@ docker stop ${NANO_NAME}
 !!! warning
 	Modifications made to configuration files while the Docker container is running have no effect until the container is restarted.
 
-You may now edit the [configuration files](/running-a-node/configuration) located in `${NANO_HOST_DIR}` using your preferred text editor.
+You may now edit the [configuration files](../../running-a-node/configuration) located in `${NANO_HOST_DIR}` using your preferred text editor.
 
 Once modifications are complete, [start up the docker container again](#starting) using the same command.
 
@@ -233,7 +233,7 @@ curl -s -d '{
 }' http://127.0.0.1:7076 | jq ".blocks[].block_account"
 ```
 
-For other commands, review the [RPC Protocol](/commands/rpc-protocol) details.
+For other commands, review the [RPC Protocol](../../commands/rpc-protocol) details.
 
 ---
 

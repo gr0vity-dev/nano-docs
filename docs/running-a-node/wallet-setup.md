@@ -133,7 +133,7 @@ If you would like to replace the wallet's automatically generated seed with your
 
 #### Set wallet password
 
-It is a best practice to set the wallet password for additional security. Use the ['password_change' RPC](../commands/rpc-protocol.md#password_change) to change from the empty default to a secure password. When looking to interact with the wallet it must first be unlocked, so use ['password_enter' RPC](/commands/rpc-protocol.md#password_enter) to ensure it is unlocked after setting.
+It is a best practice to set the wallet password for additional security. Use the ['password_change' RPC](../commands/rpc-protocol.md#password_change) to change from the empty default to a secure password. When looking to interact with the wallet it must first be unlocked, so use ['password_enter' RPC](../commands/rpc-protocol.md#password_enter) to ensure it is unlocked after setting.
 
 ### Create accounts
 

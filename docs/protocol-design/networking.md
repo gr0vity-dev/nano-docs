@@ -6,7 +6,7 @@ description: Details of networking setup design for nano protocol
 --8<-- "wip-living-whitepaper.md"
 
 ## TCP messages
-TCP is used for traffic on the [live network](/glossary#live-network) and for bulk data transfer on the [bootstrap network](/glossary#bootstrap-network).
+TCP is used for traffic on the [live network](../../glossary#live-network) and for bulk data transfer on the [bootstrap network](../../glossary#bootstrap-network).
 
 --8<-- "network-details.md"
 
@@ -21,7 +21,7 @@ The nodes are designed to reply to `telemetry_req` messages. They avoid replying
 Telemetry messsages bypass the node's bandwidth limiter so that services monitoring the network can still do so during when the network is heavily used. Sending `telemetry_req` frequently within this exclusion zone could see your ip blacklisted by other peers. The node safely handles this for you by doing ongoing requests periodically and only sent when valid to do so.
 
 ### Signing
-`Telemetry_ack` messages are signed using [ED25519](/protocol-design/signing-hashing-and-key-derivation/#signing-algorithm-ed25519) as follows:
+`Telemetry_ack` messages are signed using [ED25519](../../protocol-design/signing-hashing-and-key-derivation/#signing-algorithm-ed25519) as follows:
 
 ```
 ED25519(key = node id public key, message = "node id || block count || cemented count|| unchecked count || account count || bandwidth capacity || peer count || protocol version || uptime || genesis block hash || major version || minor version || patch version || pre-release version || maker || timestamp since UTC epoch || active difficulty")
@@ -49,4 +49,4 @@ Initial identification of peers is a [node implementation detail](../node-implem
 
 Existing whitepaper sections related to this page:
 
-* [Networking](/protocol-design/networking/)
+* [Networking](../../protocol-design/networking/)

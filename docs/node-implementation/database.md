@@ -31,7 +31,7 @@ description: Learn how the ledger is managed in the various tables and backend d
 
 Existing whitepaper sections related to this page:
 
-* [Implementation](/whitepaper/english/#implementation)
+* [Implementation](../../whitepaper/english/#implementation)
 
 Other content related to this page:
 

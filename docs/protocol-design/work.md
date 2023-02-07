@@ -26,7 +26,7 @@ where $H$ is an algorithm, usually in the form of a hash function, $||$ is the c
 
 The following image illustrates the process by which valid work is obtained for **Block 2**.
 
-![generate-work](/images/whitepaper/generate-work.svg)
+![generate-work](../images/whitepaper/generate-work.svg)
 
 The work field is not used when signing a block. This design has two consequences:
 
@@ -49,11 +49,11 @@ Additional requirements of parameter flexibility, constrained parallelism, and b
 
 Existing whitepaper sections related to this page:
 
-* [System Overview](/whitepaper/english/#system-overview)
+* [System Overview](../../whitepaper/english/#system-overview)
 
 Existing content related to this page:
 
-* [Basics - PoW](/integration-guides/the-basics/#proof-of-work)
+* [Basics - PoW](../../integration-guides/the-basics/#proof-of-work)
 * [Dynamic PoW & Prioritization](https://medium.com/nanocurrency/dynamic-proof-of-work-prioritization-4618b78c5be9)
 * [Nano How 4: Proof of Work](https://medium.com/nano-education/nano-how-4-proof-of-work-474bf20fc7d)
 * [Work Generation guide](../integration-guides/work-generation.md)

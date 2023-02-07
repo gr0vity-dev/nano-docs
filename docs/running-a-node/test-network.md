@@ -9,7 +9,7 @@ For load testing and new node releases and features testing, head over to the [b
 
 ## Running a test node
 
-Setting up a node on the test network is similar to the beta network. To start you should [install docker](/running-a-node/node-setup/#installing-docker) and be familiar with the general setup and [Docker management](/running-a-node/docker-management/) processes.
+Setting up a node on the test network is similar to the beta network. To start you should [install docker](../../running-a-node/node-setup/#installing-docker) and be familiar with the general setup and [Docker management](../../running-a-node/docker-management/) processes.
 
 ### Network ports
 
@@ -54,8 +54,8 @@ A list of test tags can be found at the official [Nano Currency Docker Hub](http
 --8<-- "docker-run-command-test.md"
 
 !!! tip
-	* For an explanation of the options included in the Docker `run` command, see [Starting the Container](/running-a-node/docker-management/#starting) details for the main network.
-	* See [Docker management](/running-a-node/docker-management/) for other related commands
+	* For an explanation of the options included in the Docker `run` command, see [Starting the Container](../../running-a-node/docker-management/#starting) details for the main network.
+	* See [Docker management](../../running-a-node/docker-management/) for other related commands
 
 !!! warning "Separate host directories"
 	Be sure to use a different host directory for main network, beta network and test network Docker node setups. Attempting to use the same directory will result in issues.
