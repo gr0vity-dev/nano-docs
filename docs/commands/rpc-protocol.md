@@ -1816,7 +1816,7 @@ Returns a list of pairs of online peer IPv6:port and its node protocol network v
 }
 ```  
  
-**Response version 8.0+:**
+**Response:**
 ```json
 {
   "peers": {
@@ -1825,18 +1825,9 @@ Returns a list of pairs of online peer IPv6:port and its node protocol network v
 }
 ```   
 
-**Response before version 8.0:**
-```json
-{
-  "peers": [
-      "[::ffff:172.17.0.1]:32841"
-  ]
-}
-```   
 **Optional "peer_details"**
-
    
-Boolean, false by default. Returns a list of peers IPv6:port with its node protocol network version and node ID. The node ID is random and is not a Nano address. As of Version V21+ `type` returns `tcp`, as `udp` was **deprecated** and is not longer used for peering with that node.
+Boolean, false by default. Returns a list of peers IPv6:port with its node protocol network version and node ID. The node ID is random and is not a Nano address. `type` returns `tcp`, as `udp` was **deprecated** and is not longer used for peering with that node.
 
 the node_id has a `node_` prefix
 
@@ -4342,7 +4333,7 @@ Convert `raw` amount (10^0) into `nano` (10^30 raw)
 
 
 ### active_difficulty
-_deprecated in version 22.0_
+_deprecated_
 
 Returns the difficulty values (16 hexadecimal digits string, 64 bit) and related multiplier from base difficulty.
 
