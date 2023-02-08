@@ -3491,7 +3491,7 @@ Deprecated in V24.0+. Replaced by [search_receivable_all](#search_receivable_all
 
 ### search_receivable_all  
 
-_since V24.0, use [search_pending_all](#search_pending_all) _
+_since V24.0, use [search_pending_all](#search_pending_all)_
 
 _enable_control required_   
 Tells the node to look for receivable blocks for any account in all available wallets  
