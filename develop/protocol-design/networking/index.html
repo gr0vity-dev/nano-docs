@@ -2015,7 +2015,7 @@
 <h1 id="protocol-design-networking">Protocol Design - Networking<a class="headerlink" href="#protocol-design-networking" title="Permanent link">&para;</a></h1>
 <details class="info">
 <summary>Part of work in progress Living Whitepaper</summary>
-<p>This page is part of the Living Whitepaper revisions currently underway to replace the original static whitepaper. These efforts include the <a href="/protocol-design/introduction">Protocol Design</a> and <a href="/node-implementation/introduction">Node Implementation</a> sections of the docs, which will cover and expand on details and topics covered in the <a href="/whitepaper/english">original whitepaper</a>.</p>
+<p>This page is part of the Living Whitepaper revisions currently underway to replace the original static whitepaper. These efforts include the <a href="../../protocol-design/introduction">Protocol Design</a> and <a href="../../node-implementation/introduction">Node Implementation</a> sections of the docs, which will cover and expand on details and topics covered in the <a href="../../whitepaper/english">original whitepaper</a>.</p>
 <p>See the bottom of the page for related whitepaper sections and other related details. Some of the sections and headers on this page may be in draft form or just suggestions/framework for later consideration. If you are interested in helping with revisions please connect with us on the <code>#documentation</code> channel on our <a href="https://chat.nano.org">Discord server</a>.</p>
 </details>
 <h2 id="tcp-messages">TCP messages<a class="headerlink" href="#tcp-messages" title="Permanent link">&para;</a></h2>
@@ -2041,13 +2041,13 @@
 <td>7076</td>
 <td>TCP</td>
 <td>Disabled</td>
-<td><ul><li>RPC server</li><li>Port configurable in <code>config-rpc.toml</code>, option <code>rpc.port</code></li><li>Enable in <code>config-node.toml</code>, option <code>rpc.enable</code> or by starting <code>nano_rpc</code> manually</li><li> Binds to localhost by default for security reasons, configurable in <code>config-rpc.toml</code>, option <code>rpc.address</code>; unicast</li><li>Contents: Unencrypted HTTP requests containing JSON object bodies</li><li>Allows the node to be queried or controlled through HTTP requests</li><li>If blocked the node will not be able to be queried or controlled by HTTP</li><li><strong>WARNING: Exposing this port externally while setting <code>enable_control</code> option to <code>true</code> in configs could expose your wallet, allow the node to be stopped remotely and open your node up to other dangerous activity.</strong> See the <a href="/running-a-node/security">Node Security page</a> for more details.</li></ul></td>
+<td><ul><li>RPC server</li><li>Port configurable in <code>config-rpc.toml</code>, option <code>rpc.port</code></li><li>Enable in <code>config-node.toml</code>, option <code>rpc.enable</code> or by starting <code>nano_rpc</code> manually</li><li> Binds to localhost by default for security reasons, configurable in <code>config-rpc.toml</code>, option <code>rpc.address</code>; unicast</li><li>Contents: Unencrypted HTTP requests containing JSON object bodies</li><li>Allows the node to be queried or controlled through HTTP requests</li><li>If blocked the node will not be able to be queried or controlled by HTTP</li><li><strong>WARNING: Exposing this port externally while setting <code>enable_control</code> option to <code>true</code> in configs could expose your wallet, allow the node to be stopped remotely and open your node up to other dangerous activity.</strong> See the <a href="../../running-a-node/security">Node Security page</a> for more details.</li></ul></td>
 </tr>
 <tr>
 <td>7078</td>
 <td>TCP</td>
 <td>Disabled</td>
-<td><ul><li>Websocket server</li><li>Port configurable in <code>config-node.toml</code>, option <code>node.websocket.port</code></li><li>Enable in <code>config-node.toml</code>, option <code>node.websocket.enable</code></li><li>Binds to localhost by default due to data throughput potentially being very high; producer-subscriber broadcast</li><li>Contents: Standard websocket frames containing JSON-encoded objects</li><li>See <a href="/integration-guides/websockets">WebSocket Support</a> for details on configuration</li></ul></td>
+<td><ul><li>Websocket server</li><li>Port configurable in <code>config-node.toml</code>, option <code>node.websocket.port</code></li><li>Enable in <code>config-node.toml</code>, option <code>node.websocket.enable</code></li><li>Binds to localhost by default due to data throughput potentially being very high; producer-subscriber broadcast</li><li>Contents: Standard websocket frames containing JSON-encoded objects</li><li>See <a href="../../integration-guides/websockets">WebSocket Support</a> for details on configuration</li></ul></td>
 </tr>
 </tbody>
 </table>
