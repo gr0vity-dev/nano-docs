@@ -153,6 +153,8 @@ extra_javascript:
 extra_css:
   - 'stylesheets/extras.css'
 extra:
+  nano_node:
+    current_version : V24.0
   version:
     provider: mike
     default: dev
@@ -178,7 +180,7 @@ extra:
 repo_name: 'nanocurrency/nano-docs'
 repo_url: 'https://github.com/gr0vity-dev/nano-docs'
 edit_uri: 'dev/docs/'
-plugins:
+plugins:   
     - search:
         separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
     - social:

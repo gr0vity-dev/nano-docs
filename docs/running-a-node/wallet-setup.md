@@ -25,7 +25,7 @@ The published binary builds and Docker images will have an internal node wallet 
 
 --8<-- "warning-node-wallet-not-for-prod-use.md"
 
-Below is a basic walkthrough on how to setup a wallet and make a transaction using the built-in node wallet. It is important to understand the differences between accounts, private and public keys, seeds and wallet IDs before going much further. If you aren't comfortable with these concepts yet, see [this guide](https://docs.nano.org/integration-guides/the-basics/#account-key-seed-and-wallet-ids). Creating a wallet with a seed and generating accounts from that seed will be the focus of this guide.
+Below is a basic walkthrough on how to setup a wallet and make a transaction using the built-in node wallet. It is important to understand the differences between accounts, private and public keys, seeds and wallet IDs before going much further. If you aren't comfortable with these concepts yet, see [this guide](../../integration-guides/the-basics/#account-key-seed-and-wallet-ids). Creating a wallet with a seed and generating accounts from that seed will be the focus of this guide.
 
 ### Update configuration
 
@@ -229,4 +229,4 @@ For most new node operators learning how to [receive and send funds](../integrat
 - [Ledger management guide](ledger-management.md) for more details about bootstrapping, managing the database files, and updating the node
 - [Docker management guide](docker-management.md) with additional commands and examples for those running Docker containers
 - [Simple](voting-as-a-representative.md#setup-monitoring) and [advanced](advanced-monitoring.md) monitoring for options to keep an eye on node operations
-- Many other integration and configuration options in the [integration guides](https://docs.nano.org/integration-guides/the-basics/)
+- Many other integration and configuration options in the [integration guides](../../integration-guides/the-basics/)

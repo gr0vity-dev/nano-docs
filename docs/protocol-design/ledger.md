@@ -95,4 +95,4 @@ Other existing content related to this page:
 * [Looking up to Confirmation Height](https://medium.com/nanocurrency/looking-up-to-confirmation-height-69f0cd2a85bc)
 * [Ledger Management guide](../running-a-node/ledger-management.md)
 
-[^1]: Epoch blocks details, Network Upgrades documentation: https://docs.nano.org/releases/network-upgrades/#epoch-blocks
+[^1]: Epoch blocks details, Network Upgrades documentation: ../../releases/network-upgrades/#epoch-blocks

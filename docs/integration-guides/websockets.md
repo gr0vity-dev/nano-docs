@@ -419,7 +419,7 @@ By default only `vote` type votes are broadcasted, and the others are filtered. 
 }
 ```
 
-**NOTE:** The `timestamp` field is a Unix timestamp in milliseconds for non-final votes, and the maximum integer value for the field (`18446744073709551615`) indicates it is a [final vote](https://docs.nano.org/node-implementation/voting/#final-votes).
+**NOTE:** The `timestamp` field is a Unix timestamp in milliseconds for non-final votes, and the maximum integer value for the field (`18446744073709551615`) indicates it is a [final vote](../../node-implementation/voting/#final-votes).
 
 ---
 

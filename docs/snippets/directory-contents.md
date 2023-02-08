@@ -2,7 +2,7 @@ The Nano directory contains:
 
 - Node wallet files (`wallets.ldb`, `wallets.ldb-lock`)
 - [Configuration files](../running-a-node/configuration.md#configuration-file-locations)
-- [Log files](/running-a-node/troubleshooting/#log-files)
+- [Log files](../../running-a-node/troubleshooting/#log-files)
 - Ledger files (`data.ldb` and `data.ldb-lock` for default LMDB, or `rocksdb` directory with files for optional [RocksDB backend](../running-a-node/ledger-management.md#rocksdb-ledger-backend))
 - Directory for wallet backups (`backup`)
 
