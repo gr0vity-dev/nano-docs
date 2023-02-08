@@ -2863,7 +2863,7 @@
 <h2 id="executable-binaries">Executable binaries<a class="headerlink" href="#executable-binaries" title="Permanent link">&para;</a></h2>
 <p>All executables have <code>nano_</code> prefix and projects have a <code>main</code> function inside <code>entry.cpp</code></p>
 <p><strong>nano_node</strong> – The standard way to start a node. There are 2 source files in here, <code>entry.cpp</code> and <code>daemon.cpp</code>. <code>nano_daemon::daemon::run()</code> is always called so is a good place to put a breakpoint if there are any issues during node operation (especially errors when launching initially).</p>
-<p><strong>nano_rpc</strong> – This executable does not need to be run explicitly unless <a href="../integration-guides/advanced/#running-nano-as-a-service">out of process RPC</a> is selected. Because this project is quite small it is all done inside the <code>entry.cpp</code> file and is probably an easier starting point template should anything else need to be moved out of process in the future.</p>
+<p><strong>nano_rpc</strong> – This executable does not need to be run explicitly unless <a href="../../integration-guides/advanced/#running-nano-as-a-service">out of process RPC</a> is selected. Because this project is quite small it is all done inside the <code>entry.cpp</code> file and is probably an easier starting point template should anything else need to be moved out of process in the future.</p>
 <p><strong>nano_wallet</strong> – This essentially does the same as <code>nano_node</code> but doesn’t support all CLI commands and has a graphical user interface for the wallet.</p>
 <hr />
 <h2 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">&para;</a></h2>
