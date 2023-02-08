@@ -1,677 +1,677 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>http://192.168.178.88:4477/develop/</loc>
+         <loc>https://docs.bnano.info/develop/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/glossary/</loc>
+         <loc>https://docs.bnano.info/develop/glossary/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/articles/readme/</loc>
+         <loc>https://docs.bnano.info/develop/articles/readme/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/commands/command-line-interface/</loc>
+         <loc>https://docs.bnano.info/develop/commands/command-line-interface/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/commands/rpc-protocol/</loc>
+         <loc>https://docs.bnano.info/develop/commands/rpc-protocol/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/core-development/code-standards/</loc>
+         <loc>https://docs.bnano.info/develop/core-development/code-standards/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/core-development/collaboration-process/</loc>
+         <loc>https://docs.bnano.info/develop/core-development/collaboration-process/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/core-development/overview/</loc>
+         <loc>https://docs.bnano.info/develop/core-development/overview/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/core-development/understanding-the-code/</loc>
+         <loc>https://docs.bnano.info/develop/core-development/understanding-the-code/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/integration-guides/</loc>
+         <loc>https://docs.bnano.info/develop/integration-guides/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/integration-guides/advanced/</loc>
+         <loc>https://docs.bnano.info/develop/integration-guides/advanced/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/integration-guides/block-confirmation-tracking/</loc>
+         <loc>https://docs.bnano.info/develop/integration-guides/block-confirmation-tracking/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/integration-guides/build-options/</loc>
+         <loc>https://docs.bnano.info/develop/integration-guides/build-options/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/integration-guides/ipc-integration/</loc>
+         <loc>https://docs.bnano.info/develop/integration-guides/ipc-integration/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/integration-guides/key-management/</loc>
+         <loc>https://docs.bnano.info/develop/integration-guides/key-management/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/integration-guides/the-basics/</loc>
+         <loc>https://docs.bnano.info/develop/integration-guides/the-basics/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/integration-guides/websockets/</loc>
+         <loc>https://docs.bnano.info/develop/integration-guides/websockets/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/integration-guides/work-generation/</loc>
+         <loc>https://docs.bnano.info/develop/integration-guides/work-generation/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/living-whitepaper/</loc>
+         <loc>https://docs.bnano.info/develop/living-whitepaper/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/node-implementation/blocks/</loc>
+         <loc>https://docs.bnano.info/develop/node-implementation/blocks/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/node-implementation/components/</loc>
+         <loc>https://docs.bnano.info/develop/node-implementation/components/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/node-implementation/database/</loc>
+         <loc>https://docs.bnano.info/develop/node-implementation/database/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/node-implementation/introduction/</loc>
+         <loc>https://docs.bnano.info/develop/node-implementation/introduction/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/node-implementation/networking/</loc>
+         <loc>https://docs.bnano.info/develop/node-implementation/networking/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/node-implementation/voting/</loc>
+         <loc>https://docs.bnano.info/develop/node-implementation/voting/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/node-implementation/work/</loc>
+         <loc>https://docs.bnano.info/develop/node-implementation/work/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/protocol-design/attack-vectors/</loc>
+         <loc>https://docs.bnano.info/develop/protocol-design/attack-vectors/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/protocol-design/blocks/</loc>
+         <loc>https://docs.bnano.info/develop/protocol-design/blocks/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/protocol-design/distribution-and-units/</loc>
+         <loc>https://docs.bnano.info/develop/protocol-design/distribution-and-units/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/protocol-design/introduction/</loc>
+         <loc>https://docs.bnano.info/develop/protocol-design/introduction/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/protocol-design/ledger/</loc>
+         <loc>https://docs.bnano.info/develop/protocol-design/ledger/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/protocol-design/networking/</loc>
+         <loc>https://docs.bnano.info/develop/protocol-design/networking/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/protocol-design/orv-consensus/</loc>
+         <loc>https://docs.bnano.info/develop/protocol-design/orv-consensus/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/protocol-design/resource-usage/</loc>
+         <loc>https://docs.bnano.info/develop/protocol-design/resource-usage/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/protocol-design/signing-hashing-and-key-derivation/</loc>
+         <loc>https://docs.bnano.info/develop/protocol-design/signing-hashing-and-key-derivation/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/protocol-design/work/</loc>
+         <loc>https://docs.bnano.info/develop/protocol-design/work/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/network-upgrades/</loc>
+         <loc>https://docs.bnano.info/develop/releases/network-upgrades/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/node-releases/</loc>
+         <loc>https://docs.bnano.info/develop/releases/node-releases/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v19-0/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v19-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v20-0/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v20-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v21-0/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v21-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v21-1/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v21-1/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v21-2/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v21-2/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v21-3/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v21-3/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v22-0/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v22-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v22-1/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v22-1/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v23-0/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v23-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v23-1/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v23-1/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v23-3/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v23-3/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/release-v24-0/</loc>
+         <loc>https://docs.bnano.info/develop/releases/release-v24-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/releases/roadmap/</loc>
+         <loc>https://docs.bnano.info/develop/releases/roadmap/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/advanced-monitoring/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/advanced-monitoring/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/beta-network/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/beta-network/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/beyond-the-node/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/beyond-the-node/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/configuration-https/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/configuration-https/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/configuration/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/configuration/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/docker-management/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/docker-management/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/ledger-management/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/ledger-management/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/node-setup/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/node-setup/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/overview/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/overview/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/security/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/security/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/test-network/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/test-network/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/troubleshooting/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/troubleshooting/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/voting-as-a-representative/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/voting-as-a-representative/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/running-a-node/wallet-setup/</loc>
+         <loc>https://docs.bnano.info/develop/running-a-node/wallet-setup/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/community-links/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/community-links/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/config-node-option-node-enable-voting-true/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/config-node-option-node-enable-voting-true/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/config-node-option-rpc-enable-control-false/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/config-node-option-rpc-enable-control-false/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/config-node-option-rpc-enable-control-true/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/config-node-option-rpc-enable-control-true/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/config-node-option-rpc-enable-true/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/config-node-option-rpc-enable-true/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/contributing-code/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/contributing-code/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/current-build-links-all/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/current-build-links-all/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/current-build-links-beta/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/current-build-links-beta/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/current-build-links-main/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/current-build-links-main/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/current-build-links-test/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/current-build-links-test/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/dedicated-representative-nodes/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/dedicated-representative-nodes/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/deprecation-info-pending/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/deprecation-info-pending/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/directory-contents/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/directory-contents/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/directory-locations-all/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/directory-locations-all/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/directory-locations-beta/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/directory-locations-beta/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/directory-locations-main/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/directory-locations-main/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/directory-locations-test/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/directory-locations-test/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/docker-ipv6-tip/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/docker-ipv6-tip/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/docker-run-command-beta/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/docker-run-command-beta/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/docker-run-command-main/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/docker-run-command-main/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/docker-run-command-test/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/docker-run-command-test/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/enable-voting/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/enable-voting/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/hardware-recommendations/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/hardware-recommendations/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/join-technical-mailing-list/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/join-technical-mailing-list/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/known-issue-macos-too-many-open-files/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/known-issue-macos-too-many-open-files/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/known-issue-peers-stake-reporting/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/known-issue-peers-stake-reporting/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/known-issue-unable-to-find-libboost/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/known-issue-unable-to-find-libboost/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/known-issue-unchecked-keys-rpc-rocksdb/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/known-issue-unchecked-keys-rpc-rocksdb/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/known-issue-windows-logging-stable/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/known-issue-windows-logging-stable/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/network-details-simple-beta/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/network-details-simple-beta/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/network-details-simple-main/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/network-details-simple-main/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/network-details-simple-test/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/network-details-simple-test/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/network-details/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/network-details/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v18-0/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v18-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v19-0/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v19-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v20-0/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v20-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v21-0/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v21-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v21-1/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v21-1/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v21-2/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v21-2/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v21-3/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v21-3/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v22-0/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v22-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v22-1/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v22-1/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v23-0/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v23-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v23-1/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v23-1/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v23-3/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v23-3/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v24-0/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v24-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/release-details-v25-0/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/release-details-v25-0/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/security-vulnerability-reporting/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/security-vulnerability-reporting/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/setup-beta-test-testing/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/setup-beta-test-testing/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/terms-block-transaction-transfer/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/terms-block-transaction-transfer/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/toml-config-commands/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/toml-config-commands/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/unconfirmed-information/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/unconfirmed-information/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-alternative-work-generation-setup-preferred/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-alternative-work-generation-setup-preferred/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-debug-only-command/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-debug-only-command/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-docker-limitations/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-docker-limitations/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-enable-control/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-enable-control/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-external-libraries/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-external-libraries/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-includes-unconfirmed/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-includes-unconfirmed/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-multiple-confirmation-notifications/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-multiple-confirmation-notifications/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-multiple-node-setups/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-multiple-node-setups/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-node-wallet-not-for-prod-use/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-node-wallet-not-for-prod-use/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-only-official-builds-supported/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-only-official-builds-supported/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-process-sub-type-recommended/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-process-sub-type-recommended/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-security-vulnerability-reporting/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-security-vulnerability-reporting/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-telemetry-can-be-forged/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-telemetry-can-be-forged/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-udp-deprecated/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-udp-deprecated/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/warning-unsupported-configuration/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/warning-unsupported-configuration/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/snippets/wip-living-whitepaper/</loc>
+         <loc>https://docs.bnano.info/develop/snippets/wip-living-whitepaper/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/what-is-nano/overview/</loc>
+         <loc>https://docs.bnano.info/develop/what-is-nano/overview/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://192.168.178.88:4477/develop/whitepaper/english/</loc>
+         <loc>https://docs.bnano.info/develop/whitepaper/english/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
