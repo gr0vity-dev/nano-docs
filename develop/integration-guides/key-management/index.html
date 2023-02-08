@@ -2367,7 +2367,7 @@
 <h1 id="key-management">Key Management<a class="headerlink" href="#key-management" title="Permanent link">&para;</a></h1>
 <h2 id="seeds">Seeds<a class="headerlink" href="#seeds" title="Permanent link">&para;</a></h2>
 <h3 id="hex-seed">Hex Seed<a class="headerlink" href="#hex-seed" title="Permanent link">&para;</a></h3>
-<p>Nano's private key(s) have been traditionally derived from a 64 character, uppercase hexadecimal string (0-9A-F). This is currently the more popular form of seed supported by a variety of services and wallets. Additional details available in <a href="../../integration-guides/the-basics/#seed">The Basics guide</a>.</p>
+<p>Nano's private key(s) have been traditionally derived from a 64 character, uppercase hexadecimal string (0-9A-F). This is currently the more popular form of seed supported by a variety of services and wallets. Additional details available in <a href="{{ base_url }}/integration-guides/the-basics/#seed">The Basics guide</a>.</p>
 <h3 id="mnemonic-seed">Mnemonic Seed<a class="headerlink" href="#mnemonic-seed" title="Permanent link">&para;</a></h3>
 <p>Wallets that provide mnemonic seeds should use the <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39</a> standard word list and methods for generating the seed. When BIP32 master keys are generated from the seed, the HMAC hash key variation "ed25519 seed" should be used due to nano using <a href="../../protocol-design/signing-hashing-and-key-derivation/#signing-algorithm-ed25519">ed25519 for the signing algorithm</a> (see <a href="https://github.com/satoshilabs/slips/blob/master/slip-0010.md">SLIP-0010</a>).</p>
 <p>A non-standard derivation path is used for nano in the <a href="https://github.com/LedgerHQ/app-nano">Ledger Nano implementation</a>, as well as other popular wallets. With a coin-type of <code>165'</code> (<code>0x800000a5</code>), this is a partial BIP44 path of <code>m/44'/165'/[address index]</code>. Only hardened paths are defined.</p>
@@ -2437,7 +2437,7 @@ Derived Address:
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><a href="../../integration-guides/the-basics/#wallet-id">WALLET_IDs</a> are not used for External Private Key Management since private keys are not stored in the nano_node. Much of this section builds off of the <a href="../../integration-guides/the-basics/#blocks-specifications">Blocks Specifications</a> documentation.</p>
+<p><a href="{{ base_url }}/integration-guides/the-basics/#wallet-id">WALLET_IDs</a> are not used for External Private Key Management since private keys are not stored in the nano_node. Much of this section builds off of the <a href="{{ base_url }}/integration-guides/the-basics/#blocks-specifications">Blocks Specifications</a> documentation.</p>
 </div>
 <hr />
 <h3 id="external-accounting-systems">External accounting systems<a class="headerlink" href="#external-accounting-systems" title="Permanent link">&para;</a></h3>
@@ -2451,7 +2451,7 @@ Derived Address:
 </ol>
 </div>
 <h4 id="block-confirmation-procedures">Block confirmation procedures<a class="headerlink" href="#block-confirmation-procedures" title="Permanent link">&para;</a></h4>
-<p>Before crediting funds to an account internally based on a deposit on the network, the block sending the funds must be confirmed. This is done by verifying the network has reached quorum on the block. Details of the recommended verification process can be found in the <a href="../../integration-guides/block-confirmation-tracking">block confirmation tracking guide</a>.</p>
+<p>Before crediting funds to an account internally based on a deposit on the network, the block sending the funds must be confirmed. This is done by verifying the network has reached quorum on the block. Details of the recommended verification process can be found in the <a href="{{ base_url }}/integration-guides/block-confirmation-tracking">block confirmation tracking guide</a>.</p>
 <h4 id="tracking-confirmed-balances">Tracking confirmed balances<a class="headerlink" href="#tracking-confirmed-balances" title="Permanent link">&para;</a></h4>
 <p>External accounting systems that track balances arriving to the node must track hashes of blocks that have been received in order to guarantee idempotency. Once confirmation of a block has been validated, the block hash should be recorded for the account along with any credits, debits or other related information. Any attempts to credit or debit accounts external to the node should check that no previous conflicting or duplicate activity was already recorded for that same block hash.</p>
 <h4 id="transaction-order-and-correctness">Transaction order and correctness<a class="headerlink" href="#transaction-order-and-correctness" title="Permanent link">&para;</a></h4>
@@ -2479,7 +2479,7 @@ Derived Address:
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Step 2: Expand private key</p>
-<p>From the private key, a public key can be derived, and the public key can be translated into a Nano Address using the <a href="../../commands/rpc-protocol#key_expand"><code>key_expand</code></a> RPC command.</p>
+<p>From the private key, a public key can be derived, and the public key can be translated into a Nano Address using the <a href="{{ base_url }}/commands/rpc-protocol#key_expand"><code>key_expand</code></a> RPC command.</p>
 </div>
 <h5 id="request-example">Request Example<a class="headerlink" href="#request-example" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
@@ -2500,7 +2500,7 @@ Derived Address:
 <h4 id="send-transaction">Send Transaction<a class="headerlink" href="#send-transaction" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">Step 1: Get Account Info</p>
-<p>To send funds to an account, first call the <a href="../../commands/rpc-protocol#account_info"><code>account_info</code></a> RPC command to gather necessary account information to craft your transaction. Setting <code>"representative": "true"</code> makes the nano_node also return the account's representative address, a necessary piece of data for creating a transaction.</p>
+<p>To send funds to an account, first call the <a href="{{ base_url }}/commands/rpc-protocol#account_info"><code>account_info</code></a> RPC command to gather necessary account information to craft your transaction. Setting <code>"representative": "true"</code> makes the nano_node also return the account's representative address, a necessary piece of data for creating a transaction.</p>
 </div>
 <h5 id="request-example_1">Request Example<a class="headerlink" href="#request-example_1" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
@@ -2522,8 +2522,8 @@ Derived Address:
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Step 2: Build <code>block_create</code> request</p>
-<p>Using details from the <code>account_info</code> call response, along with other information, we can create the <a href="../../commands/rpc-protocol#block_create"><code>block_create</code></a> RPC request.</p>
-<p>For more details on values, see the <a href="../../integration-guides/the-basics/#blocks-specifications">Blocks Specifications</a> documentation.</p>
+<p>Using details from the <code>account_info</code> call response, along with other information, we can create the <a href="{{ base_url }}/commands/rpc-protocol#block_create"><code>block_create</code></a> RPC request.</p>
+<p>For more details on values, see the <a href="{{ base_url }}/integration-guides/the-basics/#blocks-specifications">Blocks Specifications</a> documentation.</p>
 <table>
 <thead>
 <tr>
@@ -2600,28 +2600,28 @@ Derived Address:
 <p class="admonition-title">Additional details</p>
 <ul>
 <li>The option <code>json_block</code>, available since V19.0, makes the RPC call return a non-stringified version of the block, which is easier to parse and always recommended.</li>
-<li><a href="../../commands/rpc-protocol#block_create"><code>block_create</code></a> RPC commands generally take longer than other RPC commands because the nano_node has to generate the <a href="../../integration-guides/the-basics/#proof-of-work">Proof-of-Work</a> for the transaction. The response block data is already properly formatted to include in the <a href="../../commands/rpc-protocol#process"><code>process</code></a> RPC command.</li>
+<li><a href="{{ base_url }}/commands/rpc-protocol#block_create"><code>block_create</code></a> RPC commands generally take longer than other RPC commands because the nano_node has to generate the <a href="{{ base_url }}/integration-guides/the-basics/#proof-of-work">Proof-of-Work</a> for the transaction. The response block data is already properly formatted to include in the <a href="{{ base_url }}/commands/rpc-protocol#process"><code>process</code></a> RPC command.</li>
 <li>The nano_node creating and signing this transaction has no concept of what the transaction amount is, nor network state; all the nano_node knows is that it is creating a block whose previous block on the account chain has hash <code>92BA74A7D6DC7557F3EDA95ADC6341D51AC777A0A6FF0688A5C492AB2B2CB40D</code> results in the account having a balance of <code>3618869000000000000000000000000</code>.</li>
 <li>If the account's balance at block hash <code>92BA74A7D6DC7557F3EDA95ADC6341D51AC777A0A6FF0688A5C492AB2B2CB40D</code> was actually <code>5618869000000000000000000000000</code>, then 2 <span class="arithmatex"><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span> would have been sent to <code>nano_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p</code>.</li>
 </ul>
 </div>
 <div class="admonition question">
 <p class="admonition-title">What if I receive funds on my account and then broadcast the above crafted send? Would this result in me sending excess funds to the recipient?</p>
-<p>If you followed this guide, then the answer is "no". When you issued the <a href="../../commands/rpc-protocol#account_info"><code>account_info</code></a> RPC command, you received the account's balance at a specific blockhash on its account-chain. In your crafted transaction, you specify that hash in the <code>"previous"</code> field. If funds were signed into your account, the headblock on your account-chain would change. Since your send no longer refers to the headblock on your account-chain when broadcasted, the network would reject your transaction.</p>
+<p>If you followed this guide, then the answer is "no". When you issued the <a href="{{ base_url }}/commands/rpc-protocol#account_info"><code>account_info</code></a> RPC command, you received the account's balance at a specific blockhash on its account-chain. In your crafted transaction, you specify that hash in the <code>"previous"</code> field. If funds were signed into your account, the headblock on your account-chain would change. Since your send no longer refers to the headblock on your account-chain when broadcasted, the network would reject your transaction.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Since only the resulting balance is recorded, the transaction amount is interpreted as the difference in balance from the previous block on the account-chain and the newly created block. For this reason, it is crucial that you obtain the current account balance and headblock in the same atomic <a href="../../commands/rpc-protocol#account_info"><code>account_info</code></a> RPC command.</p>
+<p>Since only the resulting balance is recorded, the transaction amount is interpreted as the difference in balance from the previous block on the account-chain and the newly created block. For this reason, it is crucial that you obtain the current account balance and headblock in the same atomic <a href="{{ base_url }}/commands/rpc-protocol#account_info"><code>account_info</code></a> RPC command.</p>
 <p>When not following this guide closely, the following <strong>inappropriate sequence of events could lead to erroneous amounts sent</strong> to a recipient.</p>
 <ol>
-<li>An account's balance, say 5 <span class="arithmatex"><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span>, was obtained using the <a href="../../commands/rpc-protocol#account_balance"><code>account_balance</code></a>. This balance is valid as of hypothetical <strong>BLOCK_A</strong>.</li>
+<li>An account's balance, say 5 <span class="arithmatex"><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span>, was obtained using the <a href="{{ base_url }}/commands/rpc-protocol#account_balance"><code>account_balance</code></a>. This balance is valid as of hypothetical <strong>BLOCK_A</strong>.</li>
 <li>By another process you control, a receive (<strong>BLOCK_B</strong>) was signed and broadcasted into your account-chain (race-condition).</li>
 <li>Lets say this <code>receive</code> increased the funds on the account chain by 10 <span class="arithmatex"><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span>, resulting in a final balance 15 <span class="arithmatex"><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span>.</li>
-<li>The account's frontier block is obtained by the <a href="../../commands/rpc-protocol#accounts_frontiers"><code>accounts_frontiers</code></a> RPC command, returning the hash of <strong>BLOCK_B</strong>. Other transaction metadata is obtained by other RPC commands.</li>
+<li>The account's frontier block is obtained by the <a href="{{ base_url }}/commands/rpc-protocol#accounts_frontiers"><code>accounts_frontiers</code></a> RPC command, returning the hash of <strong>BLOCK_B</strong>. Other transaction metadata is obtained by other RPC commands.</li>
 <li>With the collected data, if a send transaction was created for 3 <span class="arithmatex"><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span>, the final balance would be computed as <span class="arithmatex"><span class="MathJax_Preview">5 - 3</span><script type="math/tex">5 - 3</script></span>, or 2 <span class="arithmatex"><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span>.</li>
 <li>When this is broadcasted, since it is referring to the current head block on the account, <strong>BLOCK_B</strong>, the network would accept it. But, because the balance as of <strong>BLOCK_B</strong> was actually 15 <span class="arithmatex"><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span>, this would result in 12 <span class="arithmatex"><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span> being sent to the recipient.</li>
 </ol>
-<p>For this reason, <strong>only populate transaction data source from a single <a href="../../commands/rpc-protocol#account_info"><code>account_info</code></a> RPC call</strong>.</p>
+<p>For this reason, <strong>only populate transaction data source from a single <a href="{{ base_url }}/commands/rpc-protocol#account_info"><code>account_info</code></a> RPC call</strong>.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Step 3: Broadcast the transaction</p>
@@ -2657,8 +2657,8 @@ Derived Address:
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Step 2: Build <code>block_create</code> request</p>
-<p>Using details from the <code>account_info</code> call response, along with other information, we can create the <a href="../../commands/rpc-protocol#block_create"><code>block_create</code></a> RPC request. The two differences between the send transaction are the <code>"link"</code> and <code>"balance"</code> fields.</p>
-<p>For more details on values, see the <a href="../../integration-guides/the-basics/#blocks-specifications">Blocks Specifications</a> documentation.</p>
+<p>Using details from the <code>account_info</code> call response, along with other information, we can create the <a href="{{ base_url }}/commands/rpc-protocol#block_create"><code>block_create</code></a> RPC request. The two differences between the send transaction are the <code>"link"</code> and <code>"balance"</code> fields.</p>
+<p>For more details on values, see the <a href="{{ base_url }}/integration-guides/the-basics/#blocks-specifications">Blocks Specifications</a> documentation.</p>
 <table>
 <thead>
 <tr>
@@ -2768,8 +2768,8 @@ Derived Address:
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Step 2: Build <code>block_create</code> request</p>
-<p>Using the block hash and raw transaction amount from the <code>receivable</code> call response, along with other information, we can create the <a href="../../commands/rpc-protocol#block_create"><code>block_create</code></a> RPC request. The only difference between the normal receive transactions is the <code>"previous"</code> field.</p>
-<p>For more details on values, see the <a href="../../integration-guides/the-basics/#blocks-specifications">Blocks Specifications</a> documentation.</p>
+<p>Using the block hash and raw transaction amount from the <code>receivable</code> call response, along with other information, we can create the <a href="{{ base_url }}/commands/rpc-protocol#block_create"><code>block_create</code></a> RPC request. The only difference between the normal receive transactions is the <code>"previous"</code> field.</p>
+<p>For more details on values, see the <a href="{{ base_url }}/integration-guides/the-basics/#blocks-specifications">Blocks Specifications</a> documentation.</p>
 <table>
 <thead>
 <tr>
@@ -2796,7 +2796,7 @@ Derived Address:
 </tr>
 <tr>
 <td><code>"representative"</code></td>
-<td><code>"representative"</code> the account address to use as <a href="../../integration-guides/the-basics#representatives">representative</a> for your account. Choose a reliable, trustworthy representative.</td>
+<td><code>"representative"</code> the account address to use as <a href="{{ base_url }}/integration-guides/the-basics#representatives">representative</a> for your account. Choose a reliable, trustworthy representative.</td>
 </tr>
 <tr>
 <td><code>"balance"</code></td>
@@ -2849,13 +2849,13 @@ Derived Address:
 <hr />
 <h3 id="broadcasting-transactions">Broadcasting Transactions<a class="headerlink" href="#broadcasting-transactions" title="Permanent link">&para;</a></h3>
 <div class="admonition example">
-<p class="admonition-title">Broadcast using <a href="../../commands/rpc-protocol/#process"><code>process</code></a> RPC command</p>
-<p>Common to all of these transactions is the need to broadcast the completed block to the network. This is achieved by the <a href="../../commands/rpc-protocol#process"><code>process</code></a> RPC command which accepts the block as stringified JSON data. If you followed the previous examples, you used the option <code>json_block</code> for RPC <a href="../../commands/rpc-protocol#block_create"><code>block_create</code></a>, which allows you use the non-stringified version, as long as you include the same option in this RPC call.<br />
+<p class="admonition-title">Broadcast using <a href="{{ base_url }}/commands/rpc-protocol/#process"><code>process</code></a> RPC command</p>
+<p>Common to all of these transactions is the need to broadcast the completed block to the network. This is achieved by the <a href="{{ base_url }}/commands/rpc-protocol#process"><code>process</code></a> RPC command which accepts the block as stringified JSON data. If you followed the previous examples, you used the option <code>json_block</code> for RPC <a href="{{ base_url }}/commands/rpc-protocol#block_create"><code>block_create</code></a>, which allows you use the non-stringified version, as long as you include the same option in this RPC call.<br />
 A successful broadcast will return the broadcasted block's hash.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Including <code>subtype</code> in <code>process</code> RPC calls highly recommended</p>
-<p>In order to avoid potential incorrect sends <strong>including the optional <code>subtype</code> parameter on all <a href="../../commands/rpc-protocol/#process"><code>process</code></a> RPC calls is highly recommended</strong>. In the next version of the RPC this parameter will be required.</p>
+<p>In order to avoid potential incorrect sends <strong>including the optional <code>subtype</code> parameter on all <a href="{{ base_url }}/commands/rpc-protocol/#process"><code>process</code></a> RPC calls is highly recommended</strong>. In the next version of the RPC this parameter will be required.</p>
 </div>
 <h5 id="request-example_7">Request Example<a class="headerlink" href="#request-example_7" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
@@ -2882,19 +2882,19 @@ A successful broadcast will return the broadcasted block's hash.</p>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Block watching and re-work</p>
-<p>Since V20.0, blocks processed using <a href="../../commands/rpc-protocol/#process"><code>process</code></a> are placed under observation by the node for re-broadcasting and re-generation of work under certain conditions. If you wish to disable this feature, add <code>"watch_work": "false"</code> to the process RPC command.</p>
+<p>Since V20.0, blocks processed using <a href="{{ base_url }}/commands/rpc-protocol/#process"><code>process</code></a> are placed under observation by the node for re-broadcasting and re-generation of work under certain conditions. If you wish to disable this feature, add <code>"watch_work": "false"</code> to the process RPC command.</p>
 <ul>
 <li>If a block is not confirmed within a certain amount of time (configuration option <code>work_watcher_period</code>, default 5 seconds), an <strong>automatic re-generation of a higher difficulty proof-of-work</strong> may take place.</li>
 <li>Re-generation only takes place when the network is unable to confirm transactions quickly (commonly referred as the network being <em>saturated</em>) and the higher difficulty proof-of-work is used to help prioritize the block higher in the processing queue of other nodes.</li>
 <li>Configuration option <code>max_work_generate_multiplier</code> can be used to limit how much effort should be spent in re-generating the proof-of-work.</li>
-<li>The target proof-of-work difficulty threshold is obtained internally as the minimum between <a href="../../commands/rpc-protocol/#active_difficulty"><code>active_difficulty</code></a> and <code>max_work_generate_multiplier</code> (converted to difficulty).</li>
-<li>With a new, <a href="../../integration-guides/the-basics/#difficulty-multiplier">higher difficulty</a> proof-of-work, the block will get higher confirmation priority across the network.</li>
+<li>The target proof-of-work difficulty threshold is obtained internally as the minimum between <a href="{{ base_url }}/commands/rpc-protocol/#active_difficulty"><code>active_difficulty</code></a> and <code>max_work_generate_multiplier</code> (converted to difficulty).</li>
+<li>With a new, <a href="{{ base_url }}/integration-guides/the-basics/#difficulty-multiplier">higher difficulty</a> proof-of-work, the block will get higher confirmation priority across the network.</li>
 </ul>
 </div>
 <div class="admonition info">
 <p class="admonition-title">When a transaction does not confirm</p>
 <ul>
-<li>If a transaction is taking too long to confirm, you may call the <a href="../../commands/rpc-protocol#process"><code>process</code></a> RPC command with the same block data with no risk.</li>
+<li>If a transaction is taking too long to confirm, you may call the <a href="{{ base_url }}/commands/rpc-protocol#process"><code>process</code></a> RPC command with the same block data with no risk.</li>
 <li>If for some reason a transaction fails to properly broadcast, subsequent transactions on the account-chain after that transaction will not be accepted by the network since the <code>"previous"</code> field in the transaction data refers to a non-existant block.</li>
 <li>If this situation occurs, rebroadcasting the missing transaction(s) will make the subsequent blocks valid in the network's ledger.</li>
 </ul>
@@ -2912,7 +2912,7 @@ A successful broadcast will return the broadcasted block's hash.</p>
 </code></pre></div>
 <hr />
 <h2 id="internal-management">Internal Management<a class="headerlink" href="#internal-management" title="Permanent link">&para;</a></h2>
-<p>The nano_node software has a built-in private-key manager that is suitable for smaller operations (&lt;1000 accounts). <a href="../../integration-guides/key-management/#external-management">External Key Management</a> allows more powerful and robust systems at the cost of additional complexity. External Key Management is recommended for larger operations.</p>
+<p>The nano_node software has a built-in private-key manager that is suitable for smaller operations (&lt;1000 accounts). <a href="{{ base_url }}/integration-guides/key-management/#external-management">External Key Management</a> allows more powerful and robust systems at the cost of additional complexity. External Key Management is recommended for larger operations.</p>
 <h3 id="creating-a-wallet">Creating a Wallet<a class="headerlink" href="#creating-a-wallet" title="Permanent link">&para;</a></h3>
 <p>To create an account, you first must create a wallet to hold the seed that will subsequently create the account.</p>
 <h5 id="request-example_9">Request Example<a class="headerlink" href="#request-example_9" title="Permanent link">&para;</a></h5>
@@ -2928,7 +2928,7 @@ A successful broadcast will return the broadcasted block's hash.</p>
 <p>The nano_node responds with the WALLET_ID. If you lose your WALLET_ID, it can only be recovered via a CLI command. To reiterate, the <strong>WALLET_ID is not a seed</strong>. The seed can be extracted for backup in <a href="#backing-up-seed">Backing Up Seed</a>. Many of the RPC commands in this guide require the WALLET_ID.</p>
 <hr />
 <h3 id="recovering-wallet_id">Recovering WALLET_ID<a class="headerlink" href="#recovering-wallet_id" title="Permanent link">&para;</a></h3>
-<p>If you lose your WALLET_ID, you can print out all your WALLET_IDs and public addresses in those wallets with the <a href="../../commands/command-line-interface#-wallet_list"><code>--wallet_list</code></a> CLI command as follows:</p>
+<p>If you lose your WALLET_ID, you can print out all your WALLET_IDs and public addresses in those wallets with the <a href="{{ base_url }}/commands/command-line-interface#-wallet_list"><code>--wallet_list</code></a> CLI command as follows:</p>
 <h5 id="command-format">Command Format<a class="headerlink" href="#command-format" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="si">${</span><span class="nv">NANO_NAME</span><span class="si">}</span><span class="w"> </span>nano_node<span class="w"> </span>--wallet_list
 </code></pre></div>
@@ -3015,7 +3015,7 @@ A successful broadcast will return the broadcasted block's hash.</p>
 </div>
 <hr />
 <h3 id="account-create">Account Create<a class="headerlink" href="#account-create" title="Permanent link">&para;</a></h3>
-<p>After creating a wallet, it's corresponding WALLET_ID, and <strong>backing up the seed (not the wallet_id)</strong>, the wallet can be populated with accounts. To create a new account in a wallet use the <a href="../../commands/rpc-protocol#account_create"><code>account_create</code></a> RPC command:</p>
+<p>After creating a wallet, it's corresponding WALLET_ID, and <strong>backing up the seed (not the wallet_id)</strong>, the wallet can be populated with accounts. To create a new account in a wallet use the <a href="{{ base_url }}/commands/rpc-protocol#account_create"><code>account_create</code></a> RPC command:</p>
 <h5 id="request-format_1">Request Format<a class="headerlink" href="#request-format_1" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">  &quot;action&quot;: &quot;account_create&quot;,</span>
@@ -3034,7 +3034,7 @@ A successful broadcast will return the broadcasted block's hash.</p>
 </code></pre></div>
 <hr />
 <h3 id="bulk-account-create">Bulk Account Create<a class="headerlink" href="#bulk-account-create" title="Permanent link">&para;</a></h3>
-<p>To generate many accounts in bulk, it is more efficient to create them all at once using the <a href="../../commands/rpc-protocol#accounts_create"><code>accounts_create</code></a> RPC command:</p>
+<p>To generate many accounts in bulk, it is more efficient to create them all at once using the <a href="{{ base_url }}/commands/rpc-protocol#accounts_create"><code>accounts_create</code></a> RPC command:</p>
 <h5 id="request-format_2">Request Format<a class="headerlink" href="#request-format_2" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;action&quot;: &quot;accounts_create&quot;,</span>
@@ -3065,7 +3065,7 @@ A successful broadcast will return the broadcasted block's hash.</p>
 <p>As long as the nano_node is synced and the node wallet is unlocked (node wallet locking is not covered in this guide), nano_node automatically creates and signs receive transactions for all accounts in the wallet's internal private-key management system.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>In the event that a receive is not automatically generated, it can be manually generated using the <a href="../../commands/rpc-protocol#receive"><code>receive</code></a> RPC command.</p>
+<p>In the event that a receive is not automatically generated, it can be manually generated using the <a href="{{ base_url }}/commands/rpc-protocol#receive"><code>receive</code></a> RPC command.</p>
 </div>
 <h4 id="semi-manual-receiving-funds">Semi-Manual Receiving Funds<a class="headerlink" href="#semi-manual-receiving-funds" title="Permanent link">&para;</a></h4>
 <p>If the nano_node does not automatically sign in a receivable transaction, transactions can be manually signed in. The easiest way is to explicitly command the nano_node to check all of the accounts in all of its wallets for receivable blocks.</p>
@@ -3085,7 +3085,7 @@ A successful broadcast will return the broadcasted block's hash.</p>
 </div>
 <hr />
 <h3 id="sending-funds">Sending funds<a class="headerlink" href="#sending-funds" title="Permanent link">&para;</a></h3>
-<p>The <a href="../../commands/rpc-protocol#send"><code>send</code></a> RPC command sends funds from an account in the specified wallet to a destination address.</p>
+<p>The <a href="{{ base_url }}/commands/rpc-protocol#send"><code>send</code></a> RPC command sends funds from an account in the specified wallet to a destination address.</p>
 <h5 id="request-format_3">Request Format<a class="headerlink" href="#request-format_3" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">  &quot;action&quot;: &quot;send&quot;,</span>
@@ -3131,7 +3131,7 @@ A successful broadcast will return the broadcasted block's hash.</p>
 <p class="admonition-title">Important</p>
 <p>The <code>"id"</code> field is a safety mechanism that prevents issuing a transaction multiple times by repeating the RPC command.</p>
 <ul>
-<li>If a transaction is successful, any subsequent <a href="../../commands/rpc-protocol#send"><code>send</code></a> RPC commands with the same identifier will be ignored by the nano_node.</li>
+<li>If a transaction is successful, any subsequent <a href="{{ base_url }}/commands/rpc-protocol#send"><code>send</code></a> RPC commands with the same identifier will be ignored by the nano_node.</li>
 <li>If the request times out, then the send may or may not have gone through.</li>
 <li>Most exchange "double withdraw" issues are caused by naive error-handling routines which re-issue the send request without the <code>"id"</code> parameter.</li>
 <li>The <code>"id"</code> field is local to your nano_node instance and does not offer protection when sent to different instances of nano_node that manage the same seed.</li>
@@ -3159,7 +3159,7 @@ A successful broadcast will return the broadcasted block's hash.</p>
 <p>On success, the nano_node returns the hash of the transaction's block.</p>
 <hr />
 <h3 id="republishing-transactions">Republishing Transactions<a class="headerlink" href="#republishing-transactions" title="Permanent link">&para;</a></h3>
-<p>It may take a few seconds for the transaction to appear on the Nano Network. If the transaction fails to appear, you may call the <a href="../../commands/rpc-protocol#republish"><code>republish</code></a> RPC command with the oldest missing transaction's hash. Account-chains must be <strong>continuous and unbroken</strong>. If for some reason a transaction fails to properly broadcast, subsequent transactions on the account-chain will not be accepted by the network since the <code>"previous"</code> field in the transaction data refers to a block  unknown to to other nodes on the network.</p>
+<p>It may take a few seconds for the transaction to appear on the Nano Network. If the transaction fails to appear, you may call the <a href="{{ base_url }}/commands/rpc-protocol#republish"><code>republish</code></a> RPC command with the oldest missing transaction's hash. Account-chains must be <strong>continuous and unbroken</strong>. If for some reason a transaction fails to properly broadcast, subsequent transactions on the account-chain will not be accepted by the network since the <code>"previous"</code> field in the transaction data refers to a block  unknown to to other nodes on the network.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Republishing the missing transaction(s) will make all the subsequent blocks valid in the network's ledger. Republishing does not create new transactions.</p>

@@ -2219,7 +2219,7 @@
 </ul>
 <hr />
 <h2 id="representatives">Representatives<a class="headerlink" href="#representatives" title="Permanent link">&para;</a></h2>
-<p>The Nano Network achieves consensus using the unique <a href="../../what-is-nano/overview/#representatives-and-voting">Open Representative Voting (ORV)</a> model. In this setup, representatives (accounts where nano_node with the private keys are running 24/7) vote on transactions.</p>
+<p>The Nano Network achieves consensus using the unique <a href="{{ base_url }}/what-is-nano/overview/#representatives-and-voting">Open Representative Voting (ORV)</a> model. In this setup, representatives (accounts where nano_node with the private keys are running 24/7) vote on transactions.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Below are some helpful things to remember about Nano's representatives and consensus:</p>
@@ -2247,7 +2247,7 @@
 <p>This is a series of 32 random bytes of data, usually represented as a 64 character, uppercase hexadecimal string (0-9A-F). This value is used to derive <strong>account private keys</strong> for accounts by combining it with an index and then putting that into the following hash function where <code>||</code> means concatenation and <code>i</code> is a 32-bit big-endian unsigned integer: <code>PrivK[i] = blake2b(outLen = 32, input = seed || i)</code></p>
 <p>Private keys are derived <strong>deterministically</strong> from the seed, which means that as long as you put the same seed and index into the derivation function, you will get the same resulting private key every time. Therefore, knowing just the seed allows you to be able to access all the derived private keys from index 0 to <span class="arithmatex"><span class="MathJax_Preview">2^{32} - 1</span><script type="math/tex">2^{32} - 1</script></span> (because the index value is a unsigned 32-bit integer).</p>
 <p>Wallet implementations will commonly start from index 0 and increment it by 1 each time you create a new account so that recovering accounts is as easy as importing the seed and then repeating this account creation process.</p>
-<p>It should be noted that Nano reference wallet is using described Blake2b private keys derivation path. However some implementations can use BIP44 deterministic wallets and <a href="../../integration-guides/key-management/#mnemonic-seed">mnemonic seed</a> producing different private keys for given seed and indices. Additionally 24-word mnemonic can be derived from a Nano 64 length hex seed as entropy with clear notice for users that this is not BIP44 seed/entropy.</p>
+<p>It should be noted that Nano reference wallet is using described Blake2b private keys derivation path. However some implementations can use BIP44 deterministic wallets and <a href="{{ base_url }}/integration-guides/key-management/#mnemonic-seed">mnemonic seed</a> producing different private keys for given seed and indices. Additionally 24-word mnemonic can be derived from a Nano 64 length hex seed as entropy with clear notice for users that this is not BIP44 seed/entropy.</p>
 <p><strong>Code samples</strong></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">Bitcoinjs</label></div>
 <div class="tabbed-content">
@@ -2322,7 +2322,7 @@
 <li>All RPC commands expect units to be represented as <span class="arithmatex"><span class="MathJax_Preview">raw</span><script type="math/tex">raw</script></span>. </li>
 <li>Always keep units in integer <span class="arithmatex"><span class="MathJax_Preview">raw</span><script type="math/tex">raw</script></span> amounts to prevent any floating-point error or unit confusion.</li>
 <li>Depending on your implementation language, you may require a big number library to perform arithmetic directly on <span class="arithmatex"><span class="MathJax_Preview">raw</span><script type="math/tex">raw</script></span>.</li>
-<li>See <a href="../../protocol-design/distribution-and-units/">Distribution and Units</a> page for more details on units.</li>
+<li>See <a href="{{ base_url }}/protocol-design/distribution-and-units/">Distribution and Units</a> page for more details on units.</li>
 <li>Because final balances are recorded rather than transaction amounts, API calls must be done carefully to avoid loss of funds. Incorrect arithmetic or use of fields may change an intended receive to a send to a non-existent address.</li>
 </ul>
 </div>
@@ -2396,7 +2396,7 @@
 </tr>
 </tbody>
 </table>
-<p>Depending on the action each transaction intends to perform, the <code>"link"</code> field will have a different value for <a href="../../commands/rpc-protocol#block_create">block_create</a> RPC command:</p>
+<p>Depending on the action each transaction intends to perform, the <code>"link"</code> field will have a different value for <a href="{{ base_url }}/commands/rpc-protocol#block_create">block_create</a> RPC command:</p>
 <table>
 <thead>
 <tr>
@@ -2452,7 +2452,7 @@
 <p>Make sure that your private key uses the correct partnering public key while signing as using an incorrect public key may leak information about your private key.</p>
 </div>
 <h3 id="creating-blocks">Creating Blocks<a class="headerlink" href="#creating-blocks" title="Permanent link">&para;</a></h3>
-<p>For details on how to create individual blocks for sending from, receiving to, opening or changing representatives for an account, please see the <a href="../../integration-guides/key-management/#creating-transactions">Creating Transactions</a> section.</p>
+<p>For details on how to create individual blocks for sending from, receiving to, opening or changing representatives for an account, please see the <a href="{{ base_url }}/integration-guides/key-management/#creating-transactions">Creating Transactions</a> section.</p>
 <hr />
 <h2 id="uri-and-qr-code-standards">URI and QR Code Standards<a class="headerlink" href="#uri-and-qr-code-standards" title="Permanent link">&para;</a></h2>
 <p>Note: <code>amount</code> values should always be in RAW.</p>

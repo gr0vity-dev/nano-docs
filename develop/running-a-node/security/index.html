@@ -1999,7 +1999,7 @@
 
 
 <h1 id="node-security">Node Security<a class="headerlink" href="#node-security" title="Permanent link">&para;</a></h1>
-<p>There are <a href="../../running-a-node/overview/#why-run-a-node">many reasons to run a Nano node</a> on the network. Nodes are the participants that help vote on transaction validity, assist other nodes with bootstrapping blocks in the ledger and providing an access point to all accounts. But those who choose to run them should be making a long-term commitment to <a href="../../running-a-node/node-setup/#hardware-recommendations">run them on proper hardware</a>, keep them updated with the <a href="../../releases/node-releases/">latest release</a> and, most importantly, keep their setup as secure as possible.</p>
+<p>There are <a href="{{ base_url }}/running-a-node/overview/#why-run-a-node">many reasons to run a Nano node</a> on the network. Nodes are the participants that help vote on transaction validity, assist other nodes with bootstrapping blocks in the ledger and providing an access point to all accounts. But those who choose to run them should be making a long-term commitment to <a href="{{ base_url }}/running-a-node/node-setup/#hardware-recommendations">run them on proper hardware</a>, keep them updated with the <a href="{{ base_url }}/releases/node-releases/">latest release</a> and, most importantly, keep their setup as secure as possible.</p>
 <div class="admonition info">
 <p><div style="display:flex;">
     <div style="padding-right: 10px;">
@@ -2048,8 +2048,8 @@
 <h2 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h2>
 <p>As always the machine hosting the node should have regular maintenance done such as security patches, updates, etc. See <a href="../overview/#maintenance">Maintenance</a> for more details.</p>
 <h2 id="docker-considerations">Docker considerations<a class="headerlink" href="#docker-considerations" title="Permanent link">&para;</a></h2>
-<p>When running a node in Docker there is an extra layer of port controls between the node in the Docker container and the host machine. The default node configuration provided with Docker images in <a href="https://hub.docker.com/r/nanocurrency/nano">Docker hub</a>, along with examples in our documentation <a href="../../running-a-node/docker-management/#starting">for commands such as <code>docker run</code></a>, result in allowing RPC access only to the machine hosting the container. This is the recommended setup for most nodes.</p>
-<p>To make sure Docker security is understood by any node operator and the setup used is as secure as possible, we recommend reading up on general best practices for using Docker, consider <a href="../../running-a-node/docker-management/#docker-user-support">running Docker with non-root USER</a> and verifying external access to RPC calls are controlled sufficiently by the Docker host machine.</p>
+<p>When running a node in Docker there is an extra layer of port controls between the node in the Docker container and the host machine. The default node configuration provided with Docker images in <a href="https://hub.docker.com/r/nanocurrency/nano">Docker hub</a>, along with examples in our documentation <a href="{{ base_url }}/running-a-node/docker-management/#starting">for commands such as <code>docker run</code></a>, result in allowing RPC access only to the machine hosting the container. This is the recommended setup for most nodes.</p>
+<p>To make sure Docker security is understood by any node operator and the setup used is as secure as possible, we recommend reading up on general best practices for using Docker, consider <a href="{{ base_url }}/running-a-node/docker-management/#docker-user-support">running Docker with non-root USER</a> and verifying external access to RPC calls are controlled sufficiently by the Docker host machine.</p>
 
 
 

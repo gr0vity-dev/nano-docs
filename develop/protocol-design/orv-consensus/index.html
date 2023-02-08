@@ -2149,23 +2149,23 @@
 <h1 id="protocol-design-orv-consensus">Protocol Design - ORV Consensus<a class="headerlink" href="#protocol-design-orv-consensus" title="Permanent link">&para;</a></h1>
 <details class="info">
 <summary>Part of work in progress Living Whitepaper</summary>
-<p>This page is part of the Living Whitepaper revisions currently underway to replace the original static whitepaper. These efforts include the <a href="../../protocol-design/introduction">Protocol Design</a> and <a href="../../node-implementation/introduction">Node Implementation</a> sections of the docs, which will cover and expand on details and topics covered in the <a href="../../whitepaper/english">original whitepaper</a>.</p>
+<p>This page is part of the Living Whitepaper revisions currently underway to replace the original static whitepaper. These efforts include the <a href="{{ base_url }}/protocol-design/introduction">Protocol Design</a> and <a href="{{ base_url }}/node-implementation/introduction">Node Implementation</a> sections of the docs, which will cover and expand on details and topics covered in the <a href="{{ base_url }}/whitepaper/english">original whitepaper</a>.</p>
 <p>See the bottom of the page for related whitepaper sections and other related details. Some of the sections and headers on this page may be in draft form or just suggestions/framework for later consideration. If you are interested in helping with revisions please connect with us on the <code>#documentation</code> channel on our <a href="https://chat.nano.org">Discord server</a>.</p>
 </details>
-<p>Existing whitepaper sections: <a href="../../whitepaper/english/#system-overview">System Overview</a>, <a href="../../whitepaper/english/#implementation">Implementation</a></p>
+<p>Existing whitepaper sections: <a href="{{ base_url }}/whitepaper/english/#system-overview">System Overview</a>, <a href="{{ base_url }}/whitepaper/english/#implementation">Implementation</a></p>
 <p>Existing content:</p>
 <ul>
-<li><a href="../../what-is-nano/overview/#representatives-and-voting">Representatives and voting</a></li>
-<li><a href="../../integration-guides/the-basics/#representatives">Representatives</a></li>
+<li><a href="{{ base_url }}/what-is-nano/overview/#representatives-and-voting">Representatives and voting</a></li>
+<li><a href="{{ base_url }}/integration-guides/the-basics/#representatives">Representatives</a></li>
 <li><a href="https://github.com/nanocurrency/nano-node/issues/464#issuecomment-356467448">PoW for Receive block</a></li>
 </ul>
 <hr />
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>In order to protect against <a href="../attack-vectors/#50-attack">double spending</a> and <a href="../attack-vectors/#sybil-attack-to-change-ledger-entries">Sybil attacks</a>, Nano uses a unique consensus mechanism called Open Representative Voting (ORV). In ORV, user-selected representative nodes vote on each transaction, and every node (representative or not) independently <a href="../../glossary/#cementing">cements</a> each transaction after seeing enough representative votes to achieve <a href="#quorum">quorum</a>. Since Nano transactions are processed individually and asynchronously, deterministic finality (irreversible, full-settlement) is achieved in a short period of time, typically less than 1 second <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <p>Due to Nano's <a href="../ledger/">block-lattice ledger design</a>, only account owners have the ability to sign blocks into their account-chains, so all forks must be the result of poor programming or malicious intent (double-spend) by the account owner, which means that nodes can easily make policy decisions on how to handle forks without affecting legitimate transactions.</p>
-<p>Because Nano accounts can freely delegate their voting weight to representatives at any time, the users have more control over who has power with consensus and how decentralized the network is. Also note that delegation of voting weight does not mean staking of any funds - the account delegating can still spend all their available funds at any time without restrictions. This is a key advantage to the design of <a href="../../glossary/#open-representative-voting-orv">Open Representative Voting (ORV)</a>. With no direct monetary incentive for nodes, this removes emergent centralization forces for longer-term trending toward decentralization of the network.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>Because Nano accounts can freely delegate their voting weight to representatives at any time, the users have more control over who has power with consensus and how decentralized the network is. Also note that delegation of voting weight does not mean staking of any funds - the account delegating can still spend all their available funds at any time without restrictions. This is a key advantage to the design of <a href="{{ base_url }}/glossary/#open-representative-voting-orv">Open Representative Voting (ORV)</a>. With no direct monetary incentive for nodes, this removes emergent centralization forces for longer-term trending toward decentralization of the network.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <h3 id="open-representative-voting-orv-vs-proof-of-stake-pos">Open Representative Voting (ORV) vs Proof of Stake (PoS)<a class="headerlink" href="#open-representative-voting-orv-vs-proof-of-stake-pos" title="Permanent link">&para;</a></h3>
-<p>While Nano uses a weighted-voting system (<a href="../../protocol-design#orv-consensus">ORV</a>) that can be compared to PoS, it differs from traditional PoS because:</p>
+<p>While Nano uses a weighted-voting system (<a href="{{ base_url }}/protocol-design#orv-consensus">ORV</a>) that can be compared to PoS, it differs from traditional PoS because:</p>
 <ul>
 <li>
 <p>There is not one monolithic blockchain that requires leader selection (i.e. a staker or a miner) to extend</p>
@@ -2192,7 +2192,7 @@
 <p>Representatives do not earn transaction fees</p>
 </li>
 <li>
-<p>Representatives cannot reverse transactions that nodes have locally confirmed (due to <a href="../../glossary#cementing">block cementing</a>).</p>
+<p>Representatives cannot reverse transactions that nodes have locally confirmed (due to <a href="{{ base_url }}/glossary#cementing">block cementing</a>).</p>
 </li>
 </ul>
 <h3 id="confirmation-speed">Confirmation Speed<a class="headerlink" href="#confirmation-speed" title="Permanent link">&para;</a></h3>
@@ -2234,13 +2234,13 @@
 <hr />
 <p>Existing whitepaper sections related to this page:</p>
 <ul>
-<li><a href="../../whitepaper/english/#system-overview">System Overview</a></li>
-<li><a href="../../whitepaper/english/#implementation">Implementation</a></li>
+<li><a href="{{ base_url }}/whitepaper/english/#system-overview">System Overview</a></li>
+<li><a href="{{ base_url }}/whitepaper/english/#implementation">Implementation</a></li>
 </ul>
 <p>Existing content related to this page:</p>
 <ul>
-<li><a href="../../what-is-nano/overview/#representatives-and-voting">Representatives and voting</a></li>
-<li><a href="../../integration-guides/the-basics/#representatives">Representatives</a></li>
+<li><a href="{{ base_url }}/what-is-nano/overview/#representatives-and-voting">Representatives and voting</a></li>
+<li><a href="{{ base_url }}/integration-guides/the-basics/#representatives">Representatives</a></li>
 <li><a href="https://github.com/nanocurrency/nano-node/issues/464#issuecomment-356467448">PoW for Receive block</a></li>
 </ul>
 <div class="footnote">

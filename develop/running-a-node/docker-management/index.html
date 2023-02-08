@@ -2094,7 +2094,7 @@
 <ul>
 <li>Node wallet files (<code>wallets.ldb</code>, <code>wallets.ldb-lock</code>)</li>
 <li><a href="../configuration/#configuration-file-locations">Configuration files</a></li>
-<li><a href="../../running-a-node/troubleshooting/#log-files">Log files</a></li>
+<li><a href="{{ base_url }}/running-a-node/troubleshooting/#log-files">Log files</a></li>
 <li>Ledger files (<code>data.ldb</code> and <code>data.ldb-lock</code> for default LMDB, or <code>rocksdb</code> directory with files for optional <a href="../ledger-management/#rocksdb-ledger-backend">RocksDB backend</a>)</li>
 <li>Directory for wallet backups (<code>backup</code>)</li>
 </ul>
@@ -2115,7 +2115,7 @@
 <p><code>${NANO_TAG}</code> - The version of docker image you will be running.</p>
 </li>
 <li>
-<p><code>${NANO_HOST_DIR}</code> - Location on the host computer where the ledger, configuration files, and logs will be stored. The Docker container will directly store files such as <a href="../../running-a-node/configuration">config-node.toml</a> and <code>data.ldb</code> into this directory.</p>
+<p><code>${NANO_HOST_DIR}</code> - Location on the host computer where the ledger, configuration files, and logs will be stored. The Docker container will directly store files such as <a href="{{ base_url }}/running-a-node/configuration">config-node.toml</a> and <code>data.ldb</code> into this directory.</p>
 </li>
 </ul>
 <hr />
@@ -2161,17 +2161,17 @@
 </tr>
 <tr>
 <td><code>-p 127.0.0.1:7078:7078</code><br />or <code>-p[::1]:7078:7078</code></td>
-<td>Indicates that only the host can create a connection to the <a href="../../integration-guides/websockets">websocket server</a>. Data throughput can be very high depending on configuration, which could slow down the node if available outside the host.</td>
+<td>Indicates that only the host can create a connection to the <a href="{{ base_url }}/integration-guides/websockets">websocket server</a>. Data throughput can be very high depending on configuration, which could slow down the node if available outside the host.</td>
 </tr>
 </tbody>
 </table>
-<p>If you wish to use different ports, change the host ports in the <code>docker run</code> command; do not change the ports in the <a href="../../running-a-node/configuration">config-node.toml</a> file.</p>
+<p>If you wish to use different ports, change the host ports in the <code>docker run</code> command; do not change the ports in the <a href="{{ base_url }}/running-a-node/configuration">config-node.toml</a> file.</p>
 <p>This will start the docker container using host ports 7075 and 7076 and put the data in a permanent location in your hosts's home directory, outside the docker container. Upon successful startup, Docker will return the container's full ID. A typical ID will look something like the value below.</p>
 <div class="highlight"><pre><span></span><code>0118ad5b48489303aa9d195f8a45ddc74a90e8a7209fc67d5483aabf3170d619
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As of V21 peering and communicating via UDP has been disabled by default and is deprecated. The ability to use UDP will be removed from the node in a future release yet to be determined.  For more information, see the <a href="../../running-a-node/configuration/#network-details">network details</a>.</p>
+<p>As of V21 peering and communicating via UDP has been disabled by default and is deprecated. The ability to use UDP will be removed from the node in a future release yet to be determined.  For more information, see the <a href="{{ base_url }}/running-a-node/configuration/#network-details">network details</a>.</p>
 <p>On port 7075, only TCP is required since V21.</p>
 </div>
 <div class="admonition warning">
@@ -2216,11 +2216,11 @@ Alteratively, you can use <a href="#docker-compose"><code>docker-compose</code><
 <p class="admonition-title">Warning</p>
 <p>Modifications made to configuration files while the Docker container is running have no effect until the container is restarted.</p>
 </div>
-<p>You may now edit the <a href="../../running-a-node/configuration">configuration files</a> located in <code>${NANO_HOST_DIR}</code> using your preferred text editor.</p>
+<p>You may now edit the <a href="{{ base_url }}/running-a-node/configuration">configuration files</a> located in <code>${NANO_HOST_DIR}</code> using your preferred text editor.</p>
 <p>Once modifications are complete, <a href="#starting">start up the docker container again</a> using the same command.</p>
 <div class="admonition tip">
 <p class="admonition-title">Enable Voting</p>
-<p>When setting up a new node, voting is disabled by default in the configuration file and must be manually enabled in order to participate in consensus. See <a href="../../running-a-node/configuration/#nodeenable_voting">enable_voting configuration option</a> for more details.</p>
+<p>When setting up a new node, voting is disabled by default in the configuration file and must be manually enabled in order to participate in consensus. See <a href="{{ base_url }}/running-a-node/configuration/#nodeenable_voting">enable_voting configuration option</a> for more details.</p>
 </div>
 <hr />
 <h3 id="docker-compose">Docker Compose<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h3>
@@ -2291,7 +2291,7 @@ services:
 <span class="s1">  &quot;json_block&quot;: &quot;true&quot; </span>
 <span class="s1">}&#39;</span><span class="w"> </span>http://127.0.0.1:7076<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s2">&quot;.blocks[].block_account&quot;</span>
 </code></pre></div>
-<p>For other commands, review the <a href="../../commands/rpc-protocol">RPC Protocol</a> details.</p>
+<p>For other commands, review the <a href="{{ base_url }}/commands/rpc-protocol">RPC Protocol</a> details.</p>
 <hr />
 <h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
 <p>If you get <code>Error starting userland proxy: port is not a proto:IP:port: 'tcp:[:'.</code> or want to expose IPv4 port, use <code>-p 127.0.0.1:7076:7076</code>. Likewise, if you get <code>curl: (7) Couldn't connect to server</code> when interacting with the node, replace <code>[::1]:7076</code> with <code>127.0.0.1:7076</code>.</p>

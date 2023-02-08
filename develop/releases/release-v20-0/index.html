@@ -2174,17 +2174,17 @@
 <summary>Known Issue V20: Peers stake reporting inaccurate (Windows only)</summary>
 <ul>
 <li>
-<p><strong>Issue:</strong> For Windows builds only, when calling <a href="../../commands/rpc-protocol/#confirmation_quorum">confirmation_quorum RPC</a> the <code>peers_stake_total</code> amount returned may be inaccurate, returning a range from the correct full peer stake amount down to 0.</p>
+<p><strong>Issue:</strong> For Windows builds only, when calling <a href="{{ base_url }}/commands/rpc-protocol/#confirmation_quorum">confirmation_quorum RPC</a> the <code>peers_stake_total</code> amount returned may be inaccurate, returning a range from the correct full peer stake amount down to 0.</p>
 </li>
 <li>
-<p><strong>Solution:</strong> A solution to the issue has been found and as this is a reporting issue only, the fix will be included in the next released version. For those manually building the node, patching the <a href="https://github.com/nanocurrency/nano-node/pull/2405">fix pull request</a> onto the <a href="https://github.com/nanocurrency/nano-node/tree/V20.0">V20.0 tag</a> can resolve the issue now. Or alternatively, building on the V20.0 tag with <code>RelWithDebInfo</code> option, see <a href="../../integration-guides/build-options/#setup">Build Instructions for Windows</a>.</p>
+<p><strong>Solution:</strong> A solution to the issue has been found and as this is a reporting issue only, the fix will be included in the next released version. For those manually building the node, patching the <a href="https://github.com/nanocurrency/nano-node/pull/2405">fix pull request</a> onto the <a href="https://github.com/nanocurrency/nano-node/tree/V20.0">V20.0 tag</a> can resolve the issue now. Or alternatively, building on the V20.0 tag with <code>RelWithDebInfo</code> option, see <a href="{{ base_url }}/integration-guides/build-options/#setup">Build Instructions for Windows</a>.</p>
 </li>
 </ul>
 </details>
 <h2 id="upgrade-notices">Upgrade Notices<a class="headerlink" href="#upgrade-notices" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Only node V18.0 and higher supported</p>
-<p>With V20.0 only nodes V18.0 and higher will be peered with on the network (see <a href="../../releases/node-releases/#active-releases">Active Releases</a> above). This means any nodes running versions earlier than 18.0 will begin to lose peers and fall out of sync over time once upgrades to V20.0 begin.</p>
+<p>With V20.0 only nodes V18.0 and higher will be peered with on the network (see <a href="{{ base_url }}/releases/node-releases/#active-releases">Active Releases</a> above). This means any nodes running versions earlier than 18.0 will begin to lose peers and fall out of sync over time once upgrades to V20.0 begin.</p>
 <p><strong>If you are running a node version earlier than V18.0, please update as soon as possible to avoid disruption.</strong></p>
 </div>
 <h3 id="database-upgrades">Database upgrades<a class="headerlink" href="#database-upgrades" title="Permanent link">&para;</a></h3>
@@ -2238,50 +2238,50 @@
 </tr>
 </tbody>
 </table>
-<p>More details on the new configuration setup can be found in the node <a href="../../running-a-node/configuration/">Configuration documentation</a>.</p>
+<p>More details on the new configuration setup can be found in the node <a href="{{ base_url }}/running-a-node/configuration/">Configuration documentation</a>.</p>
 <h3 id="networking-changes">Networking changes<a class="headerlink" href="#networking-changes" title="Permanent link">&para;</a></h3>
-<p>Improvements to default network setup in this version requires less setup from node operators, specifically around port forwarding. Although new setups will immediately benefit, any existing systems that have already setup port forwarding may be impacted by these changes. For those systems, we recommend validating your network setup allows proper peering with a test V20.0 node prior to upgrading. If you run into issues, review the <a href="../../running-a-node/troubleshooting/#troubleshooting-upnp">Troubleshooting UPnP documentation</a> for assistance. Additional help can be sought in the <a href="https://forum.nano.org/c/node-and-rep">Node and Representative Management forum category</a>. </p>
+<p>Improvements to default network setup in this version requires less setup from node operators, specifically around port forwarding. Although new setups will immediately benefit, any existing systems that have already setup port forwarding may be impacted by these changes. For those systems, we recommend validating your network setup allows proper peering with a test V20.0 node prior to upgrading. If you run into issues, review the <a href="{{ base_url }}/running-a-node/troubleshooting/#troubleshooting-upnp">Troubleshooting UPnP documentation</a> for assistance. Additional help can be sought in the <a href="https://forum.nano.org/c/node-and-rep">Node and Representative Management forum category</a>. </p>
 <h3 id="proof-of-work-management">Proof-of-Work management<a class="headerlink" href="#proof-of-work-management" title="Permanent link">&para;</a></h3>
 <p>A couple changes to PoW management that services should be aware of:</p>
 <ul>
 <li>With OpenCL enabled, nodes will still use the local CPU for work generation by default. Setting <code>node.work_threads</code> to <code>0</code> will turn this off if required.</li>
-<li>Regenerating PoW for delayed transactions during high network load will now happen by default through the <a href="../../commands/rpc-protocol/#process">process RPC</a>. If you wish to turn this off, setting <code>watch_work</code> to <code>false</code> is required.</li>
+<li>Regenerating PoW for delayed transactions during high network load will now happen by default through the <a href="{{ base_url }}/commands/rpc-protocol/#process">process RPC</a>. If you wish to turn this off, setting <code>watch_work</code> to <code>false</code> is required.</li>
 </ul>
 <p><strong>Other updates to review</strong><br />
-Improvements to the <a href="../../integration-guides/key-management/#external-management">External Management</a> and <a href="../../integration-guides/block-confirmation-tracking/">Block Confirmation and Tracking</a> documentation should help clarify the recommended approaches to building integrations.</p>
+Improvements to the <a href="{{ base_url }}/integration-guides/key-management/#external-management">External Management</a> and <a href="{{ base_url }}/integration-guides/block-confirmation-tracking/">Block Confirmation and Tracking</a> documentation should help clarify the recommended approaches to building integrations.</p>
 <hr />
 <h2 id="major-updates">Major Updates<a class="headerlink" href="#major-updates" title="Permanent link">&para;</a></h2>
 <h3 id="migration-to-toml-config-files">Migration to .toml config files<a class="headerlink" href="#migration-to-toml-config-files" title="Permanent link">&para;</a></h3>
-<p>Better legibility, support for comments, and no more having the node write to your config files are some of the benefits of this upgrade. Any non-default values captured in your existing .json files will be migrated and you can export a full list of configuration options for use with simple commands. See additional callouts in <a href="#upgrade-notices">Upgrade Notices</a> above and in the node <a href="../../running-a-node/configuration/">Configuration documentation</a>.</p>
+<p>Better legibility, support for comments, and no more having the node write to your config files are some of the benefits of this upgrade. Any non-default values captured in your existing .json files will be migrated and you can export a full list of configuration options for use with simple commands. See additional callouts in <a href="#upgrade-notices">Upgrade Notices</a> above and in the node <a href="{{ base_url }}/running-a-node/configuration/">Configuration documentation</a>.</p>
 <h3 id="proof-of-work-regeneration-outside-development-wallet">Proof-of-Work regeneration outside development wallet<a class="headerlink" href="#proof-of-work-regeneration-outside-development-wallet" title="Permanent link">&para;</a></h3>
-<p>Any requests to the <a href="../../commands/rpc-protocol/#process">process RPC</a> will have the new <code>watch_work</code> option turned on by default, allowing the node to regenerate Proof-of-Work for blocks even if they are outside of the node’s development wallet. This makes Dynamic PoW and prioritization function more consistently across the network. If you have an external integration utilizing this RPC call, you will automatically start taking advantage of rework during confirmation delays on the network.</p>
+<p>Any requests to the <a href="{{ base_url }}/commands/rpc-protocol/#process">process RPC</a> will have the new <code>watch_work</code> option turned on by default, allowing the node to regenerate Proof-of-Work for blocks even if they are outside of the node’s development wallet. This makes Dynamic PoW and prioritization function more consistently across the network. If you have an external integration utilizing this RPC call, you will automatically start taking advantage of rework during confirmation delays on the network.</p>
 <h3 id="rocksdb-experimental-support">RocksDB experimental support<a class="headerlink" href="#rocksdb-experimental-support" title="Permanent link">&para;</a></h3>
-<p>With better disk IO usage, RocksDB is being introduced in this version with experimental support. It is not recommended for use in production, but those interested in testing out a more performant database for the ledger should checkout <a href="../../running-a-node/rocksdb-ledger-backend/">how to install RocksDB</a> and try it out on development and test systems. We also have a <a href="https://forum.nano.org/t/rocksdb-ledger-backend-testing/111/4">related discussion in our forum</a> for those interested.</p>
+<p>With better disk IO usage, RocksDB is being introduced in this version with experimental support. It is not recommended for use in production, but those interested in testing out a more performant database for the ledger should checkout <a href="{{ base_url }}/running-a-node/rocksdb-ledger-backend/">how to install RocksDB</a> and try it out on development and test systems. We also have a <a href="https://forum.nano.org/t/rocksdb-ledger-backend-testing/111/4">related discussion in our forum</a> for those interested.</p>
 <h3 id="active-elections-and-other-optimizations">Active elections and other optimizations<a class="headerlink" href="#active-elections-and-other-optimizations" title="Permanent link">&para;</a></h3>
 <p>Thanks to our excellent community testers putting effort into collecting and analyzing block, voting and confirmation data from the beta network, we’ve found various optimizations with the active elections process, confirmation request attempts and bootstrapping behaviors. Various changes have been implemented to help reduce resource usage on nodes in various areas and increase the available throughput on the network. This feature also enhances the effectiveness of prioritization and rework of PoW. No action is needed to take advantage of these great updates. </p>
 <h3 id="infrastructure-for-pow-transition">Infrastructure for PoW transition<a class="headerlink" href="#infrastructure-for-pow-transition" title="Permanent link">&para;</a></h3>
 <p>Back in September we <a href="https://medium.com/nanocurrency/v20-a-look-at-lydia-62bf6e1b24b">announced a new PoW algorithm design</a> we had been working on which aimed to be memory hard. After open sourcing an implementation of the algorithm, an efficient low-memory solution was found and we subsequently <a href="https://medium.com/nanocurrency/nano-pow-v20-update-e2197ff52941">removed the algorithm implementation from V20</a>.</p>
-<p>As part of the original implementation work we were able to setup infrastructure for moving PoW out of the node process in the future, and also added support for version 2 of epoch blocks, which will allow the <a href="../../releases/network-upgrades/">network upgrade</a> later when a new PoW algorithm is ready. These updates will be included in Lydia but not be utilized until a future version. To follow along with node releases going forward, check out the <a href="../../releases/upcoming-features/">Upcoming Features</a> page.</p>
+<p>As part of the original implementation work we were able to setup infrastructure for moving PoW out of the node process in the future, and also added support for version 2 of epoch blocks, which will allow the <a href="{{ base_url }}/releases/network-upgrades/">network upgrade</a> later when a new PoW algorithm is ready. These updates will be included in Lydia but not be utilized until a future version. To follow along with node releases going forward, check out the <a href="{{ base_url }}/releases/upcoming-features/">Upcoming Features</a> page.</p>
 <hr />
 <h2 id="rpc-updates">RPC Updates<a class="headerlink" href="#rpc-updates" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>BEHAVIOR CHANGE</strong> <a href="../../commands/rpc-protocol/#process"><code>process</code></a> now takes an optional flag <code>watch_work</code> (default <code>true</code>). Unless set to <code>false</code>, processed blocks can be subject to PoW rework</li>
-<li><strong>BEHAVIOR CHANGE</strong> <a href="../../commands/rpc-protocol/#bootstrap"><code>bootstrap</code></a>, <a href="../../commands/rpc-protocol/#bootstrap_any"><code>bootstrap_any</code></a> and <a href="../../commands/rpc-protocol/#bootstrap_lazy"><code>boostrap_lazy</code></a> will now throw errors when certain launch flags are used to disabled bootstrap methods - see each RPC page for details</li>
-<li><strong>BEHAVIOR CHANGE</strong> RPCs requiring work generation will now throw errors when work generation is disabled (no <a href="../../integration-guides/work-generation/#nodework_peers">work peers</a>, no <a href="../../integration-guides/work-generation/#nodeopenclenable">OpenCL</a> and no work threads configured)</li>
-<li><a href="../../commands/rpc-protocol/#block_count"><code>block_count</code></a> no longer requires config option <code>enable_control</code> to get the cemented block count</li>
-<li><a href="../../commands/rpc-protocol/#unchecked"><code>unchecked</code></a> now takes an optional flag <code>json_block</code> to return blocks in JSON-format</li>
-<li><a href="../../commands/rpc-protocol/#version"><code>version</code></a> now includes more fields - network label, identifier (hash of the genesis open block) and build information</li>
-<li><a href="../../commands/rpc-protocol/#peers"><code>peers</code></a> and <a href="../../commands/rpc-protocol/#node_id"><code>node_id</code></a> now return node IDs with a <code>node_</code> prefix</li>
-<li><a href="../../commands/rpc-protocol/#work_generate">work_generate</a> and <a href="../../commands/rpc-protocol/#work_validate">work_validate</a> can now take a multiplier (against base difficulty) to set a different difficulty threshold</li>
+<li><strong>BEHAVIOR CHANGE</strong> <a href="{{ base_url }}/commands/rpc-protocol/#process"><code>process</code></a> now takes an optional flag <code>watch_work</code> (default <code>true</code>). Unless set to <code>false</code>, processed blocks can be subject to PoW rework</li>
+<li><strong>BEHAVIOR CHANGE</strong> <a href="{{ base_url }}/commands/rpc-protocol/#bootstrap"><code>bootstrap</code></a>, <a href="{{ base_url }}/commands/rpc-protocol/#bootstrap_any"><code>bootstrap_any</code></a> and <a href="{{ base_url }}/commands/rpc-protocol/#bootstrap_lazy"><code>boostrap_lazy</code></a> will now throw errors when certain launch flags are used to disabled bootstrap methods - see each RPC page for details</li>
+<li><strong>BEHAVIOR CHANGE</strong> RPCs requiring work generation will now throw errors when work generation is disabled (no <a href="{{ base_url }}/integration-guides/work-generation/#nodework_peers">work peers</a>, no <a href="{{ base_url }}/integration-guides/work-generation/#nodeopenclenable">OpenCL</a> and no work threads configured)</li>
+<li><a href="{{ base_url }}/commands/rpc-protocol/#block_count"><code>block_count</code></a> no longer requires config option <code>enable_control</code> to get the cemented block count</li>
+<li><a href="{{ base_url }}/commands/rpc-protocol/#unchecked"><code>unchecked</code></a> now takes an optional flag <code>json_block</code> to return blocks in JSON-format</li>
+<li><a href="{{ base_url }}/commands/rpc-protocol/#version"><code>version</code></a> now includes more fields - network label, identifier (hash of the genesis open block) and build information</li>
+<li><a href="{{ base_url }}/commands/rpc-protocol/#peers"><code>peers</code></a> and <a href="{{ base_url }}/commands/rpc-protocol/#node_id"><code>node_id</code></a> now return node IDs with a <code>node_</code> prefix</li>
+<li><a href="{{ base_url }}/commands/rpc-protocol/#work_generate">work_generate</a> and <a href="{{ base_url }}/commands/rpc-protocol/#work_validate">work_validate</a> can now take a multiplier (against base difficulty) to set a different difficulty threshold</li>
 </ul>
 <hr />
 <h2 id="cli-updates">CLI Updates<a class="headerlink" href="#cli-updates" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>NEW</strong> <a href="../../commands/command-line-interface/#-generate_config-noderpc"><code>generate_config [node|rpc]</code></a> prints sample configuration files to <em>stdout</em><ul>
+<li><strong>NEW</strong> <a href="{{ base_url }}/commands/command-line-interface/#-generate_config-noderpc"><code>generate_config [node|rpc]</code></a> prints sample configuration files to <em>stdout</em><ul>
 <li><code>use_defaults</code> additional argument to generate uncommented entries (not recommended)</li>
 </ul>
 </li>
-<li><strong>NEW</strong> <a href="../../commands/command-line-interface/#-config-keyvalue"><code>config</code></a> passes configuration arguments, alternative to setting in the config file</li>
+<li><strong>NEW</strong> <a href="{{ base_url }}/commands/command-line-interface/#-config-keyvalue"><code>config</code></a> passes configuration arguments, alternative to setting in the config file</li>
 </ul>
 <hr />
 <h2 id="node-configuration-updates">Node Configuration Updates<a class="headerlink" href="#node-configuration-updates" title="Permanent link">&para;</a></h2>
@@ -2291,7 +2291,7 @@ Improvements to the <a href="../../integration-guides/key-management/#external-m
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Generate .toml config to see options</p>
-<p>As noted in the <a href="#upgrade-notices">Upgrade Notices</a> above, this version will migrate your existing .json files over to .toml files. Only non-default values for these fields will be added to the new .toml file. If you wish to adjust other options, use the <a href="../../running-a-node/configuration/#configuration-file-locations">config generation commands</a> to see all available options.</p>
+<p>As noted in the <a href="#upgrade-notices">Upgrade Notices</a> above, this version will migrate your existing .json files over to .toml files. Only non-default values for these fields will be added to the new .toml file. If you wish to adjust other options, use the <a href="{{ base_url }}/running-a-node/configuration/#configuration-file-locations">config generation commands</a> to see all available options.</p>
 </div>
 <p>The following options are notable node configuration updates. Additional configuration changes have been included in this release and can be found when generating the config files.</p>
 <ul>
@@ -2302,13 +2302,13 @@ Improvements to the <a href="../../integration-guides/key-management/#external-m
 <hr />
 <h2 id="developerdebug-options">Developer/Debug Options<a class="headerlink" href="#developerdebug-options" title="Permanent link">&para;</a></h2>
 <ul>
-<li>New RPC <a href="../../commands/rpc-protocol/#epoch_upgrade"><code>epoch_upgrade</code></a> allowing easier epoch distribution (<strong>Note</strong> - this epoch requires a special private key to be used, see the <a href="../../releases/network-upgrades/#epoch-blocks">Network Upgrades</a> page for information)</li>
-<li>RPC <a href="../../commands/rpc-protocol/#bootstrap"><code>bootstrap</code></a> has a new optional "bypass_frontier_confirmation"</li>
-<li>RPC <a href="../../commands/rpc-protocol/#bootstrap_status"><code>bootstrap_status</code></a> now displays more data about the current bootstrap attempt</li>
-<li>New CLI <a href="../../commands/command-line-interface/#-debug_stacktrace"><code>debug_stacktrace</code></a> displays an example stacktrace, simulating an unexpected program crash</li>
-<li>New CLI <a href="../../commands/command-line-interface/#-debug_account_versions"><code>debug_account_versions</code></a> displays the total number of accounts separated by version and opened/unopened</li>
-<li>CLI <a href="../../commands/command-line-interface/#-debug_validate_blocks"><code>debug_validate_blocks</code></a> updated to cover more cases</li>
-<li>CLI <code>debug_profile_verify</code> renamed to <a href="../../commands/command-line-interface/#-debug_profile_validate"><code>debug_profile_validate</code></a> and now provides simplified work validation profiling</li>
+<li>New RPC <a href="{{ base_url }}/commands/rpc-protocol/#epoch_upgrade"><code>epoch_upgrade</code></a> allowing easier epoch distribution (<strong>Note</strong> - this epoch requires a special private key to be used, see the <a href="{{ base_url }}/releases/network-upgrades/#epoch-blocks">Network Upgrades</a> page for information)</li>
+<li>RPC <a href="{{ base_url }}/commands/rpc-protocol/#bootstrap"><code>bootstrap</code></a> has a new optional "bypass_frontier_confirmation"</li>
+<li>RPC <a href="{{ base_url }}/commands/rpc-protocol/#bootstrap_status"><code>bootstrap_status</code></a> now displays more data about the current bootstrap attempt</li>
+<li>New CLI <a href="{{ base_url }}/commands/command-line-interface/#-debug_stacktrace"><code>debug_stacktrace</code></a> displays an example stacktrace, simulating an unexpected program crash</li>
+<li>New CLI <a href="{{ base_url }}/commands/command-line-interface/#-debug_account_versions"><code>debug_account_versions</code></a> displays the total number of accounts separated by version and opened/unopened</li>
+<li>CLI <a href="{{ base_url }}/commands/command-line-interface/#-debug_validate_blocks"><code>debug_validate_blocks</code></a> updated to cover more cases</li>
+<li>CLI <code>debug_profile_verify</code> renamed to <a href="{{ base_url }}/commands/command-line-interface/#-debug_profile_validate"><code>debug_profile_validate</code></a> and now provides simplified work validation profiling</li>
 <li>New CMake build options:</li>
 <li><code>NANO_ROCKSDB</code> enables use of the RocksDB database backend, experimental</li>
 <li><code>NANO_WARN_TO_ERR</code> turns compiler warnings into errors on Linux/Mac</li>
