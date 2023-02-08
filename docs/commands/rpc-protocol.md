@@ -15,7 +15,7 @@ The RPC protocol accepts JSON HTTP POST requests. The following are RPC commands
 ## Node RPCs
 
 !!! warning "Unconfirmed blocks returned"
-    Unless otherwise specified, RPC calls can return unconfirmed blocks and related details. In the most important cases where balances or similar details may include unconfirmed amounts, additional warnings have been included. Refer to [Block confirmation procedures](/integration-guides/key-management/#block-confirmation-procedures) for details.
+    Unless otherwise specified, RPC calls can return unconfirmed blocks and related details. In the most important cases where balances or similar details may include unconfirmed amounts, additional warnings have been included. Refer to [Block confirmation procedures](../../integration-guides/key-management/#block-confirmation-procedures) for details.
 
 ---
 
@@ -137,7 +137,7 @@ If the `count` limit results in stopping before the end of the account chain, th
 Returns frontier, open block, change representative block, balance, last modified timestamp from local database & block count for **account**. Only works for accounts that have received their first transaction and have an entry on the ledger, will return "Account not found" otherwise. To open an account, use [receive](#receive).  
 
 --8<-- "unconfirmed-information.md"
-    The balance is obtained from the frontier, which may be unconfirmed. As long as you follow the [guidelines](/integration-guides/key-management/#transaction-order-and-correctness), you can rely on the **balance** for the purposes of creating transactions for this account. If the frontier is never confirmed, then the blocks that proceed it will also never be confirmed.
+    The balance is obtained from the frontier, which may be unconfirmed. As long as you follow the [guidelines](../../integration-guides/key-management/#transaction-order-and-correctness), you can rely on the **balance** for the purposes of creating transactions for this account. If the frontier is never confirmed, then the blocks that proceed it will also never be confirmed.
 
     If you need only details for confirmed blocks, use the `include_confirmed` option below and referenced the `confirmed_*` fields added in to the response.
 
@@ -955,7 +955,7 @@ Default "false". If "true", an additional "blocks_not_found" is provided in the 
 ---
 
 ### bootstrap  
-Initialize bootstrap to specific **IP address** and **port**. Not compatible with launch flag [--disable_legacy_bootstrap](/commands/command-line-interface/#-disable_legacy_bootstrap)   
+Initialize bootstrap to specific **IP address** and **port**. Not compatible with launch flag [--disable_legacy_bootstrap](../../commands/command-line-interface/#-disable_legacy_bootstrap)   
 
 **Request:**
 ```json
@@ -975,7 +975,7 @@ Initialize bootstrap to specific **IP address** and **port**. Not compatible wit
 ---
 
 ### bootstrap_any  
-Initialize multi-connection bootstrap to random peers. Not compatible with launch flag [--disable_legacy_bootstrap](/commands/command-line-interface/#-disable_legacy_bootstrap)   
+Initialize multi-connection bootstrap to random peers. Not compatible with launch flag [--disable_legacy_bootstrap](../../commands/command-line-interface/#-disable_legacy_bootstrap)   
 
 **Request:**
 ```json
@@ -1005,7 +1005,7 @@ String, empty by default. Public address for targeting a specific account on boo
 
 ### bootstrap_lazy  
    
-Initialize lazy bootstrap with given block **hash**. Not compatible with launch flag [--disable_lazy_bootstrap](/commands/command-line-interface/#-disable_lazy_bootstrap). Response includes whether new election was `started` and whether a new lazy `key_inserted` was successful.
+Initialize lazy bootstrap with given block **hash**. Not compatible with launch flag [--disable_lazy_bootstrap](../../commands/command-line-interface/#-disable_lazy_bootstrap). Response includes whether new election was `started` and whether a new lazy `key_inserted` was successful.
 
 **Request:**
 ```json
@@ -1221,7 +1221,7 @@ Returns the hash of the block which is having the confirmation height set for, e
 duration, time, confirmation_stats:    
 Returns hash, tally weight, election duration (in milliseconds), election confirmation timestamp for recent elections winners; the confirmation request count; the number of blocks and voters. Also returns stats: count of elections in history (limited to 2048) & average duration time.
 
-`confirmation_history_size` can be managed in the configuration file to adjust the number of elections to be kept in history and returned by this call. Due to timings inside the node, the default 2048 limit will return all confirmations up to traffic levels of approximately 56 confirmations/sec. To properly track levels above this, increase this value or use the confirmation subscription through the [websocket](/integration-guides/websockets) instead.
+`confirmation_history_size` can be managed in the configuration file to adjust the number of elections to be kept in history and returned by this call. Due to timings inside the node, the default 2048 limit will return all confirmations up to traffic levels of approximately 56 confirmations/sec. To properly track levels above this, increase this value or use the confirmation subscription through the [websocket](../../integration-guides/websockets) instead.
 
 **Request:**
 ```json
@@ -2332,7 +2332,7 @@ _Requires configuration changes. Set "rpc.enable_sign_hash" to "true"_
 
 ### stats
   
-For configuration and other details, please see [Statistics from RPC](/running-a-node/troubleshooting/#statistics-from-rpc)
+For configuration and other details, please see [Statistics from RPC](../../running-a-node/troubleshooting/#statistics-from-rpc)
 
 **Request counters:**
 ```json
@@ -2553,7 +2553,7 @@ Boolean, false by default. Returns a consecutive list of block hashes in the acc
 ### telemetry
   
 Return metrics from other nodes on the network. By default, returns a summarized view of the whole network. See below for details on obtaining local telemetry data.  
-[Networking - node telemetry](/protocol-design/networking#node-telemetry) contains more detailed information on the protocol implementation of telemetry.  
+[Networking - node telemetry](../../protocol-design/networking#node-telemetry) contains more detailed information on the protocol implementation of telemetry.  
 **Request:**
 ```json
 {
@@ -2597,7 +2597,7 @@ This contains a summarized view of the network with 10% of lower/upper bound res
 | **genesis_block**     | mode (most common) of genesis block hashes |
 | **maker**             | mode (most common), meant for third party node software implementing the protocol so that it can be distinguished, `0` = Nano Foundation, `1` = Nano Foundation pruned node |
 | **timestamp**         | number of milliseconds since the UTC epoch at the point where the response is sent from the peer |
-| **active_difficulty** | _V22.0+_ returns minimum network difficulty due to deprecated active difficulty measurements<br><br> _up to V21.3_ returns average of the current network difficulty, see [active_difficulty](/commands/rpc-protocol/#active_difficulty) "network_current" |
+| **active_difficulty** | _V22.0+_ returns minimum network difficulty due to deprecated active difficulty measurements<br><br> _up to V21.3_ returns average of the current network difficulty, see [active_difficulty](../../commands/rpc-protocol/#active_difficulty) "network_current" |
 
 This only returns values which have been cached by the ongoing polling of peer metric data. Each response is cached for 60 seconds on the main network and 15 seconds on beta; a few additional seconds are added on for response delays.
 
@@ -3052,8 +3052,8 @@ Check whether **work** is valid for block. Provides two values: **valid_all** is
 
     Use the new response fields **"valid_all"** and **"valid_receive"** taking into account the subtype of the block using this work value:
 
-    - **valid_all** validates at the current network difficulty. As soon as the node processes the first [epoch_2 block](/releases/network-upgrades#increased-work-difficulty), this difficulty is increased.
-    - **valid_receive** is completely accurate **only once the [epoch_2 upgrade](/releases/network-upgrades#increased-work-difficulty) is finished.** Until the upgrade is finished, it is only accurate if the account where this work will be used is already upgraded. The upgrade status of an account can be obtained from [account_info](#account_info). The account is upgraded if "account_version" is `"2"`.
+    - **valid_all** validates at the current network difficulty. As soon as the node processes the first [epoch_2 block](../../releases/network-upgrades#increased-work-difficulty), this difficulty is increased.
+    - **valid_receive** is completely accurate **only once the [epoch_2 upgrade](../../releases/network-upgrades#increased-work-difficulty) is finished.** Until the upgrade is finished, it is only accurate if the account where this work will be used is already upgraded. The upgrade status of an account can be obtained from [account_info](#account_info). The account is upgraded if "account_version" is `"2"`.
 
 **Request:**
 ```json
@@ -3123,7 +3123,7 @@ Work version string. Currently "work_1" is the default and only valid option.
 ## Wallet RPCs
 
 !!! warning "For development and testing only"
-    Below are RPC commands that interact with the built-in, QT-based node wallet. This wallet is only recommended for development and testing. For production integrations, setting up custom [External Management](/integration-guides/key-management/#external-management) processes is required.
+    Below are RPC commands that interact with the built-in, QT-based node wallet. This wallet is only recommended for development and testing. For production integrations, setting up custom [External Management](../../integration-guides/key-management/#external-management) processes is required.
 
 ---
 

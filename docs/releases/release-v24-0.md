@@ -66,9 +66,9 @@ There were more updates on switching from the old term `pending` to `receivable`
 ## RPC updates
 
 * **NEW** `populate_backlog` is a RPC command for populating backlog. Populating backlog is a process in the node that scans all accounts, checks for unconfirmed blocks in that account's chain and queues those blocks for confirmation via election scheduler.
-* [`account_balances`](https://docs.nano.org/commands/rpc-protocol/#accounts_balances), [`accounts_frontiers`](https://docs.nano.org/commands/rpc-protocol/#accounts_frontiers), and [`accounts_representatives`](https://docs.nano.org/commands/rpc-protocol/#accounts_representatives) RPCs now return per account results making possible to them to retrieve partial data in case there is any error in one of the accounts.
-* [`blocks_info`](https://docs.nano.org/commands/rpc-protocol/#block_info) RPC now has a `receive_hash` option. This field facilitates retrieving the receive block of a specific send block.
-* [`receivable`](https://docs.nano.org/commands/rpc-protocol/#receivable) RPC now as an `offset` parameter that enables retrieving receivable blocks in chunks.
+* [`account_balances`](../commands/rpc-protocol.md#accounts_balances), [`accounts_frontiers`](../commands/rpc-protocol.md#accounts_frontiers), and [`accounts_representatives`](../commands/rpc-protocol.md#accounts_representatives) RPCs now return per account results making possible to them to retrieve partial data in case there is any error in one of the accounts.
+* [`blocks_info`](../commands/rpc-protocol.md#block_info) RPC now has a `receive_hash` option. This field facilitates retrieving the receive block of a specific send block.
+* [`receivable`](../commands/rpc-protocol.md#receivable) RPC now as an `offset` parameter that enables retrieving receivable blocks in chunks.
 
 ### Pending/Receivable term RPC updates
 

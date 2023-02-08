@@ -35,10 +35,10 @@ Methods and mechanisms built into the current node software that aren't required
 | [Database](database.md) | Storage and cementing mechanisms, backend database options | 
 | [Voting](voting.md) | Vote handling and voting weight management | 
 | [Work](work.md) | Kernel designs, prioritization processes and rework mechanisms | 
-| [Contributing](/node-implementation/contributing/) | How to contribute to the Nano protocol directly | 
+| [Contributing](../../node-implementation/contributing/) | How to contribute to the Nano protocol directly | 
 
 ---
 
 Existing whitepaper sections related to this page:
 
-* [Implementation](/whitepaper/english/#implementation)
+* [Implementation](../../whitepaper/english/#implementation)

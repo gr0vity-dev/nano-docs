@@ -74,7 +74,7 @@ Once you have enough weight, after a few minutes you can search for your represe
 
 ## Step 5: Monitoring and more
 
-Congratulations on getting your representative setup! If you are able to do a good job maintaining the node and keeping it performing well, you may have a chance at becoming a [Principal Representative](overview.md#principal-representative-nodes). To reach this higher level of participation in consensus, you must get at least 0.1% of [online voting weight](/glossary#online-voting-weight) delegated to your node. After that any votes you send for transactions will be rebroadcast by other nodes to help with consensus even more.
+Congratulations on getting your representative setup! If you are able to do a good job maintaining the node and keeping it performing well, you may have a chance at becoming a [Principal Representative](overview.md#principal-representative-nodes). To reach this higher level of participation in consensus, you must get at least 0.1% of [online voting weight](../../glossary#online-voting-weight) delegated to your node. After that any votes you send for transactions will be rebroadcast by other nodes to help with consensus even more.
 
 Once you are comfortable with your node setup and want to connect it to the broader Nano ecosystem, there are a few recommended options:
 

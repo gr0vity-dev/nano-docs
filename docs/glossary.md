@@ -40,7 +40,7 @@ During initial sync, the nano\_node requests old transactions to independently v
 When a 'burn' takes place, funds are sent to a specifc address that no one can access. Because no one can ever access funds sent to a burn address, it reduces the [circulating supply](#circulating-supply).
 
 #### circulating supply
-133,248,297.920938463463374607431768211455 Nano. This is the supply that resulted after [burns](#burn) were made from the [genesis](#genesis) account, landing account and faucet account, following original distribution. Actual circulating supply is lower due to lost keys and sends to burn accounts. The original supply minus any amounts sent to the burn account can be found using the [available_supply](/commands/rpc-protocol/#available_supply) RPC.
+133,248,297.920938463463374607431768211455 Nano. This is the supply that resulted after [burns](#burn) were made from the [genesis](#genesis) account, landing account and faucet account, following original distribution. Actual circulating supply is lower due to lost keys and sends to burn accounts. The original supply minus any amounts sent to the burn account can be found using the [available_supply](../commands/rpc-protocol/#available_supply) RPC.
 
 #### Cementing
 When a specific node marks a [confirmed](#confirmation) transaction as locally irreversible by setting the [account's](#account) [confirmation height](#confirmation-height) (in the node database) to the now higher [block height](#block-height) of the confirmed transaction. Cementing is a node-level operation.
@@ -102,7 +102,7 @@ A Proof-of-Work is a piece of data which satisfies certain requirements and is d
 A Nano account with >= 0.1% of the [online voting weight](#online-voting-weight) delegated to it. When configured on a node which is voting, the votes it produces will be rebroadcasted by other nodes to who receive them, helping the network reach consensus more quickly.
 
 #### protocol version
-The version used to identify the set of protocol rules nodes are required to follow in order to properly communicate with peers. Nodes running older protocol versions are periodically de-peered on the network to keep communication efficient - see [Active Releases](/releases/node-releases/#active-releases) and [Inactive Releases](/releases/node-releases/#inactive-releases) for the latest versions allowed to peer with one another.
+The version used to identify the set of protocol rules nodes are required to follow in order to properly communicate with peers. Nodes running older protocol versions are periodically de-peered on the network to keep communication efficient - see [Active Releases](../releases/node-releases/#active-releases) and [Inactive Releases](../releases/node-releases/#inactive-releases) for the latest versions allowed to peer with one another.
 
 #### qualified root
 The concatenation of the root and previous attributes of a block. For the first block on an account, this would be is the account public key following by 32 zero bytes. For the second or higher block on an account, this would be the previous field repeated twice (root + previous, where root == previous).
@@ -144,7 +144,7 @@ Each node configured with a [Representative](#representative) votes on every blo
 The amount of weight delegated to a [Representative](#representative).
 
 #### wallet
-A wallet is an organizational object in a nano\_node that holds a single seed from which multiple accounts are deterministically derived via a 32-bit unsigned integer index starting at 0. Private keys are derived from the seed and index as follows: (`||` means concatenation; `blake2b` is a [highly optimized cryptographic hash function](/protocol-design/signing-hashing-and-key-derivation/#hashing-algorithm-blake2))
+A wallet is an organizational object in a nano\_node that holds a single seed from which multiple accounts are deterministically derived via a 32-bit unsigned integer index starting at 0. Private keys are derived from the seed and index as follows: (`||` means concatenation; `blake2b` is a [highly optimized cryptographic hash function](../protocol-design/signing-hashing-and-key-derivation/#hashing-algorithm-blake2))
 
 $$
 k_{private} = blake2b(\text{seed} || \text{index})

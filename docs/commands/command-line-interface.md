@@ -57,7 +57,7 @@ Either specify a single `--root` to clear or `--all` to clear all final votes (n
 Write configuration to stdout, populated with commented-out defaults suitable for this system. Pass the configuration type, `node` or `rpc`.
 If `--use_defaults` is passed, the generated config will not have values commented-out. This is not recommended except for testing and debugging.
 
-The output can be piped to a file, using the locations defined in [configuration](/running-a-node/configuration#configuration-file-locations).
+The output can be piped to a file, using the locations defined in [configuration](../../running-a-node/configuration#configuration-file-locations).
 
 ### --help
 Print out options
@@ -284,7 +284,7 @@ List representatives and weights
 
 ### --debug_generate_crash_report
 
-After a node crash on linux, this command reads the dump files generated from that crash and produces a "nano_node_crash_report.txt" file. Requires `addr2line` to be installed on the system. See the [troubleshooting guide](/running-a-node/troubleshooting/#what-to-do-if-the-node-crashes-linux) for more information.
+After a node crash on linux, this command reads the dump files generated from that crash and produces a "nano_node_crash_report.txt" file. Requires `addr2line` to be installed on the system. See the [troubleshooting guide](../../running-a-node/troubleshooting/#what-to-do-if-the-node-crashes-linux) for more information.
 
 ### --debug_opencl
 Profile OpenCL work generation for (optional) `--device=<device>` on `--device=<platform>` using `--threads=<threads>` count. To retrieve available platforms & devices run [--diagnostics](#-diagnostics). 

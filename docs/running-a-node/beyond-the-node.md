@@ -5,7 +5,7 @@ description: Explore other tools, services, education and inspiration available 
 
 ## Building tools and services
 
-Congrats! Now that you understand more about how Nano works and setup your own node to participate on the network, the next step is building tools and services on the node. Our [Integration Guides](/integration-guides/the-basics/) are a great starting point to help you understand how you can leverage your node to create amazing applications that utilize the unique value transfer features of Nano.
+Congrats! Now that you understand more about how Nano works and setup your own node to participate on the network, the next step is building tools and services on the node. Our [Integration Guides](../../integration-guides/the-basics/) are a great starting point to help you understand how you can leverage your node to create amazing applications that utilize the unique value transfer features of Nano.
 
 ## Need some inspiration?
 
@@ -15,4 +15,4 @@ For even more details about the many projects that help make our ecosystem robus
 
 ## Keep learning
 
-If you're ready to keep building with Nano, head over to [The Basics](/integration-guides/the-basics/) of our Integration Guides.
+If you're ready to keep building with Nano, head over to [The Basics](../../integration-guides/the-basics/) of our Integration Guides.

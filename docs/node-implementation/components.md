@@ -37,4 +37,4 @@ description: A breakdown of the various components making up the nano node imple
 
 Existing whitepaper sections related to this page:
 
-* [Implementation](/whitepaper/english/#implementation)
+* [Implementation](../../whitepaper/english/#implementation)

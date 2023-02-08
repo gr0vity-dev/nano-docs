@@ -80,7 +80,7 @@ The official binaries, builds and Docker containers for the Nano node published 
 - Manual options for block creation, block processing and initiation of bootstrapping
 - Various advanced options for viewing the ledger, peers, blocks, accounts and statistics
 
-This wallet requires running the node, so after getting your [node setup](../running-a-node/node-setup.md) you can follow the [wallet setup guide](/running-a-node/wallet-setup.md) to get started. If building the node yourself, see the Qt wallet notes on the [build options guide](../integration-guides/build-options.md) for how to build the `nano_wallet` binary in addition to the node.
+This wallet requires running the node, so after getting your [node setup](../running-a-node/node-setup.md) you can follow the [wallet setup guide](../running-a-node/wallet-setup.md) to get started. If building the node yourself, see the Qt wallet notes on the [build options guide](../integration-guides/build-options.md) for how to build the `nano_wallet` binary in addition to the node.
 
 ### Pippin
 

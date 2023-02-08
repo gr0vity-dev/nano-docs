@@ -23,7 +23,7 @@ All new transactions on the Nano Protocol are communicated via blocks. The accou
 | signature      | 128 hex-char string | 64 bytes   | ED25519+Blake2b 512-bit signature |
 | work           | 16 hex-char string  | 8 bytes    | [Proof of Work](../glossary.md#proof-of-work-pow) Nonce |
 
-Depending on the action each transaction intends to perform, the `"link"` field will have a different value for [block_create](/commands/rpc-protocol#block_create) RPC command:
+Depending on the action each transaction intends to perform, the `"link"` field will have a different value for [block_create](../../commands/rpc-protocol#block_create) RPC command:
 
 | Action  | RPC Format         | Description                                |
 |         |                    |                                            |
@@ -93,14 +93,14 @@ Epoch blocks are unable to change any balances or representatives on accounts. I
 
 Existing whitepaper sections related to this page:
 
-* [Nano Components](/whitepaper/english/#raiblocks-components)
-* [System Overview](/whitepaper/english/#system-overview)
+* [Nano Components](../../whitepaper/english/#raiblocks-components)
+* [System Overview](../../whitepaper/english/#system-overview)
 
 Existing content:
 
 * [Athena and Epoch v2 Blocks Explained](https://medium.com/nanocurrency/athena-and-epoch-v2-blocks-explained-de0a3dd37c39)
-* [Blocks specifications](/integration-guides/the-basics/#blocks-specifications)
-* [Creating transactions](/integration-guides/key-management/#creating-transactions)
+* [Blocks specifications](../../integration-guides/the-basics/#blocks-specifications)
+* [Creating transactions](../../integration-guides/key-management/#creating-transactions)
 * [Nano 101: Epoch Blocks](https://medium.com/nanocurrency/an-epoch-blocks-explainer-aa22905b28db)
 * [Nano How 2: Blocks and Lattices](https://medium.com/nano-education/nano-how-2-blocks-and-lattices-c0ccd417bd5a)
 * [Network Upgrades details on epoch blocks](../releases/network-upgrades.md#epoch-blocks)

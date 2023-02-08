@@ -13,7 +13,7 @@ When security of funds is critical, it is a best practice to split your balance 
 !!! warning "Important"
 	A cold wallet manages private keys that have **never** been on a network-enabled computer.
 
-This guide extends the concepts covered in [External Private Key Management](/integration-guides/key-management/).  It is advised that you read that section before continuing.
+This guide extends the concepts covered in [External Private Key Management](../../integration-guides/key-management/).  It is advised that you read that section before continuing.
 
 !!! note
 	Operations done on the hot, online, insecure computer will be prefaced with `(HOT)`. Operations done on the cold, offline, secure computer will be prefaced with `(COLD)`.
@@ -60,7 +60,7 @@ The process for external private key management in a cold wallet is very similar
 
 #### (HOT) Account Information
 
-Get account information by the [`account_info`](/commands/rpc-protocol#account_info) RPC Command:
+Get account information by the [`account_info`](../../commands/rpc-protocol#account_info) RPC Command:
 
 ##### Request Example
 
@@ -90,7 +90,7 @@ curl -d '{
 
 #### (HOT) Balance Validation (Part 1)
 
-We should always assume the `(HOT)` computer has been compromised, so cannot trust the balance returned by [`account_info`](/commands/rpc-protocol#account_info). We must obtain the headblock's transaction data and independently confirm the block's hash on our `(COLD)` offline computer. On the `(HOT)` online computer, this information can be obtained by the [`block_info`](/commands/rpc-protocol#block_info) RPC Command.
+We should always assume the `(HOT)` computer has been compromised, so cannot trust the balance returned by [`account_info`](../../commands/rpc-protocol#account_info). We must obtain the headblock's transaction data and independently confirm the block's hash on our `(COLD)` offline computer. On the `(HOT)` online computer, this information can be obtained by the [`block_info`](../../commands/rpc-protocol#block_info) RPC Command.
 
 ##### Request Format
 
@@ -145,7 +145,7 @@ Transfer the response over to the `(COLD)` computer.
 
 #### (COLD) Balance Validation (Part 2)
 
-On the `(COLD)` computer, we need to verify the block hash using the [`block_hash`](/commands/rpc-protocol#block_hash) RPC Command.. This allows us to create a safe transaction referencing the reported head block's balance.
+On the `(COLD)` computer, we need to verify the block hash using the [`block_hash`](../../commands/rpc-protocol#block_hash) RPC Command.. This allows us to create a safe transaction referencing the reported head block's balance.
 
 ##### Request Format
 
@@ -193,9 +193,9 @@ Using the responded hash on the `(COLD)` computer guarentees that the transactio
 
 	By independently computing the headblock's hash on the `(COLD)` computer, the generated transaction would be rejected by the network since the `previous` field references a non-existent block which is certainly not the headblock of your account.
 
-Use the responded hash for the `previous` field in your new transaction. When computing final account balance, compute it relative to the `balance` field of the headblock on the `(COLD)` computer. Complete the rest of the [block creation as described in section External Private Key Management](/integration-guides/key-management/#send-transaction).
+Use the responded hash for the `previous` field in your new transaction. When computing final account balance, compute it relative to the `balance` field of the headblock on the `(COLD)` computer. Complete the rest of the [block creation as described in section External Private Key Management](../../integration-guides/key-management/#send-transaction).
 
-Once the block is created and signed on the `(COLD)` computer, transfer the contents over to the `(HOT)` computer. From the `(HOT)` computer, run the [`process`](/commands/rpc-protocol#process) RPC command to broadcast the signed transaction to the network.
+Once the block is created and signed on the `(COLD)` computer, transfer the contents over to the `(HOT)` computer. From the `(HOT)` computer, run the [`process`](../../commands/rpc-protocol#process) RPC command to broadcast the signed transaction to the network.
 
 ---
 
@@ -210,7 +210,7 @@ Send JSON POST requests with every confirmed block to callback server configured
 
 **Configuration**
 
-For details on configuring the HTTP callback within a node, see the [HTTP callback section of Running a Node Configuration](/running-a-node/configuration#http-callback).
+For details on configuring the HTTP callback within a node, see the [HTTP callback section of Running a Node Configuration](../../running-a-node/configuration#http-callback).
 
 **Example Callback**
 
@@ -287,7 +287,7 @@ There are 3 different ways to enable RPC for the node:
 * `node.ipc.tcp.enable` = **true**
 * `node.ipc.tcp.port` == `process.ipc_port` of `config-rpc.toml`
 
-The choice depends on the setup and security that you want. The easiest way is to use RPC *in_process* according to [configuration](/running-a-node/configuration)
+The choice depends on the setup and security that you want. The easiest way is to use RPC *in_process* according to [configuration](../../running-a-node/configuration)
 
 **Launch nano_node in test mode**   
 
@@ -342,7 +342,7 @@ curl -d '{
     
     
 !!! tip
-    To manage node, use [RPC commands](/commands/rpc-protocol) or [CLI](/commands/command-line-interface)
+    To manage node, use [RPC commands](../../commands/rpc-protocol) or [CLI](../../commands/command-line-interface)
 
 ### Known issues  
 

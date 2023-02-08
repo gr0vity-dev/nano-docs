@@ -23,7 +23,7 @@ All executables have `nano_` prefix and projects have a `main` function inside `
 
 **nano_node** – The standard way to start a node. There are 2 source files in here, `entry.cpp` and `daemon.cpp`. `nano_daemon::daemon::run()` is always called so is a good place to put a breakpoint if there are any issues during node operation (especially errors when launching initially).
 
-**nano_rpc** – This executable does not need to be run explicitly unless out of process RPC is selected. https://docs.nano.org/integration-guides/advanced/?h=+nano_rpc#running-nano-as-a-service Because this project is quite small it is all done inside the `entry.cpp` file and is probably an easier starting point template should anything else need to be moved out of process in the future.
+**nano_rpc** – This executable does not need to be run explicitly unless [out of process RPC](../../integration-guides/advanced/#running-nano-as-a-service) is selected. Because this project is quite small it is all done inside the `entry.cpp` file and is probably an easier starting point template should anything else need to be moved out of process in the future.
 
 **nano_wallet** – This essentially does the same as `nano_node` but doesn’t support all CLI commands and has a graphical user interface for the wallet.
 
@@ -235,7 +235,7 @@ Any functionality which is shared between test projects and may also use gtest l
 The`nano/lib` library was originally intended to be used by other programs wanting some of the nano functionality, but those specific external C functions were removed and it has now become the place to put all commonly used code. As such anything which doesn’t depend on the node should go here, and the `secure` library is now mostly for ledger specific things.
 
 ### git submodules
-We have a variety of submodules https://docs.nano.org/node-implementation/contributing/?h=+submodule#about-the-code-base third party dependencies are to be kept as minimal as possible in order to keep build times lean, but if there is a suitable one it can be added a submodule.
+We have a variety of submodules ../../node-implementation/contributing/?h=+submodule#about-the-code-base third party dependencies are to be kept as minimal as possible in order to keep build times lean, but if there is a suitable one it can be added a submodule.
 
 ---
 

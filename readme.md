@@ -109,7 +109,7 @@ Usage of Draw.io is encouraged for generating diagrams:
 * Diagrams can be edited using the Draw.io and similar applications:
 	* Web: https://nanocurrency.github.io/drawio/src/main/webapp/index.html or https://app.diagrams.net
 	* Desktop: https://github.com/jgraph/drawio-desktop/releases/latest 
-* Embedding diagrams uses markdown format: `![account-chains](/diagrams/account-chains.svg)`
+* Embedding diagrams uses markdown format: `![account-chains](../../diagrams/account-chains.svg)`
 
 There is also support for Mermaid Sequence Diagrams, and documentation can be found here: https://mermaidjs.github.io/#/sequenceDiagram, however given the desire to have consistency in the diagrams and the limitations of Mermaid, generating Draw.io type diagrams is preferred.
 
