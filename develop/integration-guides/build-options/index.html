@@ -2326,8 +2326,8 @@
 <div class="admonition warning">
 <p class="admonition-title">Only Official Builds Supported</p>
 <ul>
-<li>The fastest and most recommended method of installation is through <a href="{{ base_url }}/running-a-node/node-setup">Docker management</a></li>
-<li>Only <a href="{{ base_url }}/integration-guides/build-options#official-release-builds">official release builds</a> are recommended and supported for use on the main network</li>
+<li>The fastest and most recommended method of installation is through <a href="../../running-a-node/node-setup">Docker management</a></li>
+<li>Only <a href="../../integration-guides/build-options#official-release-builds">official release builds</a> are recommended and supported for use on the main network</li>
 <li>Builds created from git should be done using the available release tags (<code>V21.2</code> etc.)</li>
 </ul>
 </div>
@@ -2372,7 +2372,7 @@
 </tr>
 <tr>
 <td>Docker</td>
-<td><code>docker pull nanocurrency/nano:V24.0</code><br />See <a href="{{ base_url }}/running-a-node/node-setup/#pulling-the-docker-image">Pulling the Docker Image</a> for more details.</td>
+<td><code>docker pull nanocurrency/nano:V24.0</code><br />See <a href="../../running-a-node/node-setup/#pulling-the-docker-image">Pulling the Docker Image</a> for more details.</td>
 <td></td>
 </tr>
 <tr>
@@ -2434,7 +2434,7 @@
 <ul>
 <li>Node wallet files (<code>wallets.ldb</code>, <code>wallets.ldb-lock</code>)</li>
 <li><a href="../../running-a-node/configuration/#configuration-file-locations">Configuration files</a></li>
-<li><a href="{{ base_url }}/running-a-node/troubleshooting/#log-files">Log files</a></li>
+<li><a href="../../running-a-node/troubleshooting/#log-files">Log files</a></li>
 <li>Ledger files (<code>data.ldb</code> and <code>data.ldb-lock</code> for default LMDB, or <code>rocksdb</code> directory with files for optional <a href="../../running-a-node/ledger-management/#rocksdb-ledger-backend">RocksDB backend</a>)</li>
 <li>Directory for wallet backups (<code>backup</code>)</li>
 </ul>
@@ -2558,9 +2558,9 @@
 <p class="admonition-title">Unsupported configuration</p>
 <ul>
 <li>This documentation is intended only for developers of the Nano Node software, and will not result in a supported configuration.  End-users are advised to use releases.</li>
-<li>The fastest and most recommended method of installation is through <a href="{{ base_url }}/running-a-node/node-setup">Docker</a>.</li>
-<li><a href="{{ base_url }}/integration-guides/advanced/#running-nano-as-a-service">Running node as a service</a>.</li>
-<li>To manage a node, use <a href="{{ base_url }}/commands/rpc-protocol/">RPC commands</a> or the <a href="{{ base_url }}/commands/command-line-interface">CLI</a>.</li>
+<li>The fastest and most recommended method of installation is through <a href="../../running-a-node/node-setup">Docker</a>.</li>
+<li><a href="../../integration-guides/advanced/#running-nano-as-a-service">Running node as a service</a>.</li>
+<li>To manage a node, use <a href="../../commands/rpc-protocol/">RPC commands</a> or the <a href="../../commands/command-line-interface">CLI</a>.</li>
 </ul>
 </div>
 <div class="admonition tip">
@@ -2843,7 +2843,7 @@ Go to <code>Configuration Properties</code> &gt; <code>Debugging</code> and set 
 <li><code>NANO_SECURE_RPC=ON</code> (to build node with TLS)</li>
 <li><code>NANO_WARN_TO_ERR=ON</code> (<em>v20.0+</em> turn compiler warnings into errors on Linux/Mac) </li>
 <li><code>NANO_TIMED_LOCKS=50</code> (<em>v20.0+</em> when the number of milliseconds a mutex is held is equal or greater than this output a stacktrace, 0 disables.)</li>
-<li><code>NANO_STACKTRACE_BACKTRACE=ON</code> (<em>v20.0+</em> use a different configuration of Boost backtrace in stacktraces, attempting to display filenames, function names and line numbers. Needs <code>libbacktrace</code> to be installed. Some <a href="https://www.boost.org/doc/libs/develop/doc/html/stacktrace/configuration_and_build.html#stacktrace.configuration_and_build.f3">workarounds</a> may be necessary depending on system and configuration. Use CLI <a href="{{ base_url }}/commands/command-line-interface#-debug_stacktrace"><code>--debug_stacktrace</code></a> to get an example output.)</li>
+<li><code>NANO_STACKTRACE_BACKTRACE=ON</code> (<em>v20.0+</em> use a different configuration of Boost backtrace in stacktraces, attempting to display filenames, function names and line numbers. Needs <code>libbacktrace</code> to be installed. Some <a href="https://www.boost.org/doc/libs/develop/doc/html/stacktrace/configuration_and_build.html#stacktrace.configuration_and_build.f3">workarounds</a> may be necessary depending on system and configuration. Use CLI <a href="../../commands/command-line-interface#-debug_stacktrace"><code>--debug_stacktrace</code></a> to get an example output.)</li>
 <li><code>CI_BUILD=TRUE</code> (<em>v20.0+</em> if enabled, uses environment variable <code>TRAVIS_TAG</code> (required) to modify the locally reported node version; example <code>TRAVIS_TAG="My Nano Node v20"</code>)</li>
 <li><code>NANO_ASIO_HANDLER_TRACKING=10</code> (Output asio diagnostics for any completion handlers which have taken longer than this in milliseconds. For more information see the description of the PR <a href="https://github.com/nanocurrency/nano-node/pull/2681">#2681</a>)</li>
 <li><code>NANO_FUZZER_TEST=ON</code> (Build the fuzz tests, not available on Windows)</li>
@@ -2898,7 +2898,7 @@ Go to <code>Configuration Properties</code> &gt; <code>Debugging</code> and set 
 <h3 id="environment-variables-to-customize-tests">Environment variables to customize tests<a class="headerlink" href="#environment-variables-to-customize-tests" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>TEST_KEEP_TMPDIRS=1</code> - Setting this to anything will prevent the tests deleting any files it creates, useful for debugging log files. </li>
-<li><code>TEST_USE_ROCKSDB=1</code> - Use the RocksDB ledger backend for the tests instead of LMDB. The tests must be built with <a href="{{ base_url }}/running-a-node/rocksdb-ledger-backend/#rocksdb-ledger-backend">RocksDB</a> support.</li>
+<li><code>TEST_USE_ROCKSDB=1</code> - Use the RocksDB ledger backend for the tests instead of LMDB. The tests must be built with <a href="../../running-a-node/rocksdb-ledger-backend/#rocksdb-ledger-backend">RocksDB</a> support.</li>
 <li><code>TEST_BASE_PORT=26000</code> - The base port used in tests, the range of ports used in this case would be 26000 - 26199. This is useful if wanting to run multiple tests at once without port conflicts, the default base port used is 24000. </li>
 <li><code>NANO_DEFAULT_PEER=peering.nano.org</code> - Setting this adds its variable contents to <code>preconfigured_peers</code> from config-node.toml, &amp; allows manually setting initial peering DNS. Setting it to an unresolvable address will prevent the node from contacting peers (after wiping peer table).</li>
 </ul>

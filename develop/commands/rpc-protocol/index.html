@@ -3827,13 +3827,13 @@
 <h2 id="node-rpcs">Node RPCs<a class="headerlink" href="#node-rpcs" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Unconfirmed blocks returned</p>
-<p>Unless otherwise specified, RPC calls can return unconfirmed blocks and related details. In the most important cases where balances or similar details may include unconfirmed amounts, additional warnings have been included. Refer to <a href="{{ base_url }}/integration-guides/key-management/#block-confirmation-procedures">Block confirmation procedures</a> for details.</p>
+<p>Unless otherwise specified, RPC calls can return unconfirmed blocks and related details. In the most important cases where balances or similar details may include unconfirmed amounts, additional warnings have been included. Refer to <a href="../../integration-guides/key-management/#block-confirmation-procedures">Block confirmation procedures</a> for details.</p>
 </div>
 <hr />
 <h3 id="account_balance">account_balance<a class="headerlink" href="#account_balance" title="Permanent link">&para;</a></h3>
 <p>Returns how many RAW is owned and how many have not yet been received by <strong>account</strong>  </p>
 <div class="admonition info">
-<p>The term <code>pending</code> was deprecated in favor of <a href="{{ base_url }}/glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: <a href="https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates">https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates</a>.</p>
+<p>The term <code>pending</code> was deprecated in favor of <a href="../../glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: ../../releases/release-v24-0/#pendingreceivable-term-rpc-updates.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -3924,7 +3924,7 @@
 <div class="admonition info">
 <p class="admonition-title">Unconfirmed information</p>
 <p>This call returns information that may be based on unconfirmed blocks. These details should not be relied on for any process or integration that requires confirmed blocks.<br />
-The balance is obtained from the frontier, which may be unconfirmed. As long as you follow the <a href="{{ base_url }}/integration-guides/key-management/#transaction-order-and-correctness">guidelines</a>, you can rely on the <strong>balance</strong> for the purposes of creating transactions for this account. If the frontier is never confirmed, then the blocks that proceed it will also never be confirmed.</p>
+The balance is obtained from the frontier, which may be unconfirmed. As long as you follow the <a href="../../integration-guides/key-management/#transaction-order-and-correctness">guidelines</a>, you can rely on the <strong>balance</strong> for the purposes of creating transactions for this account. If the frontier is never confirmed, then the blocks that proceed it will also never be confirmed.</p>
 <p>If you need only details for confirmed blocks, use the <code>include_confirmed</code> option below and referenced the <code>confirmed_*</code> fields added in to the response.</p>
 </div>
 <p><strong>Request:</strong>
@@ -3956,7 +3956,7 @@ Boolean, false by default. Adds new return fields with prefix of <code>confirmed
 <li>If <code>receivable</code> option also <code>true</code>, <code>confirmed_receivable</code> included: balance of all receivable amounts where the matching incoming send blocks have been confirmed on their account</li>
 </ul>
 <div class="admonition info">
-<p>The term <code>pending</code> was deprecated in favor of <a href="{{ base_url }}/glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: <a href="https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates">https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates</a>.</p>
+<p>The term <code>pending</code> was deprecated in favor of <a href="../../glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: ../../releases/release-v24-0/#pendingreceivable-term-rpc-updates.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -4068,7 +4068,7 @@ Booleans, false by default. Additionally returns representative, voting weight, 
 The receivable balances are calculated from potentially unconfirmed blocks. Account balances are obtained from their frontiers. An atomic <a href="#account_info">account_info</a> RPC call is recommended for the purposes of creating transactions.</p>
 </div>
 <div class="admonition info">
-<p>The term <code>pending</code> was deprecated in favor of <a href="{{ base_url }}/glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: <a href="https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates">https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates</a>.</p>
+<p>The term <code>pending</code> was deprecated in favor of <a href="../../glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: ../../releases/release-v24-0/#pendingreceivable-term-rpc-updates.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -4303,7 +4303,7 @@ Boolean, false by default. Returns a list of receivable block hashes with amount
 <p>Default "true". If "true", "cemented" in the response will contain the number of cemented blocks. (In V19.0 default was "false")</p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <hr />
 <h3 id="block_create">block_create<a class="headerlink" href="#block_create" title="Permanent link">&para;</a></h3>
@@ -4311,7 +4311,7 @@ Boolean, false by default. Returns a list of receivable block hashes with amount
 Creates a json representations of new block based on input data &amp; signed with <strong>private key</strong> or <strong>account</strong> in <strong>wallet</strong>. Use for offline signing. Using the optional <code>json_block</code> is recommended .  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request sample for state block:</strong><br />
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -4510,7 +4510,7 @@ Parameters for state block:</p>
 <p>_pending, source: <br />
 Booleans, false by default. Additionally checks if block is pending, returns source account for receive &amp; open blocks (0 for send &amp; change blocks).</p>
 <div class="admonition info">
-<p>The term <code>pending</code> was deprecated in favor of <a href="{{ base_url }}/glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: <a href="https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates">https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates</a>.</p>
+<p>The term <code>pending</code> was deprecated in favor of <a href="../../glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: ../../releases/release-v24-0/#pendingreceivable-term-rpc-updates.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -4598,7 +4598,7 @@ Booleans, false by default. Additionally checks if block is pending, returns sou
 </code></pre></div></p>
 <hr />
 <h3 id="bootstrap">bootstrap<a class="headerlink" href="#bootstrap" title="Permanent link">&para;</a></h3>
-<p>Initialize bootstrap to specific <strong>IP address</strong> and <strong>port</strong>. Not compatible with launch flag <a href="{{ base_url }}/commands/command-line-interface/#-disable_legacy_bootstrap">--disable_legacy_bootstrap</a>   </p>
+<p>Initialize bootstrap to specific <strong>IP address</strong> and <strong>port</strong>. Not compatible with launch flag <a href="../../commands/command-line-interface/#-disable_legacy_bootstrap">--disable_legacy_bootstrap</a>   </p>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bootstrap&quot;</span><span class="p">,</span>
@@ -4613,7 +4613,7 @@ Booleans, false by default. Additionally checks if block is pending, returns sou
 </code></pre></div></p>
 <hr />
 <h3 id="bootstrap_any">bootstrap_any<a class="headerlink" href="#bootstrap_any" title="Permanent link">&para;</a></h3>
-<p>Initialize multi-connection bootstrap to random peers. Not compatible with launch flag <a href="{{ base_url }}/commands/command-line-interface/#-disable_legacy_bootstrap">--disable_legacy_bootstrap</a>   </p>
+<p>Initialize multi-connection bootstrap to random peers. Not compatible with launch flag <a href="../../commands/command-line-interface/#-disable_legacy_bootstrap">--disable_legacy_bootstrap</a>   </p>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bootstrap_any&quot;</span>
@@ -4632,7 +4632,7 @@ Booleans, false by default. Additionally checks if block is pending, returns sou
 <p>String, empty by default. Public address for targeting a specific account on bootstrap attempt</p>
 <hr />
 <h3 id="bootstrap_lazy">bootstrap_lazy<a class="headerlink" href="#bootstrap_lazy" title="Permanent link">&para;</a></h3>
-<p>Initialize lazy bootstrap with given block <strong>hash</strong>. Not compatible with launch flag <a href="{{ base_url }}/commands/command-line-interface/#-disable_lazy_bootstrap">--disable_lazy_bootstrap</a>. Response includes whether new election was <code>started</code> and whether a new lazy <code>key_inserted</code> was successful.</p>
+<p>Initialize lazy bootstrap with given block <strong>hash</strong>. Not compatible with launch flag <a href="../../commands/command-line-interface/#-disable_lazy_bootstrap">--disable_lazy_bootstrap</a>. Response includes whether new election was <code>started</code> and whether a new lazy <code>key_inserted</code> was successful.</p>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bootstrap_lazy&quot;</span><span class="p">,</span>
@@ -4811,7 +4811,7 @@ Find info about specific qualified root with <a href="#confirmation_info">confir
 </div>
 <p>duration, time, confirmation_stats:  <br />
 Returns hash, tally weight, election duration (in milliseconds), election confirmation timestamp for recent elections winners; the confirmation request count; the number of blocks and voters. Also returns stats: count of elections in history (limited to 2048) &amp; average duration time.</p>
-<p><code>confirmation_history_size</code> can be managed in the configuration file to adjust the number of elections to be kept in history and returned by this call. Due to timings inside the node, the default 2048 limit will return all confirmations up to traffic levels of approximately 56 confirmations/sec. To properly track levels above this, increase this value or use the confirmation subscription through the <a href="{{ base_url }}/integration-guides/websockets">websocket</a> instead.</p>
+<p><code>confirmation_history_size</code> can be managed in the configuration file to adjust the number of elections to be kept in history and returned by this call. Due to timings inside the node, the default 2048 limit will return all confirmations up to traffic levels of approximately 56 confirmations/sec. To properly track levels above this, increase this value or use the confirmation subscription through the <a href="../../integration-guides/websockets">websocket</a> instead.</p>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;confirmation_history&quot;</span>
@@ -5083,7 +5083,7 @@ Returns hash, tally weight, election duration (in milliseconds), election confir
 <p>Upgrade network to new <strong>epoch</strong> with epoch signer private <strong>key</strong>. This spawns a background task to iterate over all accounts and add the epoch block to any accounts that do not have it. It will return <code>{ "started" = "1" }</code> if the background task was spawned successfully or <code>{ "started" = "0" }</code> if the operation could not be started. Reasons for not being able to start the operations include the node being stopped and a previous being in progress. <code>epoch</code> can be set to either 1 (representing the <a href="../../releases/network-upgrades/#state-blocks">network upgrade to state blocks</a>) or 2 (representing the <a href="../../releases/network-upgrades/#increased-work-difficulty">network upgrade for increase work difficulty</a>).</p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -5137,7 +5137,7 @@ Number. Determines limit of number of accounts to upgrade.</p>
 Tells the node to send a keepalive packet to <strong>address</strong>:<strong>port</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -5188,7 +5188,7 @@ Tells the node to send a keepalive packet to <strong>address</strong>:<strong>po
 Returns frontier, open block, change representative block, balance, last modified timestamp from local database &amp; block count starting at <strong>account</strong> up to <strong>count</strong>   </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Includes unconfirmed blocks</p>
@@ -5263,7 +5263,7 @@ NOTE: The "count" option is ignored if "sorting" is specified</p>
 the node_id has a <code>node_</code> prefix</p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -5288,7 +5288,7 @@ the node_id has a <code>node_</code> prefix</p>
 <p>Removing node ID (restart required to take effect)</p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -5359,7 +5359,7 @@ the node_id has a <code>node_</code> prefix</p>
 <p>Publish <strong>block</strong> to the network. Using the optional <code>json_block</code> is recommended. </p>
 <div class="admonition warning">
 <p class="admonition-title">Including <code>subtype</code> in <code>process</code> RPC calls highly recommended</p>
-<p>In order to avoid potential incorrect sends <strong>including the optional <code>subtype</code> parameter on all <a href="{{ base_url }}/commands/rpc-protocol/#process"><code>process</code></a> RPC calls is highly recommended</strong>. In the next version of the RPC this parameter will be required.</p>
+<p>In order to avoid potential incorrect sends <strong>including the optional <code>subtype</code> parameter on all <a href="../../commands/rpc-protocol/#process"><code>process</code></a> RPC calls is highly recommended</strong>. In the next version of the RPC this parameter will be required.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -5690,7 +5690,7 @@ Array of accounts. Returned list is filtered for only these accounts.</p>
 </code></pre></div></p>
 <hr />
 <h3 id="stats">stats<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h3>
-<p>For configuration and other details, please see <a href="{{ base_url }}/running-a-node/troubleshooting/#statistics-from-rpc">Statistics from RPC</a></p>
+<p>For configuration and other details, please see <a href="../../running-a-node/troubleshooting/#statistics-from-rpc">Statistics from RPC</a></p>
 <p><strong>Request counters:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stats&quot;</span><span class="p">,</span>
@@ -5831,7 +5831,7 @@ Array of accounts. Returned list is filtered for only these accounts.</p>
 Method to safely shutdown node  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -5867,7 +5867,7 @@ Method to safely shutdown node  </p>
 <hr />
 <h3 id="telemetry">telemetry<a class="headerlink" href="#telemetry" title="Permanent link">&para;</a></h3>
 <p>Return metrics from other nodes on the network. By default, returns a summarized view of the whole network. See below for details on obtaining local telemetry data.<br />
-<a href="{{ base_url }}/protocol-design/networking#node-telemetry">Networking - node telemetry</a> contains more detailed information on the protocol implementation of telemetry.<br />
+<a href="../../protocol-design/networking#node-telemetry">Networking - node telemetry</a> contains more detailed information on the protocol implementation of telemetry.<br />
 <strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;telemetry&quot;</span>
@@ -5948,7 +5948,7 @@ Method to safely shutdown node  </p>
 </tr>
 <tr>
 <td><strong>active_difficulty</strong></td>
-<td><em>V22.0+</em> returns minimum network difficulty due to deprecated active difficulty measurements<br><br> <em>up to V21.3</em> returns average of the current network difficulty, see <a href="{{ base_url }}/commands/rpc-protocol/#active_difficulty">active_difficulty</a> "network_current"</td>
+<td><em>V22.0+</em> returns minimum network difficulty due to deprecated active difficulty measurements<br><br> <em>up to V21.3</em> returns average of the current network difficulty, see <a href="../../commands/rpc-protocol/#active_difficulty">active_difficulty</a> "network_current"</td>
 </tr>
 </tbody>
 </table>
@@ -6066,7 +6066,7 @@ _RPC Version always returns "1"</p>
 Clear unchecked synchronizing blocks   </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6152,7 +6152,7 @@ Clear unchecked synchronizing blocks   </p>
 <p>Returns the total receivable balance for unopened accounts in the local database, starting at <strong>account</strong> (optional) up to <strong>count</strong> (optional), sorted by account number. <em><strong>Notes:</strong></em> By default excludes the burn account.   </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6189,7 +6189,7 @@ Number (128 bit, decimal), default 0. Return only accounts with total receivable
 Stop generating <strong>work</strong> for block  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6208,7 +6208,7 @@ Stop generating <strong>work</strong> for block  </p>
 Generates <strong>work</strong> for block. <strong>hash</strong> is the frontier of the account or in the case of an open block, the public key representation of the account which can be found with <a href="#account_key">account_key</a>.  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6255,7 +6255,7 @@ Without this parameter, the node will only generate work locally.</p>
 Add specific <strong>IP address</strong> and <strong>port</strong> as work peer for node until restart   </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6274,7 +6274,7 @@ Add specific <strong>IP address</strong> and <strong>port</strong> as work peer 
 <p><em>enable_control required</em>      </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6294,7 +6294,7 @@ Add specific <strong>IP address</strong> and <strong>port</strong> as work peer 
 Clear work peers node list until restart   </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6315,8 +6315,8 @@ Clear work peers node list until restart   </p>
 <p>In V21.0, when the optional <strong>difficulty</strong> is <em>not</em> given, <strong>valid</strong> is no longer included in the response.</p>
 <p>Use the new response fields <strong>"valid_all"</strong> and <strong>"valid_receive"</strong> taking into account the subtype of the block using this work value:</p>
 <ul>
-<li><strong>valid_all</strong> validates at the current network difficulty. As soon as the node processes the first <a href="{{ base_url }}/releases/network-upgrades#increased-work-difficulty">epoch_2 block</a>, this difficulty is increased.</li>
-<li><strong>valid_receive</strong> is completely accurate <strong>only once the <a href="{{ base_url }}/releases/network-upgrades#increased-work-difficulty">epoch_2 upgrade</a> is finished.</strong> Until the upgrade is finished, it is only accurate if the account where this work will be used is already upgraded. The upgrade status of an account can be obtained from <a href="#account_info">account_info</a>. The account is upgraded if "account_version" is <code>"2"</code>.</li>
+<li><strong>valid_all</strong> validates at the current network difficulty. As soon as the node processes the first <a href="../../releases/network-upgrades#increased-work-difficulty">epoch_2 block</a>, this difficulty is increased.</li>
+<li><strong>valid_receive</strong> is completely accurate <strong>only once the <a href="../../releases/network-upgrades#increased-work-difficulty">epoch_2 upgrade</a> is finished.</strong> Until the upgrade is finished, it is only accurate if the account where this work will be used is already upgraded. The upgrade status of an account can be obtained from <a href="#account_info">account_info</a>. The account is upgraded if "account_version" is <code>"2"</code>.</li>
 </ul>
 </div>
 <p><strong>Request:</strong>
@@ -6371,7 +6371,7 @@ Clear work peers node list until restart   </p>
 <h2 id="wallet-rpcs">Wallet RPCs<a class="headerlink" href="#wallet-rpcs" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">For development and testing only</p>
-<p>Below are RPC commands that interact with the built-in, QT-based node wallet. This wallet is only recommended for development and testing. For production integrations, setting up custom <a href="{{ base_url }}/integration-guides/key-management/#external-management">External Management</a> processes is required.</p>
+<p>Below are RPC commands that interact with the built-in, QT-based node wallet. This wallet is only recommended for development and testing. For production integrations, setting up custom <a href="../../integration-guides/key-management/#external-management">External Management</a> processes is required.</p>
 </div>
 <hr />
 <h3 id="account_create">account_create<a class="headerlink" href="#account_create" title="Permanent link">&para;</a></h3>
@@ -6379,7 +6379,7 @@ Clear work peers node list until restart   </p>
 Creates a new account, insert next deterministic key in <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6432,7 +6432,7 @@ Creates a new account, insert next deterministic key in <strong>wallet</strong> 
 Moves <strong>accounts</strong> from <strong>source</strong> to <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6455,7 +6455,7 @@ Moves <strong>accounts</strong> from <strong>source</strong> to <strong>wallet</
 Remove <strong>account</strong> from <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6475,7 +6475,7 @@ Remove <strong>account</strong> from <strong>wallet</strong>  </p>
 Sets the representative for <strong>account</strong> in <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6498,7 +6498,7 @@ Sets the representative for <strong>account</strong> in <strong>wallet</strong> 
 Creates new accounts, insert next deterministic keys in <strong>wallet</strong> up to <strong>count</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6535,7 +6535,7 @@ Creates new accounts, insert next deterministic keys in <strong>wallet</strong> 
 Changes the password for <strong>wallet</strong> to <strong>password</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6584,7 +6584,7 @@ Changes the password for <strong>wallet</strong> to <strong>password</strong>  <
 Receive receivable <strong>block</strong> for <strong>account</strong> in <strong>wallet</strong>. If receiving the block opens the account, sets the account representative to a <a href="#wallet_representative">wallet representative</a>. Before v21, the representative is set to the account itself.  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6607,7 +6607,7 @@ Receive receivable <strong>block</strong> for <strong>account</strong> in <stron
 Returns receive minimum for node wallet  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6625,7 +6625,7 @@ Returns receive minimum for node wallet  </p>
 Set <strong>amount</strong> as new receive minimum for node wallet until restart  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6648,7 +6648,7 @@ Set <strong>amount</strong> as new receive minimum for node wallet until restart
 Tells the node to look for receivable blocks for any account in <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6671,7 +6671,7 @@ Tells the node to look for receivable blocks for any account in <strong>wallet</
 Tells the node to look for receivable blocks for any account in all available wallets  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6689,7 +6689,7 @@ Tells the node to look for receivable blocks for any account in all available wa
 Send <strong>amount</strong> from <strong>source</strong> in <strong>wallet</strong> to <strong>destination</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <div class="admonition success">
 <p class="admonition-title">Use of <code>id</code> option is highly recommended</p>
@@ -6753,7 +6753,7 @@ Proof of Work is precomputed for <strong>one</strong> transaction in the backgro
 Add an adhoc private key <strong>key</strong> to <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6783,7 +6783,7 @@ Add an adhoc private key <strong>key</strong> to <strong>wallet</strong>  </p>
 Add watch-only <strong>accounts</strong> to <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6808,7 +6808,7 @@ Add watch-only <strong>accounts</strong> to <strong>wallet</strong>  </p>
 <p>This call may return results that include unconfirmed blocks, so it should not be used in any processes or integrations requiring only details from blocks confirmed by the network.</p>
 </div>
 <div class="admonition info">
-<p>The term <code>pending</code> was deprecated in favor of <a href="{{ base_url }}/glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: <a href="https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates">https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates</a>.</p>
+<p>The term <code>pending</code> was deprecated in favor of <a href="../../glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: ../../releases/release-v24-0/#pendingreceivable-term-rpc-updates.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6836,7 +6836,7 @@ Changes seed for <strong>wallet</strong> to <strong>seed</strong>.  <strong><em>
 <code>last_restored_account</code> and <code>restored_count</code> fields in response returned since   </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6875,7 +6875,7 @@ Changes seed for <strong>wallet</strong> to <strong>seed</strong>.  <strong><em>
 Creates a new random wallet id  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6895,7 +6895,7 @@ Creates a new random wallet id  </p>
 Destroys <strong>wallet</strong> and all contained accounts  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -6993,7 +6993,7 @@ Destroys <strong>wallet</strong> and all contained accounts  </p>
 <p>This call may return results that include unconfirmed blocks, so it should not be used in any processes or integrations requiring only details from blocks confirmed by the network.</p>
 </div>
 <div class="admonition info">
-<p>The term <code>pending</code> was deprecated in favor of <a href="{{ base_url }}/glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: <a href="https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates">https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates</a>.</p>
+<p>The term <code>pending</code> was deprecated in favor of <a href="../../glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: ../../releases/release-v24-0/#pendingreceivable-term-rpc-updates.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -7024,10 +7024,10 @@ Returns frontier, open block, change representative block, balance, last modifie
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <div class="admonition info">
-<p>The term <code>pending</code> was deprecated in favor of <a href="{{ base_url }}/glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: <a href="https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates">https://docs.nano.org/releases/release-v24-0/#pendingreceivable-term-rpc-updates</a>.</p>
+<p>The term <code>pending</code> was deprecated in favor of <a href="../../glossary/#receivable"><code>receivable</code></a>. For compatibility reasons both terms are still available for many calls and in responses. For more details see: ../../releases/release-v24-0/#pendingreceivable-term-rpc-updates.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -7086,7 +7086,7 @@ Returns frontier, open block, change representative block, balance, last modifie
 Locks <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -7123,7 +7123,7 @@ Locks <strong>wallet</strong>  </p>
 Returns a list of block hashes which have not yet been received by accounts in this <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -7224,7 +7224,7 @@ Returns a list of block hashes which have not yet been received by accounts in t
 Sets the default <strong>representative</strong> for <strong>wallet</strong> <em>(used only for new accounts, already existing accounts use already set representatives)</em>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -7246,7 +7246,7 @@ Sets the default <strong>representative</strong> for <strong>wallet</strong> <em
 Rebroadcast blocks for accounts from <strong>wallet</strong> starting at frontier down to <strong>count</strong> to the network     </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -7270,7 +7270,7 @@ Rebroadcast blocks for accounts from <strong>wallet</strong> starting at frontie
 Returns a list of pairs of account and work from <strong>wallet</strong>   </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -7291,7 +7291,7 @@ Returns a list of pairs of account and work from <strong>wallet</strong>   </p>
 Retrieves work for <strong>account</strong> in <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -7311,7 +7311,7 @@ Retrieves work for <strong>account</strong> in <strong>wallet</strong>  </p>
 Set <strong>work</strong> for <strong>account</strong> in <strong>wallet</strong>  </p>
 <div class="admonition danger">
 <p class="admonition-title">Dangerous RPC calls controlled by <code>enable_control</code></p>
-<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="{{ base_url }}/commands/rpc-protocol#send">access wallet funds</a>, <a href="{{ base_url }}/commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="{{ base_url }}/running-a-node/security">Node Security page</a>.</p>
+<p>This RPC command/option requires <code>enable_control</code> to be enabled within the RPC config file. Enabling this means that anyone with access to the RPC port could potentially <a href="../../commands/rpc-protocol#send">access wallet funds</a>, <a href="../../commands/rpc-protocol#stop">stop</a> the node from running and take other dangerous actions. <strong>Use caution when enabling this option, especially with external RPC access available.</strong> For more details see the <a href="../../running-a-node/security">Node Security page</a>.</p>
 </div>
 <p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>

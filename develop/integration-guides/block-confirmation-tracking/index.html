@@ -1941,12 +1941,12 @@
 <p>Due to notification methods not guaranteeing delivery of every block confirmed, it is recommended that manual requests for confirmation status be implemented as a fallback option. Both these types of methods are outlined below.</p>
 </div>
 <h3 id="receiving-notifications-of-confirmation">Receiving notifications of confirmation<a class="headerlink" href="#receiving-notifications-of-confirmation" title="Permanent link">&para;</a></h3>
-<p>The recommended method for receiving notifications is via <a href="{{ base_url }}/integration-guides/websockets">WebSockets</a> through the confirmation <code>topic</code>. This method involves sending a subscribe command to start receiving notifications every time a block is confirmed by the network. It is recommended that the <code>confirmation_type</code> filtering options are not used for this purpose, to make it less likely to miss a notification.</p>
+<p>The recommended method for receiving notifications is via <a href="../../integration-guides/websockets">WebSockets</a> through the confirmation <code>topic</code>. This method involves sending a subscribe command to start receiving notifications every time a block is confirmed by the network. It is recommended that the <code>confirmation_type</code> filtering options are not used for this purpose, to make it less likely to miss a notification.</p>
 <p><strong>Setup process</strong></p>
 <ol>
-<li>Update your <a href="{{ base_url }}/running-a-node/configuration/#nodewebsocket">WebSocket configuration</a></li>
+<li>Update your <a href="../../running-a-node/configuration/#nodewebsocket">WebSocket configuration</a></li>
 <li>Connect to the WebSocket at the configured endpoint</li>
-<li>Send a <a href="{{ base_url }}/integration-guides/websockets#confirmations">subscription request for all confirmations</a> including the ack option and validate the subscription request was successful</li>
+<li>Send a <a href="../../integration-guides/websockets#confirmations">subscription request for all confirmations</a> including the ack option and validate the subscription request was successful</li>
 <li>Listen for block confirmation notifications from the WebSocket</li>
 </ol>
 <p>As confirmations are received they can be parsed and handled as necessary. All operations handling notifications from the node on block confirmation should be idempotent as multiple notifications for the same block hash can occur.</p>
@@ -1955,19 +1955,19 @@
 <p>Depending on the node setup and sync status, multiple confirmation notifications for the same block hash may be sent by a single tracking mechanism. <strong>In order to prevent potential issues, integrations must track these block hashes externally to the node and prevent any unwanted actions based on multiple notifications.</strong></p>
 </div>
 <h3 id="requesting-block-confirmation-status">Requesting block confirmation status<a class="headerlink" href="#requesting-block-confirmation-status" title="Permanent link">&para;</a></h3>
-<p>In the event confirmation notifications are not received from the WebSocket in an expected timeframe, the <a href="{{ base_url }}/commands/rpc-protocol#block_info">block_info</a> RPC can be called on a specific block hash. The <code>confirmed</code> field will indicate whether the block has been confirmed. Typical confirmation times on the main network during low-traffic periods are within a few seconds, so a delay of 5 seconds before requesting block information is recommended.</p>
-<p>If confirmation has still not been seen on the block, the <a href="{{ base_url }}/commands/rpc-protocol#block_confirm">block_confirm</a> RPC can be called. This will cause the following:</p>
+<p>In the event confirmation notifications are not received from the WebSocket in an expected timeframe, the <a href="../../commands/rpc-protocol#block_info">block_info</a> RPC can be called on a specific block hash. The <code>confirmed</code> field will indicate whether the block has been confirmed. Typical confirmation times on the main network during low-traffic periods are within a few seconds, so a delay of 5 seconds before requesting block information is recommended.</p>
+<p>If confirmation has still not been seen on the block, the <a href="../../commands/rpc-protocol#block_confirm">block_confirm</a> RPC can be called. This will cause the following:</p>
 <ul>
-<li>If the block is confirmed, it will trigger a notification through the WebSocket and HTTP Callbacks, and the block hash will also appear in the <a href="{{ base_url }}/commands/rpc-protocol/#confirmation_history">confirmation_history</a> RPC (recommended for debug purposes only).</li>
+<li>If the block is confirmed, it will trigger a notification through the WebSocket and HTTP Callbacks, and the block hash will also appear in the <a href="../../commands/rpc-protocol/#confirmation_history">confirmation_history</a> RPC (recommended for debug purposes only).</li>
 <li>If the block is not in active elections, it will start an election which should result in confirmation and related notifications.</li>
 <li>If the block is already in active elections, it will not have an effect and confirmation should eventually occur along with related notifications.</li>
 </ul>
-<p>Once <a href="{{ base_url }}/commands/rpc-protocol#block_confirm">block_confirm</a> is called, a notification of confirmation through the WebSocket should be expected and if not received, then calling <a href="{{ base_url }}/commands/rpc-protocol#block_info">block_info</a> RPC to check for confirmation again can be done. Escalation of potential delays in confirmation can be done after this point in external systems as necessary.</p>
+<p>Once <a href="../../commands/rpc-protocol#block_confirm">block_confirm</a> is called, a notification of confirmation through the WebSocket should be expected and if not received, then calling <a href="../../commands/rpc-protocol#block_info">block_info</a> RPC to check for confirmation again can be done. Escalation of potential delays in confirmation can be done after this point in external systems as necessary.</p>
 <h3 id="account-frontier-confirmation-status">Account frontier confirmation status<a class="headerlink" href="#account-frontier-confirmation-status" title="Permanent link">&para;</a></h3>
 <p>For some systems the starting point for checking block status may be the account, such as when a user views their account. The following process is recommended when the account is known and the confirmation status of the frontier block is desired.</p>
 <ol>
-<li>Call <a href="{{ base_url }}/commands/rpc-protocol/#account_info">account_info</a> RPC to get current frontier hash</li>
-<li>Call <a href="{{ base_url }}/commands/rpc-protocol#block_info">block_info</a> for the frontier hash and check if <code>confirmed</code> = <code>true</code></li>
+<li>Call <a href="../../commands/rpc-protocol/#account_info">account_info</a> RPC to get current frontier hash</li>
+<li>Call <a href="../../commands/rpc-protocol#block_info">block_info</a> for the frontier hash and check if <code>confirmed</code> = <code>true</code></li>
 </ol>
 <p>If the block is not confirmed, you can follow a similar process outlined in the <a href="#requesting-block-confirmation-status">Requesting block confirmation status</a> section above for requesting block confirmation and re-checking confirmation status before escalating in external systems.</p>
 

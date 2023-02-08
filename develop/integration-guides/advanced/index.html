@@ -2047,7 +2047,7 @@
 <p class="admonition-title">Important</p>
 <p>A cold wallet manages private keys that have <strong>never</strong> been on a network-enabled computer.</p>
 </div>
-<p>This guide extends the concepts covered in <a href="{{ base_url }}/integration-guides/key-management/">External Private Key Management</a>.  It is advised that you read that section before continuing.</p>
+<p>This guide extends the concepts covered in <a href="../../integration-guides/key-management/">External Private Key Management</a>.  It is advised that you read that section before continuing.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Operations done on the hot, online, insecure computer will be prefaced with <code>(HOT)</code>. Operations done on the cold, offline, secure computer will be prefaced with <code>(COLD)</code>.</p>
@@ -2087,7 +2087,7 @@
 <h3 id="private-key-management">Private Key Management<a class="headerlink" href="#private-key-management" title="Permanent link">&para;</a></h3>
 <p>The process for external private key management in a cold wallet is very similar to external private key management for a hot wallet. The primary difference is that all signing commands (and thus information containing your private key) are isolated to a clean computer with no network connection.</p>
 <h4 id="hot-account-information">(HOT) Account Information<a class="headerlink" href="#hot-account-information" title="Permanent link">&para;</a></h4>
-<p>Get account information by the <a href="{{ base_url }}/commands/rpc-protocol#account_info"><code>account_info</code></a> RPC Command:</p>
+<p>Get account information by the <a href="../../commands/rpc-protocol#account_info"><code>account_info</code></a> RPC Command:</p>
 <h5 id="request-example">Request Example<a class="headerlink" href="#request-example" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">  &quot;action&quot;: &quot;account_info&quot;,</span>
@@ -2108,7 +2108,7 @@
 </code></pre></div>
 <hr />
 <h4 id="hot-balance-validation-part-1">(HOT) Balance Validation (Part 1)<a class="headerlink" href="#hot-balance-validation-part-1" title="Permanent link">&para;</a></h4>
-<p>We should always assume the <code>(HOT)</code> computer has been compromised, so cannot trust the balance returned by <a href="{{ base_url }}/commands/rpc-protocol#account_info"><code>account_info</code></a>. We must obtain the headblock's transaction data and independently confirm the block's hash on our <code>(COLD)</code> offline computer. On the <code>(HOT)</code> online computer, this information can be obtained by the <a href="{{ base_url }}/commands/rpc-protocol#block_info"><code>block_info</code></a> RPC Command.</p>
+<p>We should always assume the <code>(HOT)</code> computer has been compromised, so cannot trust the balance returned by <a href="../../commands/rpc-protocol#account_info"><code>account_info</code></a>. We must obtain the headblock's transaction data and independently confirm the block's hash on our <code>(COLD)</code> offline computer. On the <code>(HOT)</code> online computer, this information can be obtained by the <a href="../../commands/rpc-protocol#block_info"><code>block_info</code></a> RPC Command.</p>
 <h5 id="request-format">Request Format<a class="headerlink" href="#request-format" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">  &quot;action&quot;: &quot;block_info&quot;,</span>
@@ -2152,7 +2152,7 @@
 <p>Transfer the response over to the <code>(COLD)</code> computer.</p>
 <hr />
 <h4 id="cold-balance-validation-part-2">(COLD) Balance Validation (Part 2)<a class="headerlink" href="#cold-balance-validation-part-2" title="Permanent link">&para;</a></h4>
-<p>On the <code>(COLD)</code> computer, we need to verify the block hash using the <a href="{{ base_url }}/commands/rpc-protocol#block_hash"><code>block_hash</code></a> RPC Command.. This allows us to create a safe transaction referencing the reported head block's balance.</p>
+<p>On the <code>(COLD)</code> computer, we need to verify the block hash using the <a href="../../commands/rpc-protocol#block_hash"><code>block_hash</code></a> RPC Command.. This allows us to create a safe transaction referencing the reported head block's balance.</p>
 <h5 id="request-format_1">Request Format<a class="headerlink" href="#request-format_1" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">  &quot;action&quot;: &quot;block_hash&quot;,</span>
@@ -2190,8 +2190,8 @@
 </ul>
 <p>By independently computing the headblock's hash on the <code>(COLD)</code> computer, the generated transaction would be rejected by the network since the <code>previous</code> field references a non-existent block which is certainly not the headblock of your account.</p>
 </div>
-<p>Use the responded hash for the <code>previous</code> field in your new transaction. When computing final account balance, compute it relative to the <code>balance</code> field of the headblock on the <code>(COLD)</code> computer. Complete the rest of the <a href="{{ base_url }}/integration-guides/key-management/#send-transaction">block creation as described in section External Private Key Management</a>.</p>
-<p>Once the block is created and signed on the <code>(COLD)</code> computer, transfer the contents over to the <code>(HOT)</code> computer. From the <code>(HOT)</code> computer, run the <a href="{{ base_url }}/commands/rpc-protocol#process"><code>process</code></a> RPC command to broadcast the signed transaction to the network.</p>
+<p>Use the responded hash for the <code>previous</code> field in your new transaction. When computing final account balance, compute it relative to the <code>balance</code> field of the headblock on the <code>(COLD)</code> computer. Complete the rest of the <a href="../../integration-guides/key-management/#send-transaction">block creation as described in section External Private Key Management</a>.</p>
+<p>Once the block is created and signed on the <code>(COLD)</code> computer, transfer the contents over to the <code>(HOT)</code> computer. From the <code>(HOT)</code> computer, run the <a href="../../commands/rpc-protocol#process"><code>process</code></a> RPC command to broadcast the signed transaction to the network.</p>
 <hr />
 <h2 id="http-callback">HTTP callback<a class="headerlink" href="#http-callback" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
@@ -2204,7 +2204,7 @@
 <p>Depending on the node setup and sync status, multiple confirmation notifications for the same block hash may be sent by a single tracking mechanism. <strong>In order to prevent potential issues, integrations must track these block hashes externally to the node and prevent any unwanted actions based on multiple notifications.</strong></p>
 </div>
 <p><strong>Configuration</strong></p>
-<p>For details on configuring the HTTP callback within a node, see the <a href="{{ base_url }}/running-a-node/configuration#http-callback">HTTP callback section of Running a Node Configuration</a>.</p>
+<p>For details on configuring the HTTP callback within a node, see the <a href="../../running-a-node/configuration#http-callback">HTTP callback section of Running a Node Configuration</a>.</p>
 <p><strong>Example Callback</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nano_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est&quot;</span><span class="p">,</span><span class="w">  </span>
@@ -2272,7 +2272,7 @@
 <li><code>node.ipc.tcp.enable</code> = <strong>true</strong></li>
 <li><code>node.ipc.tcp.port</code> == <code>process.ipc_port</code> of <code>config-rpc.toml</code></li>
 </ul>
-<p>The choice depends on the setup and security that you want. The easiest way is to use RPC <em>in_process</em> according to <a href="{{ base_url }}/running-a-node/configuration">configuration</a></p>
+<p>The choice depends on the setup and security that you want. The easiest way is to use RPC <em>in_process</em> according to <a href="../../running-a-node/configuration">configuration</a></p>
 <p><strong>Launch nano_node in test mode</strong>   </p>
 <div class="codehilite"><pre><span></span><code>./nano_node --daemon --network=test
 </code></pre></div>
@@ -2322,7 +2322,7 @@ WantedBy=multi-user.target
 
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To manage node, use <a href="{{ base_url }}/commands/rpc-protocol">RPC commands</a> or <a href="{{ base_url }}/commands/command-line-interface">CLI</a></p>
+<p>To manage node, use <a href="../../commands/rpc-protocol">RPC commands</a> or <a href="../../commands/command-line-interface">CLI</a></p>
 </div>
 <h3 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h3>
 <p><strong>Error initiating bootstrap ... Too many open files</strong></p>

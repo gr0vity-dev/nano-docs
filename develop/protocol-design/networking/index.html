@@ -2015,11 +2015,11 @@
 <h1 id="protocol-design-networking">Protocol Design - Networking<a class="headerlink" href="#protocol-design-networking" title="Permanent link">&para;</a></h1>
 <details class="info">
 <summary>Part of work in progress Living Whitepaper</summary>
-<p>This page is part of the Living Whitepaper revisions currently underway to replace the original static whitepaper. These efforts include the <a href="{{ base_url }}/protocol-design/introduction">Protocol Design</a> and <a href="{{ base_url }}/node-implementation/introduction">Node Implementation</a> sections of the docs, which will cover and expand on details and topics covered in the <a href="{{ base_url }}/whitepaper/english">original whitepaper</a>.</p>
+<p>This page is part of the Living Whitepaper revisions currently underway to replace the original static whitepaper. These efforts include the <a href="../../protocol-design/introduction">Protocol Design</a> and <a href="../../node-implementation/introduction">Node Implementation</a> sections of the docs, which will cover and expand on details and topics covered in the <a href="../../whitepaper/english">original whitepaper</a>.</p>
 <p>See the bottom of the page for related whitepaper sections and other related details. Some of the sections and headers on this page may be in draft form or just suggestions/framework for later consideration. If you are interested in helping with revisions please connect with us on the <code>#documentation</code> channel on our <a href="https://chat.nano.org">Discord server</a>.</p>
 </details>
 <h2 id="tcp-messages">TCP messages<a class="headerlink" href="#tcp-messages" title="Permanent link">&para;</a></h2>
-<p>TCP is used for traffic on the <a href="{{ base_url }}/glossary#live-network">live network</a> and for bulk data transfer on the <a href="{{ base_url }}/glossary#bootstrap-network">bootstrap network</a>.</p>
+<p>TCP is used for traffic on the <a href="../../glossary#live-network">live network</a> and for bulk data transfer on the <a href="../../glossary#bootstrap-network">bootstrap network</a>.</p>
 <h2 id="network-details">Network Details<a class="headerlink" href="#network-details" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2041,13 +2041,13 @@
 <td>7076</td>
 <td>TCP</td>
 <td>Disabled</td>
-<td><ul><li>RPC server</li><li>Port configurable in <code>config-rpc.toml</code>, option <code>rpc.port</code></li><li>Enable in <code>config-node.toml</code>, option <code>rpc.enable</code> or by starting <code>nano_rpc</code> manually</li><li> Binds to localhost by default for security reasons, configurable in <code>config-rpc.toml</code>, option <code>rpc.address</code>; unicast</li><li>Contents: Unencrypted HTTP requests containing JSON object bodies</li><li>Allows the node to be queried or controlled through HTTP requests</li><li>If blocked the node will not be able to be queried or controlled by HTTP</li><li><strong>WARNING: Exposing this port externally while setting <code>enable_control</code> option to <code>true</code> in configs could expose your wallet, allow the node to be stopped remotely and open your node up to other dangerous activity.</strong> See the <a href="{{ base_url }}/running-a-node/security">Node Security page</a> for more details.</li></ul></td>
+<td><ul><li>RPC server</li><li>Port configurable in <code>config-rpc.toml</code>, option <code>rpc.port</code></li><li>Enable in <code>config-node.toml</code>, option <code>rpc.enable</code> or by starting <code>nano_rpc</code> manually</li><li> Binds to localhost by default for security reasons, configurable in <code>config-rpc.toml</code>, option <code>rpc.address</code>; unicast</li><li>Contents: Unencrypted HTTP requests containing JSON object bodies</li><li>Allows the node to be queried or controlled through HTTP requests</li><li>If blocked the node will not be able to be queried or controlled by HTTP</li><li><strong>WARNING: Exposing this port externally while setting <code>enable_control</code> option to <code>true</code> in configs could expose your wallet, allow the node to be stopped remotely and open your node up to other dangerous activity.</strong> See the <a href="../../running-a-node/security">Node Security page</a> for more details.</li></ul></td>
 </tr>
 <tr>
 <td>7078</td>
 <td>TCP</td>
 <td>Disabled</td>
-<td><ul><li>Websocket server</li><li>Port configurable in <code>config-node.toml</code>, option <code>node.websocket.port</code></li><li>Enable in <code>config-node.toml</code>, option <code>node.websocket.enable</code></li><li>Binds to localhost by default due to data throughput potentially being very high; producer-subscriber broadcast</li><li>Contents: Standard websocket frames containing JSON-encoded objects</li><li>See <a href="{{ base_url }}/integration-guides/websockets">WebSocket Support</a> for details on configuration</li></ul></td>
+<td><ul><li>Websocket server</li><li>Port configurable in <code>config-node.toml</code>, option <code>node.websocket.port</code></li><li>Enable in <code>config-node.toml</code>, option <code>node.websocket.enable</code></li><li>Binds to localhost by default due to data throughput potentially being very high; producer-subscriber broadcast</li><li>Contents: Standard websocket frames containing JSON-encoded objects</li><li>See <a href="../../integration-guides/websockets">WebSocket Support</a> for details on configuration</li></ul></td>
 </tr>
 </tbody>
 </table>
@@ -2062,7 +2062,7 @@
 <p>The nodes are designed to reply to <code>telemetry_req</code> messages. They avoid replying if messages are received from the same peer in quick succession; the minimum time until another reply is 60 seconds on the main network, 15 seconds on beta. This is done to reduce bandwidth.</p>
 <p>Telemetry messsages bypass the node's bandwidth limiter so that services monitoring the network can still do so during when the network is heavily used. Sending <code>telemetry_req</code> frequently within this exclusion zone could see your ip blacklisted by other peers. The node safely handles this for you by doing ongoing requests periodically and only sent when valid to do so.</p>
 <h3 id="signing">Signing<a class="headerlink" href="#signing" title="Permanent link">&para;</a></h3>
-<p><code>Telemetry_ack</code> messages are signed using <a href="{{ base_url }}/protocol-design/signing-hashing-and-key-derivation/#signing-algorithm-ed25519">ED25519</a> as follows:</p>
+<p><code>Telemetry_ack</code> messages are signed using <a href="../../protocol-design/signing-hashing-and-key-derivation/#signing-algorithm-ed25519">ED25519</a> as follows:</p>
 <div class="highlight"><pre><span></span><code>ED25519(key = node id public key, message = &quot;node id || block count || cemented count|| unchecked count || account count || bandwidth capacity || peer count || protocol version || uptime || genesis block hash || major version || minor version || patch version || pre-release version || maker || timestamp since UTC epoch || active difficulty&quot;)
 </code></pre></div>
 <p>The node id used in the initial handshake is used for signing. The genesis block hash should be in big endian.
@@ -2080,7 +2080,7 @@ The data is signed so that it cannot be forged by a Man In The Middle (MITM) att
 <hr />
 <p>Existing whitepaper sections related to this page:</p>
 <ul>
-<li><a href="{{ base_url }}/protocol-design/networking/">Networking</a></li>
+<li><a href="../../protocol-design/networking/">Networking</a></li>
 </ul>
 
 

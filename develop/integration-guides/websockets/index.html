@@ -2295,7 +2295,7 @@
 <p>Filters for <strong>confirmation</strong> can be used to subscribe only to selected accounts. Once filters are given, blocks from accounts that do not match the options are not broadcasted.</p>
 <div class="admonition warning">
 <p class="admonition-title">Legacy blocks never broadcasted</p>
-<p>Note that <a href="{{ base_url }}/glossary#legacy-blocks">legacy blocks</a> are never broadcasted if filters are given, even if they match the accounts.</p>
+<p>Note that <a href="../../glossary#legacy-blocks">legacy blocks</a> are never broadcasted if filters are given, even if they match the accounts.</p>
 </div>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe&quot;</span><span class="p">,</span>
@@ -2482,10 +2482,10 @@ Because account filtering needs block content to function, setting this flag to 
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>NOTE:</strong> The <code>timestamp</code> field is a Unix timestamp in milliseconds for non-final votes, and the maximum integer value for the field (<code>18446744073709551615</code>) indicates it is a <a href="{{ base_url }}/node-implementation/voting/#final-votes">final vote</a>.</p>
+<p><strong>NOTE:</strong> The <code>timestamp</code> field is a Unix timestamp in milliseconds for non-final votes, and the maximum integer value for the field (<code>18446744073709551615</code>) indicates it is a <a href="../../node-implementation/voting/#final-votes">final vote</a>.</p>
 <hr />
 <h3 id="stopped-elections">Stopped elections<a class="headerlink" href="#stopped-elections" title="Permanent link">&para;</a></h3>
-<p>If an election is stopped for any reason, the corresponding block hash is sent on the <code>"stopped_election"</code> topic. Reasons for stopping elections include low priority elections being dropped due to processing queue capacity being reached, and forced processing via <a href="{{ base_url }}/commands/rpc-protocol/#process"><code>process</code></a> RPC when there's a fork.</p>
+<p>If an election is stopped for any reason, the corresponding block hash is sent on the <code>"stopped_election"</code> topic. Reasons for stopping elections include low priority elections being dropped due to processing queue capacity being reached, and forced processing via <a href="../../commands/rpc-protocol/#process"><code>process</code></a> RPC when there's a fork.</p>
 <h5 id="subscribing_2">Subscribing<a class="headerlink" href="#subscribing_2" title="Permanent link">&para;</a></h5>
 <p>To subscribe to all stopped elections notifications:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -2647,7 +2647,7 @@ See the <a href="../../commands/rpc-protocol/#telemetry">telemetry</a> RPC comma
 <p>This subscription is available since <em>v21.0</em></p>
 <div class="admonition danger">
 <p class="admonition-title">These blocks are not confirmed</p>
-<p>Blocks received through this websocket should <strong>not</strong> be used for tracking confirmations, as they are unconfirmed and could be replaced by a conflicting block. Read the <a href="{{ base_url }}/integration-guides/block-confirmation-tracking/">confirmation tracking guide</a> for more details.</p>
+<p>Blocks received through this websocket should <strong>not</strong> be used for tracking confirmations, as they are unconfirmed and could be replaced by a conflicting block. Read the <a href="../../integration-guides/block-confirmation-tracking/">confirmation tracking guide</a> for more details.</p>
 </div>
 <h5 id="subscribing_7">Subscribing<a class="headerlink" href="#subscribing_7" title="Permanent link">&para;</a></h5>
 <p>To subscribe to node telemetry response notifications:</p>
