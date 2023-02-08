@@ -1,5 +1,5 @@
 site_name: Nano Documentation
-site_url: http://192.168.178.88:4477/
+site_url: https://docs.bnano.info
 theme:
   name: 'material'
   palette:
@@ -153,8 +153,6 @@ extra_javascript:
 extra_css:
   - 'stylesheets/extras.css'
 extra:
-  nano_node:
-    current_version : V24.0
   version:
     provider: mike
     default: dev
