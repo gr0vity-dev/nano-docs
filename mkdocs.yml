@@ -177,7 +177,7 @@ extra:
     link: 'https://www.instagram.com/nanocurrency/'  
 repo_name: 'nanocurrency/nano-docs'
 repo_url: 'https://github.com/gr0vity-dev/nano-docs'
-edit_uri: 'dev/docs/'
+edit_uri: 'edit/main/docs/'
 plugins:   
     - search:
         separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
